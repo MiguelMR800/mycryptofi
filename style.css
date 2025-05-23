@@ -35,18 +35,21 @@ h1 {
 p {
     margin-bottom: 1rem;
 }
-.button {
-    display: inline-block;
-    background-color: #004455;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
+ul.article-list {
+    list-style-type: none;
+    padding-left: 0;
 }
-.button:hover {
-    background-color: #006677;
+ul.article-list li {
+    margin-bottom: 0.75rem;
+}
+ul.article-list li a {
+    text-decoration: none;
+    color: #004455;
+    font-weight: 500;
+}
+ul.article-list li a:hover {
+    text-decoration: underline;
+    color: #006677;
 }
 footer {
     background-color: #eeeeee;
