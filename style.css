@@ -28,28 +28,37 @@ main {
     max-width: 800px;
     margin: 0 auto;
 }
-h1 {
-    font-size: 2rem;
+.hero-title {
+    font-size: 2.2rem;
     margin-bottom: 1rem;
+}
+h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
 }
 p {
     margin-bottom: 1rem;
 }
-ul.article-list {
-    list-style-type: none;
-    padding-left: 0;
+.article-card {
+    margin-bottom: 1rem;
 }
-ul.article-list li {
-    margin-bottom: 0.75rem;
-}
-ul.article-list li a {
+.button {
+    display: inline-block;
+    background-color: #004455;
+    color: #fff;
+    padding: 0.7rem 1rem;
     text-decoration: none;
-    color: #004455;
-    font-weight: 500;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
 }
-ul.article-list li a:hover {
-    text-decoration: underline;
-    color: #006677;
+.button:hover {
+    background-color: #006677;
+}
+.button.full {
+    display: block;
+    text-align: center;
+    font-weight: 500;
 }
 footer {
     background-color: #eeeeee;
