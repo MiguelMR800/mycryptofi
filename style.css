@@ -56,3 +56,10 @@ footer {
     color: #333333;
     margin-top: 2rem;
 }
+footer .disclaimer {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+}
