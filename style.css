@@ -1,3 +1,4 @@
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #dbeeff;
@@ -26,9 +27,9 @@ nav a:hover {
 }
 
 main {
-  max-width: 900px;
+  max-width: 820px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 section {
@@ -68,15 +69,34 @@ h1, h2 {
   color: #007acc;
 }
 
-
-
 table {
   width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
-  display: block;
   border-collapse: collapse;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: 20px 0;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 15px;
+}
+
+th {
+  background-color: #004c6d;
+  color: white;
+}
+
+td {
+  background-color: #fff;
+}
+
+@media (max-width: 600px) {
+  th, td {
+    font-size: 14px;
+    padding: 12px 10px;
+  }
 }
