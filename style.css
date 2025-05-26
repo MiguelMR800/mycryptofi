@@ -1,73 +1,71 @@
+
 body {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
   color: #222;
-  background: #f9f9f9;
 }
-h1, h2 {
-  color: #111;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1em;
-}
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-}
-a {
-  color: #0066cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-.card {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  margin: 1.5rem 0;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-.card a {
-  color: #003366;
-  font-weight: bold;
-  text-decoration: none;
-}
-.card a:hover {
-  color: #0055aa;
-}
+
 nav {
   text-align: center;
-  margin-bottom: 30px;
+  padding: 20px 0;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
 }
+
 nav a {
   margin: 0 15px;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #004466;
   text-decoration: none;
+  color: #004c6d;
+  font-weight: 500;
 }
+
 nav a:hover {
-  color: #0077cc;
+  text-decoration: underline;
 }
-hr {
-  margin: 2em 0;
+
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
-footer {
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 2em;
-  text-align: center;
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  color: #111;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 25px 30px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card a {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #003366;
+  text-decoration: none;
+  line-height: 1.5em;
+}
+
+.card a:hover {
+  color: #007acc;
 }
