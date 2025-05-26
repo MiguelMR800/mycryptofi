@@ -1,7 +1,6 @@
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #dbeeff;
   margin: 0;
   padding: 0;
   color: #222;
@@ -36,10 +35,9 @@ section {
   margin-bottom: 40px;
 }
 
-h2 {
-  margin-bottom: 20px;
-  font-size: 1.6em;
+h1, h2 {
   color: #111;
+  margin-bottom: 20px;
 }
 
 .card {
