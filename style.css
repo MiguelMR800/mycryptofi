@@ -127,3 +127,30 @@ footer .disclaimer {
   font-size: 0.9em;
   color: #333;
 }
+
+
+/* Responsiivinen taulukko korjaus */
+@media screen and (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table th, table td {
+    white-space: nowrap;
+  }
+}
