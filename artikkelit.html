@@ -7,6 +7,74 @@
    Artikkelit
   </title>
   <link href="style.css" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e6f0fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    nav {
+      text-align: center;
+      padding: 20px 0;
+      background-color: white;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #004c6d;
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.8em;
+      color: #111;
+    }
+
+    .section-title {
+      margin-top: 40px;
+      font-size: 1.6em;
+      color: #111;
+    }
+
+    .card {
+      background: #f0f0f0;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 25px 30px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .card a {
+      display: block;
+      font-size: 1.1em;
+      font-weight: 500;
+      color: #002b40;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      color: #006699;
+    }
+  </style>
  </head>
  <body>
   <nav>
@@ -18,43 +86,36 @@
    </a>
   </nav>
   <main>
-   <h2>
+   <h1>
     Artikkelit
-   </h2>
-   <div class="card">
-    <a href="article-2017.html">
-     Bitcoinin ensimmäinen ralli silmissäni – ja kuinka se muutti kaiken →
-    </a>
-   </div>
-   <div class="card">
-    <a href="article-bitcoinin-arvo.html">
-     Miksi Bitcoinilla on arvoa – ja mistä se syntyy? →
-    </a>
-   </div>
-   <div class="section-title">
-    Kylmälompakot
-   </div>
-   <div class="card">
-    <a href="article-kylmalompakot.html">
-     Kylmälompakon käyttö – mitä hyötyjä ja riskejä sinun on hyvä tietää →
-    </a>
-   </div>
-   <div class="section-title">
-    Kuumalompakot
-   </div>
-   <div class="card">
-    <a href="article-kuumalompakot.html">
-     Kuumalompakot selitettynä – MetaMask, Phantom, Jupiter ja muut →
-    </a>
-   </div>
-   <div class="section-title">
-    Treidaaminen
-   </div>
-   <div class="card">
-    <a href="article-treidaaminen.html">
-     Treidaaminen ja tekninen analyysi – tyylit, kuviot ja todennäköisyydet →
-    </a>
-   </div>
+   </h1>
+   <ul class="article-list">
+    <li>
+     <a href="article-2017-clean.html">
+      Bitcoinin ensimmäinen ralli silmissäni – ja kuinka se muutti kaiken →
+     </a>
+    </li>
+    <li>
+     <a href="article-bitcoinin-arvo-clean.html">
+      Miksi Bitcoinilla on arvoa – ja mistä se syntyy? →
+     </a>
+    </li>
+    <li>
+     <a href="article-kylmalompakot-clean.html">
+      Kylmälompakon käyttö – mitä hyötyjä ja riskejä sinun on hyvä tietää →
+     </a>
+    </li>
+    <li>
+     <a href="article-kuumalompakot-clean.html">
+      Kuumalompakot selitettynä – MetaMask, Phantom, Jupiter ja muut →
+     </a>
+    </li>
+    <li>
+     <a href="article-treidaaminen-clean.html">
+      Treidaaminen ja tekninen analyysi – tyylit, kuviot ja todennäköisyydet →
+     </a>
+    </li>
+   </ul>
   </main>
  </body>
 </html>
