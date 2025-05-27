@@ -40,3 +40,28 @@ footer .disclaimer {
   font-size: 0.9em;
   color: #333;
 }
+
+
+/* Additional fixes for article list and image size */
+
+/* Artikkelit-listan ulkoasun korjaus */
+ul.article-list {
+  padding-left: 20px;
+  list-style: none;
+}
+
+ul.article-list li {
+  margin-bottom: 12px;
+  font-size: 1em;
+}
+
+/* Kuvien koon rajoitus */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
