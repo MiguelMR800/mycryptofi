@@ -118,3 +118,46 @@ img {
     padding: 0 15px;
   }
 }
+
+
+/* Optimized table spacing */
+
+table {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto 40px auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  table-layout: auto;
+}
+
+th, td {
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 14.5px;
+  vertical-align: middle;
+}
+
+th {
+  background-color: #004c6d;
+  color: white;
+}
+
+td {
+  background-color: #fff;
+  line-height: 1.4em;
+}
+
+@media (max-width: 600px) {
+  th, td {
+    font-size: 13px;
+    padding: 8px 6px;
+  }
+
+  table {
+    max-width: 100%;
+  }
+}
