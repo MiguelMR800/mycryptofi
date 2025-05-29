@@ -39,8 +39,8 @@ nav a:hover {
 .section {
   max-width: 880px;
   margin: 40px auto;
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #0a1a2f;
+  color: #ffffff;
   border-radius: 16px;
   padding: 32px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
@@ -54,7 +54,7 @@ nav a:hover {
   font-size: 1.1rem;
 }
 .section a {
-  color: #0033cc;
+  color: #aad4ff;
   font-weight: 600;
   text-decoration: none;
 }
@@ -76,7 +76,7 @@ ul.article-list li {
   margin: 32px 0;
 }
 .cta {
-  background: #002244;
+  background: #003366;
   color: #ffffff;
   padding: 16px;
   border-radius: 10px;
@@ -87,7 +87,7 @@ ul.article-list li {
   transition: all 0.2s ease;
 }
 .cta:hover {
-  background: #003366;
+  background: #004080;
 }
 footer {
   margin-top: 60px;
@@ -100,8 +100,8 @@ footer {
 footer .disclaimer {
   max-width: 880px;
   margin: 0 auto;
-  background: #ffffff;
-  color: #111;
+  background: #0a1a2f;
+  color: #c0c0c0;
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
