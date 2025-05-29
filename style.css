@@ -1,73 +1,75 @@
 
 body {
-  background-color: #eaf0f8;
-  color: #111;
+  background: #e9f1fa;
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
+  color: #111;
 }
 
 nav {
-  background: #ffffff;
+  background: #fff;
   padding: 1em 2em;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   display: flex;
   justify-content: center;
   gap: 2em;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   font-weight: 600;
-  font-size: 1.05rem;
 }
 
 nav a {
-  color: #001c3d;
+  color: #002244;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 nav a:hover {
   text-decoration: underline;
 }
 
-/* Artikkelilista */
+/* Korttilistaus */
 ul.article-list {
   list-style: none;
   padding: 0;
+  margin: 2em auto;
+  max-width: 880px;
 }
 
 ul.article-list li {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
-
 
 ul.article-list li a {
   display: block;
-  padding: 40px 48px;
+  padding: 28px 34px;
   background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-  color: #001c3d;
+  border-radius: 20px;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08);
+  color: #002244;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  transition: all 0.2s ease-in-out;
 }
-
-ul.article-list li a:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
-}
-
 
 ul.article-list li a:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
 }
 
-/* Footer */
+/* Responsiivinen */
+@media screen and (max-width: 768px) {
+  ul.article-list li a {
+    padding: 24px 20px;
+    font-size: 1.05rem;
+  }
+}
+
 footer {
   font-size: 0.9em;
   background: #001c3d;
-  color: #eee;
+  color: #f0f0f0;
   padding: 40px 30px;
   text-align: center;
 }
@@ -78,8 +80,8 @@ footer .disclaimer {
   padding: 20px;
   border-radius: 16px;
   background: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   color: #111;
   font-size: 0.95em;
   text-shadow: 0 1px 2px rgba(180,180,180,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
