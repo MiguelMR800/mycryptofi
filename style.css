@@ -86,15 +86,15 @@ ul.article-list {
 }
 
 ul.article-list li {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 ul.article-list li a {
   display: block;
-  padding: 28px 32px;
+  padding: 18px 24px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   color: #003366;
   text-decoration: none;
   font-weight: 500;
@@ -103,14 +103,14 @@ ul.article-list li a {
 
 ul.article-list li a:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
 footer {
   font-size: 0.85em;
-  color: #fff;
-  background: #001c3d;
+  color: #444;
+  background: #d9e9f5;
   border-top: 1px solid #b0cde3;
   padding: 20px 30px;
   margin-top: 60px;
