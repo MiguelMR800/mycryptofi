@@ -1,1 +1,120 @@
-/* ... (koko CSS koodisisältö yllä) ... */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background-color: #0a1a2f;
+  color: #ffffff;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  background-color: #00172b;
+  padding: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+nav a {
+  color: #c0c0c0;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 5px #c0c0c0;
+}
+.header-img {
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.section {
+  max-width: 880px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  color: #111111;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+.section h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.section p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+.section a {
+  color: #0033cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+.section a:hover {
+  text-decoration: underline;
+}
+ul.article-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+ul.article-list li {
+  margin-bottom: 12px;
+}
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 32px 0;
+}
+.cta {
+  background: #002244;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+.cta:hover {
+  background: #003366;
+}
+footer {
+  margin-top: 60px;
+  padding: 32px 20px;
+  background: #000000;
+  color: #c0c0c0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer .disclaimer {
+  max-width: 880px;
+  margin: 0 auto;
+  background: #ffffff;
+  color: #111;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  .section {
+    padding: 20px;
+  }
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cta-buttons {
+    gap: 12px;
+  }
+}
