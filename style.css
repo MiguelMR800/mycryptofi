@@ -1,7 +1,7 @@
 
 /* Yleinen runko */
 body {
-  background: #0d1520; /* Tummempi tausta */
+  background: #e6f0fa;
   font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
@@ -31,15 +31,14 @@ nav a:hover {
 
 /* Otsikot */
 h1, h2 {
-  color: #ffffff;
+  color: #001c3d;
   margin-top: 0.5em;
-  text-align: center;
 }
 
 /* Korttimaiset sisältölaatikot */
 .section, main {
   max-width: 880px;
-  background: #f8f8f8;
+  background: white;
   margin: 2em auto;
   padding: 2em;
   border-radius: 16px;
@@ -57,6 +56,29 @@ img {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
+/* Taulukot */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 1em;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #003366;
+  color: white;
+}
+
+td {
+  background-color: #f7f9fc;
+}
+
 /* Artikkelilista */
 ul.article-list {
   list-style: none;
@@ -70,7 +92,7 @@ ul.article-list li {
 ul.article-list li a {
   display: block;
   padding: 18px 24px;
-  background: #d9d9d9; /* Hopeinen tausta */
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   color: #003366;
@@ -87,9 +109,9 @@ ul.article-list li a:hover {
 /* Footer */
 footer {
   font-size: 0.85em;
-  color: #ccc;
-  background: #0d1a2b;
-  border-top: 1px solid #233;
+  color: #444;
+  background: #d9e9f5;
+  border-top: 1px solid #b0cde3;
   padding: 20px 30px;
   margin-top: 60px;
   text-align: center;
@@ -104,4 +126,82 @@ footer .disclaimer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   font-size: 0.9em;
   color: #333;
+}
+
+
+/* Responsiivinen taulukko korjaus */
+@media screen and (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table th, table td {
+    white-space: nowrap;
+  }
+}
+
+/* Päivitetty taulukon tyyli mobiilille */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  margin-bottom: 1em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+thead, tbody {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #003366;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  th, td {
+    font-size: 15px;
+  }
+}
+
+h1 {
+  color: #111;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+h2 {
+  color: #222;
+  font-size: 1.3rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
 }
