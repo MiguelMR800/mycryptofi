@@ -1,24 +1,193 @@
 
+/* Yleinen runko */
 body {
-  background-color: #0d1520; /* Tummempi tausta */
-}
-
-.container {
-  background-color: #f8f8f8;
-  box-shadow: none; /* Poistetaan mahdollinen ylimääräinen varjostuskerros */
-}
-
-.article-card {
-  background-color: #e0e0e0; /* Hopeinen kortti */
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  background: #e6f0fa;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
   color: #111;
+  line-height: 1.6;
 }
 
-.article-card a {
-  color: #111;
-  font-weight: bold;
+/* Navigaatio */
+nav {
+  background: #ffffff;
+  padding: 1em 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  font-weight: 600;
+}
+
+nav a {
+  color: #003366;
   text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Otsikot */
+h1, h2 {
+  color: #001c3d;
+  margin-top: 0.5em;
+}
+
+/* Korttimaiset sisältölaatikot */
+.section, main {
+  max-width: 880px;
+  background: white;
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* Kuvien hallinta */
+img {
+  max-width: 100%;
+  height: auto;
+  max-height: 600px;
+  display: block;
+  margin: 1.5em auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Taulukot */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 1em;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #003366;
+  color: white;
+}
+
+td {
+  background-color: #f7f9fc;
+}
+
+/* Artikkelilista */
+ul.article-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.article-list li {
+  margin-bottom: 20px;
+}
+
+ul.article-list li a {
+  display: block;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  color: #003366;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+ul.article-list li a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+footer {
+  font-size: 0.85em;
+  color: #444;
+  background: #d9e9f5;
+  border-top: 1px solid #b0cde3;
+  padding: 20px 30px;
+  margin-top: 60px;
+  text-align: center;
+}
+
+footer .disclaimer {
+  max-width: 880px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-size: 0.9em;
+  color: #333;
+}
+
+
+/* Responsiivinen taulukko korjaus */
+@media screen and (max-width: 768px) {
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table thead {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table tbody {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  table th, table td {
+    white-space: nowrap;
+  }
+}
+
+/* Päivitetty taulukon tyyli mobiilille */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  margin-bottom: 1em;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+thead, tbody {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #003366;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  th, td {
+    font-size: 15px;
+  }
 }
