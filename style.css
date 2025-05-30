@@ -159,3 +159,10 @@ td {
     gap: 12px;
   }
 }
+.content-box {
+  background-color: #0d1b30;
+  padding: 24px;
+  margin: 24px 0;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
