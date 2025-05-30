@@ -1,3 +1,14 @@
+.header-img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 20px auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+/* muu css pysyy samana, lisätään tämä muotoilu tyylien joukkoon */
+
 * {
   margin: 0;
   padding: 0;
