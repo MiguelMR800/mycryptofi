@@ -95,7 +95,8 @@ footer .disclaimer {
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-img.framed {
+img.framed,
+.section img.framed {
   max-width: 100%;
   height: auto;
   border: 2px solid #444;
