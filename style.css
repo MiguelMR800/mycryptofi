@@ -11,6 +11,20 @@ body {
   line-height: 1.6;
   padding: 0 20px;
 }
+nav {
+  text-align: center;
+  padding: 24px 0 8px;
+}
+nav a {
+  color: #aad4ff;
+  text-decoration: underline;
+  margin: 0 12px;
+  font-weight: 600;
+}
+nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 6px #aad4ff;
+}
 .header-img {
   width: 100%;
   max-width: 300px;
@@ -40,14 +54,13 @@ body {
 .section a,
 .section a:link,
 .section a:visited {
-  color: #c0c0c0;
+  color: #aad4ff;
+  text-decoration: underline;
   font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
 }
 .section a:hover {
   color: #ffffff;
-  text-shadow: 0 0 6px #c0c0c0;
+  text-shadow: 0 0 6px #aad4ff;
 }
 ul.article-list {
   list-style: none;
@@ -55,7 +68,7 @@ ul.article-list {
   margin-top: 20px;
 }
 ul.article-list li {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 .cta-buttons {
   display: flex;
@@ -81,7 +94,7 @@ ul.article-list li {
 footer {
   margin-top: 60px;
   padding: 32px 20px;
-  background: #000000;
+  background: transparent;
   color: #c0c0c0;
   text-align: center;
   font-size: 0.9rem;
@@ -99,6 +112,8 @@ img.framed,
 .section img.framed {
   max-width: 100%;
   height: auto;
+  max-height: 420px;
+  object-fit: contain;
   border: 2px solid #444;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
@@ -112,13 +127,14 @@ table {
   background-color: #0d1b30;
   color: #ffffff;
   border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  overflow-x: auto;
+  display: block;
 }
 th, td {
   padding: 14px;
   text-align: left;
   border-bottom: 1px solid #223b5e;
+  white-space: nowrap;
 }
 th {
   background-color: #10263f;
