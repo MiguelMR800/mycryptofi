@@ -1,72 +1,9 @@
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0f1a2b;
-    color: #ffffff;
-}
-
-header, nav, main, footer {
-    padding: 20px;
-    margin: auto;
-    max-width: 1200px;
-}
-
-img {
-    max-width: 100%;
+/* Cheat Sheet - Responsiivinen skaalautuminen */
+.cheat-sheet-image {
+    width: 100%;
     height: auto;
+    max-width: 600px;
     display: block;
-    margin: 20px auto;
-}
-
-.container {
-    padding: 20px;
-}
-
-.card {
-    background-color: #1e2d44;
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    max-width: 700px;
-}
-
-.card img {
-    border-radius: 8px;
-}
-
-a {
-    color: #7ecbff;
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-a:hover {
-    color: #ffffff;
-}
-
-footer {
-    background-color: #141f33;
-    text-align: center;
-    font-size: 14px;
-    color: #aaa;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-@media (max-width: 768px) {
-    .card {
-        margin: 10px;
-        padding: 15px;
-    }
-
-    header, nav, main, footer {
-        padding: 10px;
-    }
-
-    body {
-        font-size: 16px;
-    }
+    margin: 1em auto;
 }
