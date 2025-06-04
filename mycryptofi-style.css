@@ -1,0 +1,48 @@
+
+/* MyCryptoFi Style - Light Glass Theme */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #111111;
+  line-height: 1.6;
+}
+
+header, nav, footer {
+  background-color: #001f3f;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Blog cards */
+.blog-post, .exchange-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #007BFF;
+  color: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+}
+
+/* Headings inside blog cards */
+.blog-post h2, .exchange-card h2 {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
