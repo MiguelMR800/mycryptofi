@@ -2,64 +2,137 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cryptosite – Etusivu</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="canonical" href="https://mycryptofi.com/" />
-  <link rel="icon" href="favicon-32x32.ico" sizes="32x32" />
-  <link rel="icon" href="favicon-16x16.ico" sizes="16x16" />
-  <link rel="apple-touch-icon" href="cryptosite-preview.png">
-  <meta name="description" content="Kryptosijoittamisen blogi ja opas – oppaita, analyyseja ja käytännön neuvoja suomalaisille. Affiliate-linkkejä turvallisiin pörsseihin ja lompakoihin.">
+  <meta name="description" content="MyCryptoFi – Kryptosijoittamisen blogi ilman hypeä. Löydä oppaat, artikkelit ja vinkit suomeksi.">
+  <title>MyCryptoFi – Kryptosijoittamisen blogi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Cryptosite – Etusivu" />
-  <meta property="og:description" content="Kryptosijoittamisen blogi ja opas – oppaita, analyyseja ja käytännön neuvoja suomalaisille." />
-  <meta property="og:image" content="https://mycryptofi.com/cryptosite-preview.png" />
-  <meta property="og:url" content="https://mycryptofi.com/" />
-  <meta property="og:type" content="website" />
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cryptosite – Etusivu" />
-  <meta name="twitter:description" content="Kryptosijoittamisen blogi ja opas – oppaita, analyyseja ja käytännön neuvoja suomalaisille." />
-  <meta name="twitter:image" content="https://mycryptofi.com/cryptosite-preview.png" />
+    .logo {
+      max-width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .hero {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      margin: 0 auto 2rem;
+      padding: 1.5rem;
+      border-radius: 20px;
+      max-width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .btn {
+      background-color: #005bbb;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0077ee;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      border-radius: 15px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 90%;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .glass-card a {
+      color: #aad4ff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .glass-card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
-  <body>
-    <main>
-      <img src="cryptosite-header.png" alt="Cryptosite header image" class="header-img"/>
-      <div class="section">
-        <h1>Tervetuloa blogiin</h1>
-        <p>
-          “Kuinka tulla kryptosijoittajaksi” on suomalainen, helposti ymmärrettävä blogi, joka yhdistää kryptot, osakkeet ja makrotalouden. 
-          Tavoitteena on auttaa suomalaisia ymmärtämään kryptosijoittamisen mahdollisuudet ja riskit, ilman hypeä.
-        </p>
-        <div class="cta-buttons">
-          <a href="https://www.binance.com/referral/mystery-box/2025-pizza-day/claim?ref=GRO_16987_2EVA3" target="_blank" class="cta">Avaa tili Binancessa →</a>
-          <a href="article-kylmalompakko.html" class="cta">Miksi tarvitset kylmälompakon? →</a>
-          <a href="artikkelit.html" class="cta">Lue kaikki oppaat ja artikkelit →</a>
-        <div class="social-share">
-  <a href="https://api.whatsapp.com/send?text=https://mycryptofi.com" target="_blank" class="social-btn">📲 WhatsApp</a>
-  <a href="https://t.me/share/url?url=https://mycryptofi.com" target="_blank" class="social-btn">✈️ Telegram</a>
-  <a href="sms:?&body=https://mycryptofi.com" class="social-btn">💬 Tekstiviesti</a>
-  <a href="#" onclick="navigator.clipboard.writeText('https://mycryptofi.com'); alert('Linkki kopioitu!'); return false;" class="social-btn">🔗 Kopioi linkki</a>
+<body>
+
+<header>
+  <img src="cryptosite-header.png" alt="MyCryptoFi logo" class="logo" />
+  <h1>Tervetuloa blogiin</h1>
+</header>
+
+<section class="hero">
+  <p>“Kuinka tulla kryptosijoittajaksi” on suomalainen, helposti ymmärrettävä blogi, joka yhdistää kryptot, osakkeet ja makrotalouden. Tavoitteena on auttaa suomalaisia ymmärtämään kryptosijoittamisen mahdollisuudet ja riskit, ilman hypeä.</p>
+</section>
+
+<div class="btn-row">
+  <a href="https://www.binance.com/" class="btn">Avaa tili Binancessa →</a>
+  <a href="article-kylmalompakko.html" class="btn">Miksi tarvitset kylmälompakon? →</a>
+  <a href="artikkelit.html" class="btn">Lue kaikki oppaat ja artikkelit →</a>
 </div>
 
-        <ul class="article-list">
-          <li><a href="article-2017.html">Bitcoinin ensimmäinen ralli silmissäni – ja kuinka se muutti kaiken →</a></li>
-          <li><a href="article-bitcoinin-arvo.html">Miksi Bitcoinilla on arvoa – ja mistä se syntyy? →</a></li>
-          <li><a href="article-kylmalompakko.html">Kylmälompakon käyttö – mitä hyötyjä ja riskejä sinun on hyvä tietää →</a></li>
-          <li><a href="article-kuumalompakko.html">Kuumalompakot selitettynä – MetaMask, Phantom, Jupiter ja muut →</a></li>
-          <li><a href="article-treidaaminen.html">Treidaaminen ja tekninen analyysi – tyylit, kuviot ja todennäköisyydet →</a></li>
-          <li><a href="blogi-makrotalous.html">Makrotalous ja markkinasyklit – miten tunteet ja uutiset ohjaavat markkinaa →</a></li>
-        </ul>
-      </div>
-    </main>
-    <footer>
-  <p class="disclaimer">
-    Tämä sivusto saattaa sisältää affiliate-linkkejä. Tekemäsi ostokset näiden linkkien kautta voivat tuottaa minulle pienen komission ilman lisäkuluja sinulle.
-    Kaikki sisältö edustaa omia näkemyksiäni eikä ole sijoitusneuvo. <a href="index.html#disclaimer">lue lisää</a>.
-  </p>
+<div class="btn-row">
+  <a href="#" class="btn">📱 WhatsApp</a>
+  <a href="#" class="btn">✈️ Telegram</a>
+  <a href="#" class="btn">💬 Tekstiviesti</a>
+  <a href="#" class="btn">🔗 Kopioi linkki</a>
+</div>
+
+<section>
+  <div class="glass-card"><a href="article-2017.html">Bitcoinin ensimmäinen ralli silmissäni – ja kuinka se muutti kaiken →</a></div>
+  <div class="glass-card"><a href="article-bitcoinin-arvo.html">Miksi Bitcoinilla on arvoa – ja mistä se syntyy? →</a></div>
+  <div class="glass-card"><a href="article-kylmalompakon-kaytto.html">Kylmälompakon käyttö – mitä hyötyjä ja riskejä sinun on hyvä tietää →</a></div>
+  <div class="glass-card"><a href="article-kuumalompakko.html">Kuumalompakot selitettynä – MetaMask, Phantom, Jupiter ja muut →</a></div>
+  <div class="glass-card"><a href="article-treidaaminen.html">Treidaaminen ja tekninen analyysi – tyylit, kuviot ja todennäköisyydet →</a></div>
+  <div class="glass-card"><a href="blogi-makrotalous.html">Makrotalous ja markkinasyklit – miten tunteet ja uutiset ohjaavat markkinaa →</a></div>
+</section>
+
+<footer>
+  Tämä sivusto saattaa sisältää affiliate-linkkejä. <br />
+  Tekemäsi ostokset voivat tuottaa minulle pienen komission ilman lisäkuluja sinulle. <br />
+  Kaikki sisältö edustaa omia näkemyksiäni eikä ole sijoitusneuvo.
 </footer>
-  </body>
+
+</body>
 </html>
