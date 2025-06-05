@@ -2,7 +2,12 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background-color: #000;
+  background-image: url('blockchain_background.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
   color: white;
   line-height: 1.6;
   font-size: 16px;
