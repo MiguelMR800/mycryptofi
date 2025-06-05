@@ -1,94 +1,65 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
 body {
-  background: #0d1b2a;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
-nav {
-  text-align: center;
+header nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 1rem 0;
+  gap: 2rem;
 }
 
-nav a {
-  margin: 0 1rem;
-  color: #a5c9ea;
+header nav a {
+  color: #aad4ff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 15px;
   padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
-}
-
-.content-box {
-  margin-bottom: 2rem;
-}
-
-.section {
-  margin-bottom: 2rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
 }
 
 h1, h2, h3 {
-  color: #ffffff;
-  margin-bottom: 1rem;
+  color: #aad4ff;
+  margin-top: 1.5rem;
 }
 
 a {
-  color: #4da3ff;
+  color: #aad4ff;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-.affiliate-button {
-  background: #00aaff;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0.5rem 0.5rem 0.5rem 0;
-  font-weight: 600;
-}
-
-.affiliate-button:hover {
-  background: #008ecc;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-  background: rgba(255, 255, 255, 0.05);
-}
-
-th, td {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.8rem;
-  text-align: left;
-  color: #ffffff;
-}
-
-th {
-  background: rgba(255, 255, 255, 0.15);
-}
-
 footer {
   text-align: center;
-  margin-top: 2rem;
+  padding: 2rem 1rem;
   font-size: 0.85rem;
-  color: #a0a0a0;
+  color: #ccc;
 }
