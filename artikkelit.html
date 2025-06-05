@@ -1,67 +1,94 @@
 
 <!DOCTYPE html>
-
-<html data-theme="light" lang="fi">
+<html lang="fi">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Artikkelit</title>
-<link href="style (2).css" rel="stylesheet"/>
-<style>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Artikkelit – MyCryptoFi</title>
+  <style>
     body {
-      font-family: system-ui, sans-serif;
-      background: #f0f2f5;
       margin: 0;
-      padding: 2rem;
-      color: #000;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
     }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+    .logo {
+      max-width: 200px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .hero {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      margin: 0 auto 2rem;
+      padding: 1.5rem;
+      border-radius: 20px;
+      max-width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
     }
     .glass-card {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 1rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      width: 90%;
-      max-width: 500px;
-      transition: transform 0.2s ease;
-    }
-    .glass-card:hover {
-      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      border-radius: 15px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 90%;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
     }
     .glass-card a {
-      font-size: 1.2rem;
+      color: #aad4ff;
       font-weight: 600;
-      color: #003399;
       text-decoration: none;
-      display: block;
+      display: inline-block;
     }
     .glass-card a:hover {
       text-decoration: underline;
     }
-    h1 {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
     }
-    .footer {
+    .btn {
+      background-color: #005bbb;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #0077ee;
+    }
+    footer {
       text-align: center;
-      margin-top: 3rem;
+      padding: 1.5rem;
       font-size: 0.9rem;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-<h1>Artikkelit</h1>
-<div class="container">
+<header>
+  <img alt="MyCryptoFi logo" class="logo" src="cryptosite-header.png" />
+  <h1>Artikkelit</h1>
+</header>
+
+<section class="hero">
+  <p>Alta löydät kaikki julkaistut kryptoblogiartikkelit helposti luettavassa muodossa. Klikkaa ja syvenny aiheeseen. →</p>
+</section>
+
+<div class="btn-row">
+  <a class="btn" href="index.html">← Takaisin etusivulle</a>
+</div>
+
 <div class="glass-card"><a href="article-2017.html">Bitcoinin ensimmäinen härkämarkkina – Näin se käynnisti uuden aikakauden →</a></div>
 <div class="glass-card"><a href="article-bitcoinin-arvo.html">Miksi Bitcoinilla on arvoa – ja mistä se syntyy? →</a></div>
 <div class="glass-card"><a href="article-kylmalompakko.html">Kylmälompakon käyttö – mitä hyötyjä ja riskejä sinun on hyvä tietää →</a></div>
@@ -70,9 +97,9 @@
 <div class="glass-card"><a href="kylmalompakon-kaytto.html">Kylmälompakon käyttöönotto – askel askeleelta →</a></div>
 <div class="glass-card"><a href="blogi-makrotalous.html">Makrotalous ja markkinasyklit – miten tunteet ja uutiset ohjaavat markkinaa →</a></div>
 <div class="glass-card"><a href="book-hotels-with-crypto.html">Miten varata hotelli kryptovaluutalla – Opas aloittelijalle →</a></div>
-</div>
-<div class="footer">
-    Tämä sivu voi sisältää affiliate-linkkejä. <a href="vastuuvapaus.html">Lue vastuuvapauslauseke</a>.
-  </div>
+
+<footer>
+  Tämä sivu voi sisältää affiliate-linkkejä. <a href="vastuuvapaus.html" style="color:#aad4ff;">Lue vastuuvapauslauseke</a>.
+</footer>
 </body>
 </html>
