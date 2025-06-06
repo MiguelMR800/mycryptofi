@@ -1,102 +1,62 @@
-
-<!DOCTYPE html>
-
-<html lang="fi">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Artikkelit – MyCryptoFi</title>
+<html><head><meta charset="utf-8"/><title>Artikkelit</title>
 <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
-    }
-    header {
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-    }
-    .logo {
-      max-width: 200px;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
-    .hero {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      margin: 0 auto 2rem;
-      padding: 1.5rem;
-      border-radius: 20px;
-      max-width: 90%;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(6px);
-      border-radius: 15px;
-      padding: 1rem;
-      margin: 1rem auto;
-      max-width: 90%;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-    .glass-card a {
-      color: #aad4ff;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .glass-card a:hover {
-      text-decoration: underline;
-    }
-    .btn-row {
-      display: flex;
-      justify-content: center;
-      margin: 2rem auto;
-    }
-    .btn {
-      background-color: #005bbb;
-      color: white;
-      padding: 0.75rem 1.25rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .btn:hover {
-      background-color: #0077ee;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-  </style>
-</head>
-<body>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #000;
+    color: #fff;
+  }
+  .background-image-fixed {
+    background-image: url('blockchain_background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+  }
+  nav {
+    padding: 1rem;
+    background: transparent;
+    font-weight: bold;
+  }
+  nav a {
+    color: #90cdf4;
+    margin-right: 2rem;
+    text-decoration: none;
+  }
+  .glass-card {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+  }
+  .article-link {
+    display: block;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    text-decoration: none;
+    color: #90cdf4;
+    transition: background 0.2s ease;
+  }
+  .article-link:hover {
+    background: rgba(255,255,255,0.1);
+  }
+</style>
+</head><body>
+<div class="background-image-fixed"></div>
 <header>
-
-<h1>Artikkelit</h1>
+<nav>
+<a href="index.html">Etusivu</a>
+<a href="artikkelit.html">Artikkelit</a>
+</nav>
 </header>
-<section class="hero">
-<p>Alta löydät kaikki julkaistut kryptoblogiartikkelit helposti luettavassa muodossa. Klikkaa ja syvenny aiheeseen. →</p>
-</section>
-<div class="btn-row">
-<a class="btn" href="index.html">← Takaisin etusivulle</a>
-</div>
-<div class="glass-card"><a href="article-2017.html">Bitcoinin ensimmäinen härkämarkkina – Näin se käynnisti uuden aikakauden →</a></div>
-<div class="glass-card"><a href="article-bitcoinin-arvo.html">Miksi Bitcoinilla on arvoa – ja mistä se syntyy? →</a></div>
-<div class="glass-card"><a href="article-kylmalompakko.html">Kylmälompakon käyttö – mitä hyötyjä ja riskejä sinun on hyvä tietää →</a></div>
-<div class="glass-card"><a href="article-kuumalompakko.html">Kuumalompakot selitettynä – MetaMask, Phantom, Jupiter ja muut →</a></div>
-<div class="glass-card"><a href="article-treidaaminen.html">Treidaaminen ja tekninen analyysi – tyylit, kuviot ja todennäköisyydet →</a></div>
-<div class="glass-card"><a href="kylmalompakon-kaytto.html">Kylmälompakon käyttöönotto – askel askeleelta →</a></div>
-<div class="glass-card"><a href="blogi-makrotalous.html">Makrotalous ja markkinasyklit – miten tunteet ja uutiset ohjaavat markkinaa →</a></div>
-<div class="glass-card"><a href="book-hotels-with-crypto.html">Miten varata hotelli kryptovaluutalla – Opas aloittelijalle →</a></div>
-<footer>
-  Tämä sivu voi sisältää affiliate-linkkejä. <a href="vastuuvapaus.html" style="color:#aad4ff;">Lue vastuuvapauslauseke</a>.
-</footer>
-</body>
-</html>
+<div class="glass-card"><h1>Artikkelit</h1><a class="article-link" href="kylmalompakon-kaytto.html">Kylmälompakon käyttö</a><a class="article-link" href="article-2017.html">Bitcoin vuonna 2017</a><a class="article-link" href="article-bitcoinin-arvo.html">Miksi Bitcoinilla on arvoa?</a><a class="article-link" href="article-kuumalompakko.html">Kuumalompakko selitettynä</a><a class="article-link" href="article-treidaaminen.html">Treidaaminen kryptomarkkinoilla</a><a class="article-link" href="blogi-makrotalous.html">Makrotalouden vaikutus kryptoon</a><a class="article-link" href="article-binance-wallet.html">Binance Wallet -opas</a><a class="article-link" href="article-kylmalompakko.html">Mikä on kylmälompakko?</a><a class="article-link" href="book-hotels-with-crypto.html">Hotellin varaaminen kryptolla</a></div></body></html>
