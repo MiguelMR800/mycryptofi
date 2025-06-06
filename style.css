@@ -1,7 +1,13 @@
 
-body {
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #FFD700;
   position: relative;
-  z-index: 0;
 }
 
 body::before {
@@ -9,82 +15,52 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('blockchain_background.png') no-repeat center center;
+  width: 100vw;
+  height: 100vh;
+  background: url('images/mycryptohub_background.jpg') no-repeat center center;
   background-size: cover;
   z-index: -1;
+  pointer-events: none;
 }
 
+/* Light theme */
+body[data-theme="light"] {
+  color: #111;
+}
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #000;
-  background-image: url('blockchain_background.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+body[data-theme="light"]::before {
+  background: url('images/mycryptohub_background.jpg') no-repeat center center;
   background-size: cover;
-  color: white;
-  line-height: 1.6;
-  font-size: 16px;
+  filter: brightness(1.1);
 }
 
-header nav {
-  display: flex;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 1rem 0;
-  gap: 2rem;
-}
-
-header nav a {
-  color: #aad4ff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-header nav a:hover {
-  text-decoration: underline;
-}
-
-main {
+/* Cards */
+.blog-post,
+.exchange-card {
+  background: rgba(18, 18, 18, 0.75);
+  border: 1px solid #FFD700;
+  color: #FFD700;
   padding: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
-.glass-card {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-  color: white;
-  text-align: left;
+body[data-theme="light"] .blog-post,
+body[data-theme="light"] .exchange-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #d4af37;
+  color: #111;
 }
 
-h1, h2, h3 {
-  color: #aad4ff;
-  margin-top: 1.5rem;
+
+.card .title {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  display: inline-block;
 }
 
-a {
-  color: #aad4ff;
-  font-weight: bold;
-  text-decoration: none;
-}
 
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.85rem;
-  color: #ccc;
+.card h2 {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
