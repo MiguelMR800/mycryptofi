@@ -8,16 +8,9 @@
   <title>MyCryptoFi – Kryptosijoittamisen blogi</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      background-image: url('blockchain_background.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: cover;
-      color: white;
-    }
+  margin: 0;
+  padding: 0;
+}
     header {
       text-align: center;
       padding: 2rem 1rem 1rem;
@@ -59,17 +52,14 @@
       background-color: #0077ee;
     }
     .glass-card {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 16px;
-  line-height: 1.6;
-  font-family: 'Segoe UI', sans-serif;
-}
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      border-radius: 15px;
+      padding: 1rem;
+      margin: 1rem auto;
+      max-width: 90%;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
     .glass-card a {
       color: #aad4ff;
       font-weight: 600;
@@ -92,6 +82,7 @@
   </style>
 </head>
 <body>
+  <div class="background-image-fixed"></div>
 <header>
 <img alt="MyCryptoFi logo" class="logo" src="cryptosite-header.png" style="border-radius: 20px; max-width: 300px; margin-bottom: 20px;"/>
 <h1>Tervetuloa blogiin</h1>
