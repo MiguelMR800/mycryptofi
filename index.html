@@ -95,9 +95,25 @@
         font-size: 2.5rem;
       }
     }
-  </style>
+  
+.background-image-fixed {
+  background-image: url('blockchain_background.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+</style>
 </head>
 <body>
+<div class="background-image-fixed"></div>
 <header>
 <img alt="MyCryptoFi logo" class="logo" src="cryptosite-header.png" style="border-radius: 20px; max-width: 300px; margin-bottom: 20px;"/>
 <h1>Tervetuloa blogiin</h1>
