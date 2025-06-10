@@ -64,3 +64,17 @@ body[data-theme="light"] .exchange-card {
 .card h2 {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
+
+
+/* Tummentava overlay taustakuvan päälle */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45); /* Säädä tummentavuutta esim. 0.3–0.6 */
+  z-index: -1;
+  pointer-events: none;
+}
