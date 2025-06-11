@@ -1,0 +1,43 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('blockchain_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #000;
+    color: #00ffff;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.header-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.blog-preview {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.blog-preview h1 {
+    color: #00ffff;
+}
+
+article {
+    margin-bottom: 40px;
+}
+
+a {
+    color: #00ffff;
+    text-decoration: underline;
+}
