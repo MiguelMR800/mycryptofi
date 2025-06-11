@@ -989,7 +989,7 @@ overflow: hidden;}
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85);
 }
 </style>
-<title>MyCryptoFi – Krypto-oppaat, vertailut ja työkalut suomeksi</title><meta content="MyCryptoFi tarjoaa oppaat, pörssivertailut ja työkalut kryptovaluuttoihin – suomeksi. Opi käyttämään Ledgeriä, Binancea ja muita turvallisesti." name="description"/><meta content="kryptovaluutta, bitcoin, ethereum, binance, treidaus, cold wallet, ledger, suomi, vertailu, mycryptofi" name="keywords"/><meta content="MyCryptoFi" name="author"/><meta content="index, follow" name="robots"/><meta content="MyCryptoFi – Kryptomaailma suomeksi" property="og:title"/><meta content="Oppaat, työkalut ja vertailut suomeksi. Lompakot, pörssit ja hajautettu talous helposti." property="og:description"/><meta content="https://mycryptofi.com/" property="og:url"/><meta content="website" property="og:type"/><meta content="https://mycryptofi.com/og-kuva.jpg" property="og:image"/><link href="https://mycryptofi.com/" rel="canonical"/><link href="favicon-16x16.ico" rel="icon" sizes="16x16" type="image/x-icon"/><link href="favicon-32x32.ico" rel="icon" sizes="32x32" type="image/x-icon"/><meta content="cryptosite-preview.png" property="og:image"/><meta content="cryptosite-preview.png" name="twitter:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="cryptosite-preview-opt.png" name="twitter:image"/></head>
+<title>MyCryptoFi – Krypto-oppaat, vertailut ja työkalut suomeksi</title><meta content="MyCryptoFi tarjoaa oppaat, pörssivertailut ja työkalut kryptovaluuttoihin – suomeksi. Opi käyttämään Ledgeriä, Binancea ja muita turvallisesti." name="description"/><meta content="kryptovaluutta, bitcoin, ethereum, binance, treidaus, cold wallet, ledger, suomi, vertailu, mycryptofi" name="keywords"/><meta content="MyCryptoFi" name="author"/><meta content="index, follow" name="robots"/><meta content="MyCryptoFi – Kryptomaailma suomeksi" property="og:title"/><meta content="Oppaat, työkalut ja vertailut suomeksi. Lompakot, pörssit ja hajautettu talous helposti." property="og:description"/><meta content="https://mycryptofi.com/" property="og:url"/><meta content="website" property="og:type"/><meta content="https://mycryptofi.com/og-kuva.jpg" property="og:image"/><link href="https://mycryptofi.com/" rel="canonical"/></head>
 <body onload="initTheme()">
 <!-- Teemanvaihto (☀️ / 🌙) poistettu toistaiseksi -->
 <section class="intro-section">
@@ -1103,7 +1103,7 @@ overflow: hidden;}
 }
 
 .news-nav {
-  background: rgba(255, 215, 0, 0.9);
+  background: rgba(0, 255, 255, 0.8);
   color: #000;
   border: none;
   padding: 10px 18px;
@@ -1139,7 +1139,7 @@ overflow: hidden;}
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
-    color: #00ccff;
+    color: #C0C0C0;
     ">
 <div class="frosted-card"><h1>MyCryptoFi - Kryptoblogi</h1></div>
 <div class="blog-post">
@@ -1157,8 +1157,8 @@ overflow: hidden;}
 <div class="news-slide">
 <h2 id="news-title">Ladataan viimeisimpiä kryptouutisia...</h2>
 <div style="margin-top: 20px;">
-<button class="news-nav" onclick="prevNews()" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">« Edellinen</button>
-<button class="news-nav" onclick="nextNews()" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Seuraava »</button>
+<button class="news-nav" onclick="prevNews()" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">« Edellinen</button>
+<button class="news-nav" onclick="nextNews()" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Seuraava »</button>
 </div>
 </div>
 <p class="news-disclaimer">*Tämä ei ole sijoitusneuvontaa.</p>
@@ -1182,7 +1182,7 @@ function updateNews(index) {
   el.classList.remove("fade-in");
   el.classList.add("fade-out");
   setTimeout(() => {
-    el.innerHTML = '<a href="' + newsItems[index].link + '" target="_blank" style="color: #00ccff; text-decoration: none;">' + newsItems[index].title + '</a>';
+    el.innerHTML = '<a href="' + newsItems[index].link + '" target="_blank" style="color: #FFD700; text-decoration: none;">' + newsItems[index].title + '</a>';
     el.classList.remove("fade-out");
     el.classList.add("fade-in");
   }, 300);
@@ -1208,13 +1208,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 </script>
-<section class="crypto-info-section" style="background-image: url('images/crypto_background_optimized.jpg'); background-size: cover; background-position: center; padding: 50px 20px; position: relative; margin-top: 2rem;"><div class="info-overlay" style="background-color: rgba(0, 0, 0, 0.7); color: #00ccff; max-width: 800px; margin: auto; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.8);">
+<section class="crypto-info-section" style="background-image: url('images/crypto_background_optimized.jpg'); background-size: cover; background-position: center; padding: 50px 20px; position: relative; margin-top: 2rem;"><div class="info-overlay" style="background-color: rgba(0, 0, 0, 0.7); color: #C0C0C0; max-width: 800px; margin: auto; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 0 10px rgba(0,0,0,0.8);">
 <div class="info-slide">
 <h2 id="info-title" onclick="toggleInfo()">Title here</h2>
 <p class="hidden" id="info-detail">Detail here</p>
 <div style="margin-top: 20px;">
-<button class="info-nav" onclick="prevSlide()" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">« Edellinen</button>
-<button class="info-nav" onclick="nextSlide()" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Seuraava »</button>
+<button class="info-nav" onclick="prevSlide()" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">« Edellinen</button>
+<button class="info-nav" onclick="nextSlide()" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Seuraava »</button>
 </div>
 </div>
 <p class="disclaimer" style="font-size: 0.8rem; color: #bbb; margin-top: 20px;">*Tämä ei ole sijoitusneuvontaa.</p></div></section>
@@ -1228,7 +1228,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 <a class="link" href="https://rabby.io" target="_blank">Lataa Rabby Wallet</a>
 </div><div class="card"><div class="title">Phantom</div><div class="desc">Popular Solana wallet with NFTs and staking.</div><a class="link" href="https://phantom.app/" target="_blank">Lataa Phantom</a></div><div class="card"><div class="title">Solflare</div><div class="desc">Mobile and browser wallet for Solana.</div><a class="link" href="https://solflare.com/" target="_blank">Lataa Solflare</a></div><div class="card"><div class="title">Jupiter Wallet</div><div class="desc">Wallet integrated with Jupiter DEX aggregator.</div><a class="link" href="https://jup.ag/invite/BRvVHduEhaiG" target="_blank">Lataa Jupiter Wallet</a>
 <p style="margin-top: 10px;">
-<a href="https://jup.ag/invite/BRvVHduEhaiG" style="color:#00ccff; text-decoration: underline;" target="_blank">
+<a href="https://jup.ag/invite/BRvVHduEhaiG" style="color:#C0C0C0; text-decoration: underline;" target="_blank">
                 Lunasta 0.04 SOL -lahja koodilla: BRvVHduEhaiG
             </a>
 </p>
@@ -1244,15 +1244,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 <div class="card-container"><div class="card"><div class="title">Jupiter</div><div class="desc">Top Solana DEX aggregator.</div><a class="link" href="https://jup.ag" target="_blank">Vieraile Jupiter</a></div><div class="card"><div class="title">Drift</div><div class="desc">Perpetuals trading on Solana.</div><a class="link" href="https://app.drift.trade" target="_blank">Vieraile Drift</a></div><div class="card"><div class="title">Marginfi</div><div class="desc">Borrow/lend protocol with margin trading.</div><a class="link" href="https://app.marginfi.com/refer/8f3ec3ca-739a-4546-b056-efe38623dccc" target="_blank">Vieraile Marginfi</a></div><div class="card"><div class="title">Kamino</div><div class="desc">Automated yield optimizer.</div><a class="link" href="https://app.kamino.finance" target="_blank">Vieraile Kamino</a></div><div class="card"><div class="title">Meteora</div><div class="desc">Dynamic liquidity vaults.</div><a class="link" href="https://meteora.ag" target="_blank">Vieraile Meteora</a></div><div class="card"><div class="title">Orca</div><div class="desc">Friendly Solana DEX.</div><a class="link" href="https://www.orca.so" target="_blank">Vieraile Orca</a></div></div>
 </div>
 <div class="section"><h2>Kryptotyökalut</h2><p style="font-size: 0.9rem; color: #000; margin-top: -0.5rem; margin-bottom: 1rem;">Hyödyllisiä sovelluksia ja alustoja hintojen, salkkujen ja markkinatrendien seuraamiseen.</p>
-<div class="card-container"><div class="card"><div class="title">CoinMarketCap</div><div class="desc">Hintaseuranta, markkinadata ja uutiset.</div><a class="link" href="https://coinmarketcap.com" target="_blank">Vieraile CMC</a></div><div class="card"><div class="title">CoinGecko</div><div class="desc">Yksityiskohtaiset analyysit ja seuranta kaikille kryptovaluutoille.</div><a class="link" href="https://coingecko.com" target="_blank">Vieraile CoinGecko</a></div><div class="card"><div class="title">CoinStats</div><div class="desc">Portfolio &amp; performance tracking tool.</div><a class="link" href="https://invite.coinstats.app/r?i=Zb2IsJ1734804670281" target="_blank">Try CoinStats</a></div><div class="card"><div class="title">Banter Bubbles</div><div class="desc">Visuaaliset markkinaliikkeet kuplina.</div><a class="link" href="https://www.banterbubbles.com" target="_blank">Näytä kuplat</a></div><div class="card"><div class="title">TradingView</div><div class="desc">Advanced charting platform for crypto &amp; stocks.</div><a class="link" href="https://tradingview.com" target="_blank">Avaa TradingView</a></div></div>
+<div class="card-container"><div class="card"><div class="title">CoinMarketCap</div><div class="desc">Hintaseuranta, markkinadata ja uutiset.</div><a class="link" href="https://coinmarketcap.com" target="_blank">Vieraile CMC</a></div><div class="card"><div class="title">CoinGecko</div><div class="desc">Yksityiskohtaiset analyysit ja seuranta kaikille kryptovaluutoille.</div><a class="link" href="https://coingecko.com" target="_blank">Vieraile CoinGecko</a></div><div class="card"><div class="title">CoinStats</div><div class="desc">Portfolio &amp; performance tracking tool.</div><a class="link" href="https://invite.coinstats.app/r?i=Zb2IsJ1734804670281" target="_blank">Try CoinStats</a></div><div class="card"><div class="title">Banter Bubbles</div><div class="desc">Visuaaliset markkinaliikkeet kuplina.</div><a class="link" href="https://www.banterbubbles.com" target="_blank">View Bubbles</a></div><div class="card"><div class="title">TradingView</div><div class="desc">Advanced charting platform for crypto &amp; stocks.</div><a class="link" href="https://tradingview.com" target="_blank">Open TradingView</a></div></div>
 </div>
 <section id="comparisons">
-<h2 class="#00ccff-title" style="text-align:center;">Comparisons: Pörssit, Wallets &amp; DEXs</h2>
-<h3 style="color:#00ccff; text-align:center;">Pörssien vertailu</h3>
+<h2 class="gold-title" style="text-align:center;">Comparisons: Pörssit, Wallets &amp; DEXs</h2>
+<h3 style="color:#C0C0C0; text-align:center;">Exchange Comparison</h3>
 <div class="comparison-table-wrapper"><table class="comparison-table">
 <tr><th>Nimi</th><th>Kulut</th><th>Sääntely</th><th>Linkkiki</th></tr>
 <tr><td>Binance</td><td>0.1%</td><td>Kansainvälinen</td><td><a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr><tr><td>Coinbase</td><td>0.5%</td><td>Kansainvälinen</td><td><a href="https://www.coinbase.com/join" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr><tr><td>Bybit</td><td>0.1%</td><td>Veroparatiisi</td><td><a href="https://www.bybit.com/invite?ref=EQ69EL" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr><tr><td>Bitget</td><td>0.1%</td><td>Veroparatiisi</td><td><a href="https://www.bitget.com/referral/register?clacCode=B0US0BU8" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr><tr><td>Crypto.com</td><td>0.4%</td><td>Kansainvälinen</td><td><a href="https://crypto.com/app/nrmm4uzm29" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr><tr><td>MEXC</td><td>0.2%</td><td>Veroparatiisi</td><td><a href="https://www.mexc.com/register?inviteCode=1GvVa" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr><tr><td>Coinmotion</td><td>0.5%+</td><td>EU / Suomi</td><td><a href="https://coinmotion.com/fi?ref=92a4" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr><tr><td>Northcrypto</td><td>1%</td><td>EU / FIN-FSA</td><td><a href="https://northcrypto.com/fi" style="color: black !important; text-decoration: underline;" target="_blank">Vieraile</a></td></tr></table></div>
-<h3 style="color:#00ccff; text-align:center;">Kuumalompakko (online) Lompakkovertailu</h3>
+<h3 style="color:#C0C0C0; text-align:center;">Kuumalompakko (online) Wallet Comparison</h3>
 <div class="comparison-table-wrapper"><table class="comparison-table">
 <tr><th>Nimi</th><th>Tyyppi</th><th>Lohkoketjut</th><th>Sopii parhaiten</th><th>Linkkiki</th></tr>
 <tr><td>Phantom</td><td>Kuumalompakko (online)</td><td>Solana</td><td>NFTs &amp; DeFi on Solana</td><td><a href="https://phantom.app" style="; color: black !important;" target="_blank">Vieraile</a></td></tr>
@@ -1267,13 +1267,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 <td>Sopii parhaiten Sui apps</td>
 <td><a href="https://suiet.app" style="color: black !important;" target="_blank">Vieraile</a></td>
 </tr>
-</table></div><h3 style="color:#00ccff; text-align:center;">Kylmälompakko (offline) Lompakkovertailu</h3>
+</table></div><h3 style="color:#C0C0C0; text-align:center;">Kylmälompakko (offline) Wallet Comparison</h3>
 <div class="comparison-table-wrapper"><table class="comparison-table">
 <tr><th>Nimi</th><th>Tyyppi</th><th>Turvallisuus</th><th>Sopii parhaiten</th><th>Linkkiki</th></tr>
 <tr><td>Ledger</td><td>Kylmälompakko (offline)</td><td>High</td><td>Secure long-term storage</td><td><a href="https://shop.ledger.com/?r=c97ab0683c61" style="color: black !important;" target="_blank">Vieraile</a></td></tr>
 <tr><td>Trezor</td><td>Kylmälompakko (offline)</td><td>High</td><td>Privacy-focused users</td><td><a href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102ce1e13cfc323e0a78ae1f740267&amp;offer_id=239&amp;affiliate_id=35816" style="color: black !important;" target="_blank">Vieraile</a></td></tr>
 </table></div>
-<h3 style="color:#00ccff; text-align:center;">DEX-alustojen vertailu</h3>
+<h3 style="color:#C0C0C0; text-align:center;">DEX Platform Comparison</h3>
 <div class="comparison-table-wrapper"><table class="comparison-table">
 <tr><th>Nimi</th><th>Tyyppi</th><th>Lohkoketju</th><th>Fokus</th><th>Linkkiki</th></tr>
 <tr><td>Jupiter</td><td>Aggregaattori</td><td>Solana</td><td>Best routing</td><td><a href="https://jup.ag/invite/BRvVHduEhaiG" style="; color: black !important;" target="_blank">Vieraile</a></td></tr>
@@ -1402,22 +1402,22 @@ Tue projektia lähettämällä kryptoja suoraan näihin osoitteisiin.
 <div class="donation-card" style="background-image: url('images/btc-icon.png'); background-size: cover; background-position: center;">
 <h3 style="position: relative; z-index: 2;">Bitcoin</h3>
 <p id="btc-address" style="position: relative; z-index: 2;">bc1q62s4qjw3mzrgu3qn6dgrxnft3ysaut102akazd</p>
-<button class="copy-btn" onclick="copyAddress('btc-address')" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Kopioi</button>
+<button class="copy-btn" onclick="copyAddress('btc-address')" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Kopioi</button>
 </div>
 <div class="donation-card" style="background-image: url('images/eth-icon.png'); background-size: cover; background-position: center;">
 <h3 style="position: relative; z-index: 2;">Ethereum</h3>
 <p id="eth-address" style="position: relative; z-index: 2;">0xF4CCB63eeBa308C98B2440A3f4933BC389E6822f</p>
-<button class="copy-btn" onclick="copyAddress('eth-address')" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Kopioi</button>
+<button class="copy-btn" onclick="copyAddress('eth-address')" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Kopioi</button>
 </div>
 <div class="donation-card" style="background-image: url('images/sol-icon.png'); background-size: cover; background-position: center;">
 <h3 style="position: relative; z-index: 2;">Solana</h3>
 <p id="sol-address" style="position: relative; z-index: 2;">5iZj5VEgELw9wumUukXxjYNXWCbbiTnkGFuQddLX775e</p>
-<button class="copy-btn" onclick="copyAddress('sol-address')" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Kopioi</button>
+<button class="copy-btn" onclick="copyAddress('sol-address')" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Kopioi</button>
 </div>
 <div class="donation-card" style="background-image: url('images/sui-logo.png'); background-size: cover; background-position: center;">
 <h3 style="position: relative; z-index: 2;">Sui</h3>
 <p id="sui-address" style="position: relative; z-index: 2;">0x0e1b7f1da6ccce7627329f738821355dd42fe5c013b4570a8bd11b9728269c2c</p>
-<button class="copy-btn" onclick="copyAddress('sui-address')" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Kopioi</button>
+<button class="copy-btn" onclick="copyAddress('sui-address')" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Kopioi</button>
 </div>
 </div>
 <script>
@@ -1494,11 +1494,11 @@ function copyAddress(id) {
 <!-- New Bubble Keskustelu -->
 <div class="chat-button" onclick="toggleKeskustelu()">Keskustelu</div>
 <div class="chat-container" id="chatContainer">
-<div class="chat-header">Kysy CryptoBotilta</div>
+<div class="chat-header">Ask CryptoBot</div>
 <div class="chat-messages" id="chatMessages"></div>
 <div class="chat-input">
-<input id="userInput" onkeydown="if(event.key==='Enter') sendMessage()" placeholder="Kysy jotain..." type="text"/>
-<button onclick="sendMessage()" style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Lähetä</button>
+<input id="userInput" onkeydown="if(event.key==='Enter') sendMessage()" placeholder="Ask something..." type="text"/>
+<button onclick="sendMessage()" style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Send</button>
 </div>
 </div>
 <script>
@@ -1523,7 +1523,7 @@ function getOfflineBotReply(msg) {
   const lower = msg.toLowerCase();
 
   if (lower.includes("bitcoin")) {
-    return "Bitcoin on ensimmäinen hajautettu kryptovaluutta. Se mahdollistaa vertaisverkkomaksut ilman välikäsiä.";
+    return "Bitcoin is the first decentralized cryptocurrency. It allows peer-to-peer payments without intermediaries.";
   } else if (lower.includes("ethereum")) {
     return "Ethereum is a smart contract platform that enables decentralized apps and DeFi.";
   } else if (lower.includes("wallet")) {
@@ -1633,7 +1633,7 @@ function appendMessage(sender, text) {
 
 .user {
   align-self: flex-end;
-  background: rgba(255, 215, 0, 0.9);
+  background: rgba(0, 255, 255, 0.8);
   color: #000;
 }
 
@@ -1751,7 +1751,7 @@ function appendMessage(sender, text) {
 <script>
 const infoSlides = [
   {
-    title: "Minkä ongelman Bitcoin oikeasti ratkaisee?",
+    title: "What problem does Bitcoin actually solve?",
     detail: "Bitcoin removes the need for centralized intermediaries in transferring value. It's borderless, permissionless, and censorship-resistant — qualities traditional banking systems lack."
   },
   {
@@ -1845,10 +1845,10 @@ async function loadCointelegraphNews() {
 document.addEventListener("DOMContentLoaded", loadCointelegraphNews);
 </script>
 <!-- Keskustelu Widget -->
-<div id="chat-widget" style="position: fixed; bottom: 90px; right: 20px; background: #111; color: #00ccff; padding: 20px; border-radius: 10px; display: none; box-shadow: 0 0 15px #00ccff; z-index: 9999;">
+<div id="chat-widget" style="position: fixed; bottom: 90px; right: 20px; background: #111; color: gold; padding: 20px; border-radius: 10px; display: none; box-shadow: 0 0 15px gold; z-index: 9999;">
 <strong>Ask us anything!</strong><br/><br/>
 <textarea style="width: 100%; height: 60px; border-radius: 5px;"></textarea>
-<button style="background: rgba(255, 215, 0, 0.9); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #00ccff !important;">Lähetä</button>
+<button style="background: rgba(0, 255, 255, 0.8); color: #000; font-weight: bold; border: none; padding: 10px 16px; margin: 0 8px; border-radius: 8px; cursor: pointer;background-color: #000 !important; color: #C0C0C0 !important;">Send</button>
 </div>
 <script>
   document.getElementById("chat-toggle").addEventListener("click", function() {
@@ -1937,7 +1937,7 @@ function showNews(index) {
   const container = document.getElementById("news-rotating-item");
   container.style.opacity = 0;
   setTimeout(() => {
-    container.innerHTML = '<a href="' + newsItems[index].link + '" target="_blank" style="color: #00ccff; text-decoration: none;">' + newsItems[index].title + '</a>';
+    container.innerHTML = '<a href="' + newsItems[index].link + '" target="_blank" style="color: #FFD700; text-decoration: none;">' + newsItems[index].title + '</a>';
     container.style.opacity = 1;
   }, 300);
 }
