@@ -2,10 +2,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('blockchain_background.png');
+    background-image: url('E0F74AC2-88AC-4025-9C2E-FEF4597C0A82.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-color: #000;
     color: #00ffff;
@@ -23,7 +23,7 @@ header {
 
 .blog-preview {
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     max-width: 800px;
     margin: auto;
     border-radius: 10px;
@@ -39,11 +39,4 @@ article {
 
 a {
     color: #00ffff;
-    text-decoration: underline;
-}
-
-
-.background-overlay,
-.background-image-fixed {
-    pointer-events: none;
 }
