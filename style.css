@@ -41,3 +41,9 @@ a {
     color: #00ffff;
     text-decoration: underline;
 }
+
+
+.background-overlay,
+.background-image-fixed {
+    pointer-events: none;
+}
