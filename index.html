@@ -37,8 +37,8 @@
     }
 
     .hero {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
       margin: 0 auto 2rem;
       padding: 1.5rem;
       border-radius: 20px;
@@ -74,8 +74,8 @@
     }
 
     .glass-card {
-      background: rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(4px);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
       border-radius: 15px;
       padding: 1rem;
       margin: 1rem auto;
@@ -109,15 +109,15 @@
 .background-image-fixed {
   background-image: url('blockchain_background.png');
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   opacity: 0.45;
+  pointer-events: none;
 }
 
 </style>
