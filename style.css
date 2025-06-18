@@ -23,10 +23,13 @@ header {
 
 .blog-preview {
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    color: #f0f0f0;
     max-width: 800px;
     margin: auto;
     border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
 
 .blog-preview h1 {
