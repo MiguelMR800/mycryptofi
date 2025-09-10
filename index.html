@@ -1,215 +1,130 @@
 <!DOCTYPE html>
-
 <html lang="fi">
 <head>
-<link href="https://mycryptofi.com/" rel="canonical"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="MyCryptoFi – Kryptosijoittamisen blogi ilman hypeä. Löydä oppaat, analyysit ja käytännön vinkit."/>
-<!-- ✅ Tässä alkaa uusi Open Graph ja Twitter metadata -->
-<meta content="MyCryptoFi – Kryptosijoittamisen blogi ilman hypeä" property="og:title"/>
-<meta content="Blogi joka auttaa suomalaisia ymmärtämään kryptot, sijoittamisen ja makrotalouden ilman turhaa hypeä." property="og:description"/>
-<meta content="https://mycryptofi.com/cryptosite-preview.png" property="og:image"/>
-<meta content="https://mycryptofi.com/" property="og:url"/>
-<meta content="website" property="og:type"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="MyCryptoFi – Kryptosijoittamisen blogi ilman hypeä" name="twitter:title"/>
-<meta content="Suomalainen kryptoblogi ilman turhaa hypeä – kryptot, sijoittaminen ja makrotalous helposti ymmärrettävästi." name="twitter:description"/>
-<meta content="https://mycryptofi.com/cryptosite-preview.png" name="twitter:image"/>
-<!-- ✅ Metadata päättyy tähän -->
-<title>MyCryptoFi – Kryptosijoittamisen blogi</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyCryptoFi – Krypto-opas suomalaisille</title>
+  <link rel="canonical" href="https://mycryptofi.com/" />
+  <style>
     body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  
-  color: white;
+      margin: 0;
+      background: black;
       color: white;
+      font-family: Arial, sans-serif;
     }
-
     header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 40px;
       text-align: center;
-      padding: 2rem 1rem 1rem;
     }
-
-    .logo {
-      max-width: 200px;
-      margin-bottom: 1rem;
+    header h1 {
+      font-size: 2em;
+      color: #00bfff;
     }
-
-    .hero {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      margin: 0 auto 2rem;
-      padding: 1.5rem;
-      border-radius: 20px;
-      max-width: 90%;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    .intro {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.6;
     }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    .affiliate-warning {
+      font-size: 0.9em;
+      color: #bbb;
+      text-align: center;
+      max-width: 700px;
+      margin: 10px auto 30px;
     }
-
-    .btn-row {
+    .affiliate-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.5rem;
-      margin: 1.5rem 0;
+      gap: 12px;
+      margin-bottom: 30px;
     }
-
-    .btn {
-      background-color: #005bbb;
-      color: white;
-      padding: 0.75rem 1.25rem;
-      border-radius: 10px;
+    .affiliate-links a {
+      background-color: #00bfff;
+      color: black;
+      padding: 10px 18px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
     }
-
-    .btn:hover {
-      background-color: #0077ee;
+    .affiliate-links a:hover {
+      background-color: #009acd;
     }
-
-    .glass-card {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-  border-radius: 18px;
-  padding: 1.8rem;
-  margin: 1rem;
-  width: 100%;
-  max-width: 400px;
-  min-height: 100px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-  flex: 1 1 calc(50% - 2rem);
-  color: #eaeaea;
-}
-
-    .glass-card a {
-      color: #aad4ff;
-      font-weight: 600;
-      text-decoration: none;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .glass-card a:hover {
-      text-decoration: underline;
+    .card {
+      background: #111;
+      border-radius: 8px;
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.85rem;
-      color: #ccc;
+    .card:hover {
+      transform: scale(1.02);
+      background: #1b1b1b;
     }
-
-    @media (min-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
+    .card h3 {
+      color: #00bfff;
+      margin-top: 0;
     }
-  
-.background-image-fixed {
-  background-image: url('blockchain_background.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  opacity: 1;
-  pointer-events: none;
-  transform: translateZ(0);
-  will-change: transform;
-}
-
-
-.background-fixed {
-  background-image: url('blockchain_background.png');
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  opacity: 1;
-  pointer-events: none;
-}
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0 1rem;
-}
-
-.header-card {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  padding: 2rem;
-  margin: 1.5rem auto;
-  max-width: 90%;
-  color: #f0f0f0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-</style>
-
-<meta content="Kuinka tulla kryptosijoittajaksi" property="og:title"/><meta content="Ymmärrettävä blogi kryptosta, osakkeista ja makrosta ilman hypeä." property="og:description"/><meta content="https://mycryptosite.fi/cryptosite-preview-opt.png" property="og:image"/><meta content="https://mycryptosite.fi/" property="og:url"/><meta content="website" property="og:type"/></head>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.95);
+      color: white;
+      padding: 40px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .modal h2 {
+      color: #00bfff;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
 <body>
-<div class="background-fixed"></div>
-<header>
-<img alt="MyCryptoFi logo" class="logo" src="cryptosite-header.png" style="border-radius: 20px; max-width: 300px; margin-bottom: 20px;"/>
-<h1>Tervetuloa blogiin</h1>
-</header>
-<section class="hero" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: none; box-shadow: none;">
-<p>“Kuinka tulla kryptosijoittajaksi” on suomalainen, helposti ymmärrettävä blogi, joka yhdistää kryptot, osakkeet ja makrotalouden. Tavoitteena on auttaa suomalaisia ymmärtämään kryptosijoittamisen mahdollisuudet ja riskit, ilman hypeä.</p>
-</section>
-<div class="btn-row">
-<a class="btn" href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T">Avaa tili Binancessa →</a>
-<a class="btn" href="article-kylmalompakko.html">Miksi tarvitset kylmälompakon? →</a>
-<a class="btn" href="artikkelit.html">Lue kaikki oppaat ja artikkelit →</a>
-</div>
-<div class="btn-row">
-<a class="btn" href="#">📱 WhatsApp</a>
-<a class="btn" href="#">✈️ Telegram</a>
-<a class="btn" href="#">💬 Tekstiviesti</a>
-<a class="btn" href="#">🔗 Kopioi linkki</a>
-</div>
-<section>
-<div class="card-container"><div class="glass-card"><a href="article-2017.html">Bitcoinin ensimmäinen härkämarkkina – näin se käynnisti uuden aikakauden →</a></div>
-<div class="glass-card"><a href="article-bitcoinin-arvo.html">Miksi Bitcoinilla on arvoa – ja mistä se syntyy? →</a></div>
-<div class="glass-card"><a href="kylmalompakon-kaytto.html">Kylmälompakon käyttö – mitä hyötyjä ja riskejä sinun on hyvä tietää →</a></div>
-<div class="glass-card"><a href="article-kuumalompakko.html">Kuumalompakot selitettynä – MetaMask, Phantom, Jupiter ja muut →</a></div>
-<div class="glass-card"><a href="article-treidaaminen.html">Treidaaminen ja tekninen analyysi – tyylit, kuviot ja todennäköisyydet →</a></div>
-<div class="glass-card"><a href="blogi-makrotalous.html">Makrotalous ja markkinasyklit – miten tunteet ja uutiset ohjaavat markkinaa →</a></div>
-</section>
+  <header>
+    <h1>Krypto-opas suomalaisille</h1>
+  </header>
 
-<!-- Feedback Form Section -->
-<div class="feedback-section" style="max-width:600px; margin: 40px auto; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 15px; color: #fff; text-align: center;">
-  <h2 style="color:#FFD700;">Anna palautetta</h2>
-  <p style="margin-bottom: 15px;">Haluatko kehittää sivua tai antaa ehdotuksia? Kuulen mielelläni ajatuksesi.</p>
-  <form action="https://formsubmit.co/migumiguelmr@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="MyCryptoFi palaute">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <textarea name="feedback" placeholder="Kirjoita palautteesi tähän..." required style="width: 100%; height: 100px; padding: 10px; border-radius: 8px; border: none; margin-bottom: 10px;"></textarea><br>
-    <input type="email" name="email" placeholder="Sähköpostisi (valinnainen)" style="width: 100%; padding: 10px; border-radius: 8px; border: none; margin-bottom: 10px;"><br>
-    <button type="submit" style="background: #005bbb; color: white; padding: 10px 20px; border: none; border-radius: 25px; cursor: pointer;">Lähetä palaute</button>
-  </form>
-</div>
+  <div class="intro">
+    <p>
+      "Kuinka tulla kryptosijoittajaksi" on suomalainen, helposti ymmärrettävä blogi, joka yhdistää kryptot, osakkeet ja makrotalouden. Tavoitteena on auttaa ymmärtämään kryptosijoittamisen mahdollisuudet ja riskit – ilman hypeä.
+    </p>
+  </div>
 
-<footer>
-  Tämä sivusto saattaa sisältää affiliate-linkkejä. <br/>
-  Tekemäsi ostokset voivat tuottaa minulle pienen komission ilman lisäkuluja sinulle. <br/>
-  Kaikki sisältö edustaa omia näkemyksiäni eikä ole sijoitusneuvo.
-</footer>
-</body>
-</html>
+  <div class="affiliate-warning">
+    ⚠️ Tämä sivusto käyttää affiliate-linkkejä. Jos teet rekisteröitymisen tai ostoksen niiden kautta, saan mahdollisesti pienen komission – ilman lisäkustannusta sinulle. Kiitos tuesta!
+  </div>
+
+  <div class="affiliate-links">
+    <a href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T" target="_blank">Binance</a>
+    <a href="https://www.bybit.com/invite?ref=EQ69EL" target="_blank">Bybit</a>
+    <a href="https://www.bitget.com/referral/register?clacCode=B0US0BU8" target="_blank">Bitget</a>
+    <a href="https://promote.mexc.com/r/Wos5E00S" target="_blank">MEXC</a>
+    <a href="https://crypto.com/app/nrmm4uzm29" target="_blank">Crypto.com</a>
+    <a href="https://shop.ledger.com/?r=c97ab0683c61" target="_blank">Ledger</a>
+    <a href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=239&affiliate_id=35816" target="_blank">Trezor</a>
+  </div>
+
+  <!-- Korttinäkymä ja artikkelit jatkuvat tästä -->
