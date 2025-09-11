@@ -23,7 +23,7 @@
     }
     .intro {
       max-width: 800px;
-      margin: 20px auto;
+      margin: 20px auto 10px;
       text-align: center;
       font-size: 1.1em;
       line-height: 1.6;
@@ -40,7 +40,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
     .affiliate-links a {
       background-color: #00bfff;
@@ -57,25 +57,32 @@
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 24px;
       padding: 20px;
       max-width: 1200px;
       margin: auto;
     }
     .card {
-      background: #111;
-      border-radius: 8px;
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 24px;
       cursor: pointer;
-      transition: transform 0.2s ease;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
     .card:hover {
-      transform: scale(1.02);
-      background: #1b1b1b;
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.8);
     }
     .card h3 {
-      color: #00bfff;
+      color: #cceeff;
       margin-top: 0;
+    }
+    .card p {
+      font-size: 0.95em;
+      color: #ccc;
     }
     .modal {
       display: none;
@@ -127,4 +134,32 @@
     <a href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=239&affiliate_id=35816" target="_blank">Trezor</a>
   </div>
 
-  <!-- Korttinäkymä ja artikkelit jatkuvat tästä -->
+  <div class="cards">
+    <div class="card" onclick="openModal('modal2017')">
+      <h3>Bitcoinin ensimmäinen härkämarkkina – Vuosi 2017</h3>
+      <p>Miten lähdin mukaan FOMOssa ja mitä siitä opin.</p>
+    </div>
+  </div>
+
+  <div id="modal2017" class="modal">
+    <div class="modal-close" onclick="closeModal('modal2017')">&times;</div>
+    <h2>Vuosi 2017 – Ensikosketus kryptomarkkinoihin</h2>
+    <p>
+      Vuosi 2017 merkitsi käännekohtaa kryptovaluuttojen historiassa. Bitcoin nousi marginaalista maailmanlaajuiseen tietoisuuteen – ei vain hinnannousun vuoksi, vaan koska se aloitti ensimmäisen todellisen härkämarkkinansa. 
+      </p><p>
+      Omalta osaltani tämä vuosi oli lähtölaukaus koko krypto-opintielle. Lähdin mukaan puhtaasta FOMOsta – sijoitin ilman suunnitelmaa, strategiaa tai ymmärrystä. Silloin portfolioni raketoi lyhyessä ajassa, tunne oli euforinen. Mutta kuten usein käy, juhlat loppuvat aikanaan. Kurssit kääntyivät, ja tunnekuohu vaihtui pettymykseen.
+      </p><p>
+      Tämä oli arvokas opetus: volatiliteetti on kaksiteräinen miekka. Onnistumiset syntyvät vasta, kun oppii hallitsemaan riskiä, tunteita ja ajattelua. Tästä alkoi matka kohti kurinalaisempaa sijoittamista, omistajuutta ja taloudellista vapautta.
+    </p>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</body>
+</html>
