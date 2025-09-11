@@ -6,20 +6,25 @@
   <title>MyCryptoFi – Krypto-opas suomalaisille</title>
   <link rel="canonical" href="https://mycryptofi.com/" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      background: #000;
+      background: black;
       color: white;
       font-family: Arial, sans-serif;
+      overflow-x: hidden;
     }
     header {
-      background: linear-gradient(to right, #0a0f1a, #101c2d);
-      padding: 40px;
+      background: linear-gradient(to right, #0f1c2d, #1f2f40, #2d3d56);
+      padding: 40px 20px;
       text-align: center;
     }
     header h1 {
       font-size: 2em;
-      color: #33c6ff;
+      color: #00bfff;
+      margin: 0;
     }
     .intro {
       max-width: 800px;
@@ -27,6 +32,7 @@
       text-align: center;
       font-size: 1.1em;
       line-height: 1.6;
+      padding: 0 20px;
     }
     .affiliate-warning {
       font-size: 0.9em;
@@ -34,6 +40,10 @@
       text-align: center;
       max-width: 700px;
       margin: 10px auto 30px;
+      padding: 0 20px;
+    }
+    .affiliate-warning::before {
+      content: "⚠️ ";
     }
     .affiliate-links {
       display: flex;
@@ -41,19 +51,19 @@
       justify-content: center;
       gap: 12px;
       margin-bottom: 40px;
+      padding: 0 20px;
     }
     .affiliate-links a {
-      background-color: #33c6ff;
-      color: #000;
+      background-color: #00bfff;
+      color: black;
       padding: 10px 18px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s, transform 0.2s;
+      transition: background 0.3s;
     }
     .affiliate-links a:hover {
-      background-color: #1ba8e0;
-      transform: translateY(-2px);
+      background-color: #009acd;
     }
     .cards {
       display: grid;
@@ -65,20 +75,20 @@
     }
     .card {
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
       padding: 24px;
       cursor: pointer;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
     }
     .card h3 {
-      color: #33c6ff;
+      color: #00bfff;
       margin-top: 0;
     }
     .card p {
@@ -92,25 +102,30 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.97);
+      background: rgba(0, 0, 0, 0.96);
       color: white;
       padding: 40px 20px;
       overflow-y: auto;
       z-index: 1000;
     }
     .modal h2 {
-      color: #33c6ff;
+      color: #00bfff;
+      margin-top: 0;
     }
     .modal-close {
       position: absolute;
       top: 20px;
       right: 30px;
-      font-size: 28px;
+      font-size: 24px;
       cursor: pointer;
-      color: #aaa;
     }
-    .modal-close:hover {
-      color: white;
+    @media (max-width: 600px) {
+      .modal {
+        padding: 20px 14px;
+      }
+      .card {
+        padding: 18px;
+      }
     }
   </style>
 </head>
@@ -126,7 +141,7 @@
   </div>
 
   <div class="affiliate-warning">
-    ⚠️ Tämä sivusto käyttää affiliate-linkkejä. Jos teet rekisteröitymisen tai ostoksen niiden kautta, saan mahdollisesti pienen komission – ilman lisäkustannusta sinulle. Kiitos tuesta!
+    Tämä sivusto käyttää affiliate-linkkejä. Jos teet rekisteröitymisen tai ostoksen niiden kautta, saan mahdollisesti pienen komission – ilman lisäkustannusta sinulle. Kiitos tuesta!
   </div>
 
   <div class="affiliate-links">
@@ -139,34 +154,7 @@
     <a href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=239&affiliate_id=35816" target="_blank">Trezor</a>
   </div>
 
-  <div class="cards">
-    <div class="card" onclick="openModal('modal2017')">
-      <h3>Vuosi 2017 – Ensikosketus kryptomarkkinoihin</h3>
-      <p>Miten lähdin mukaan FOMOssa ja mitä siitä opin.</p>
-    </div>
-  </div>
+  <!-- Kortit ja artikkelien modalit lisätään tähän -->
 
-  <div id="modal2017" class="modal">
-    <span class="modal-close" onclick="closeModal('modal2017')">&times;</span>
-    <h2>Vuosi 2017 – Ensikosketus kryptomarkkinoihin</h2>
-    <p>
-      Vuosi 2017 merkitsi käännekohtaa kryptovaluuttojen historiassa. Bitcoin nousi marginaalista maailmanlaajuiseen tietoisuuteen – ei vain hinnannousun vuoksi, vaan koska se aloitti ensimmäisen todellisen härkämarrkinansa.
-    </p>
-    <p>
-      Omalta osaltani tämä vuosi oli lähtölaukaus koko krypto-opintielle. Lähdin mukaan puhtaasta FOMOsta – sijoitin ilman suunnitelmaa, strategiaa tai ymmärrystä. Silloin portfolio raketoi lyhyessä ajassa ja tunne oli euforinen. Mutta kuten usein käy, juhlat loppuvat aikanaan. Kurssit kääntyivät, ja tunnekokemus vaihtui pettymykseen.
-    </p>
-    <p>
-      Tämä oli arvokas opetus: volatiliteetti on kaksiteräinen miekka. Onnistumiset syntyvät vasta, kun oppii hallitsemaan riskiä, tunteita ja ajattelua. Tästä alkoi matka kohti kurinalaisempaa sijoittamista, omistajuutta ja taloudellista vapautta.
-    </p>
-  </div>
-
-  <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = 'block';
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
-    }
-  </script>
 </body>
 </html>
