@@ -1,44 +1,11 @@
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url('E0F74AC2-88AC-4025-9C2E-FEF4597C0A82.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: center;
-    background-color: #000;
-    color: #00ffff;
-}
-
-header {
-    text-align: center;
-    padding: 20px;
-}
-
-.header-logo {
-    max-width: 100%;
-    height: auto;
-}
-
-.blog-preview {
-    padding: 30px;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    color: #f0f0f0;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.blog-preview h1 {
-    color: #00ffff;
-}
-
-article {
-    margin-bottom: 40px;
-}
-
-a {
-    color: #00ffff;
-}
+body {margin:0;font-family:'Inter',sans-serif;color:#111;background:#fff;}
+h1,h3,h4{font-family:'Poppins',sans-serif;color:#000;}
+.hero{background:linear-gradient(180deg,#ffffff 0%,#f5f8ff 100%);padding:8rem 2rem;text-align:center;}
+.cards{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));padding:4rem 2rem;max-width:1200px;margin:auto;}
+.card{background:#fff;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.1);padding:2rem;transition:transform .3s,box-shadow .3s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.15);}
+.affiliate-banner{background:linear-gradient(180deg,#f9fbff,#eef3ff);padding:1.2rem 2rem;font-size:.9rem;text-align:center;color:#333;}
+footer{text-align:center;padding:2rem;background:#fafafa;}
+.affiliates a{margin:0 .8rem;color:#0044ff;text-decoration:none;font-weight:500;}
+.affiliates a:hover{text-decoration:underline;}
+@media(min-width:768px){.hero-content{display:flex;flex-direction:column;align-items:center;text-align:center;}}
