@@ -1,11 +1,98 @@
-body {margin:0;font-family:'Inter',sans-serif;color:#111;background:#fff;}
-h1,h3,h4{font-family:'Poppins',sans-serif;color:#000;}
-.hero{background:linear-gradient(180deg,#ffffff 0%,#f5f8ff 100%);padding:8rem 2rem;text-align:center;}
-.cards{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));padding:4rem 2rem;max-width:1200px;margin:auto;}
-.card{background:#fff;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,0.1);padding:2rem;transition:transform .3s,box-shadow .3s;}
-.card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.15);}
-.affiliate-banner{background:linear-gradient(180deg,#f9fbff,#eef3ff);padding:1.2rem 2rem;font-size:.9rem;text-align:center;color:#333;}
-footer{text-align:center;padding:2rem;background:#fafafa;}
-.affiliates a{margin:0 .8rem;color:#0044ff;text-decoration:none;font-weight:500;}
-.affiliates a:hover{text-decoration:underline;}
-@media(min-width:768px){.hero-content{display:flex;flex-direction:column;align-items:center;text-align:center;}}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(to bottom, #012b44, #000);
+  padding: 40px 20px;
+}
+header h1 {
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+.subtitle {
+  color: #ccc;
+  font-size: 1.2em;
+}
+
+/* INTRO */
+.intro {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 1.05em;
+  color: #eee;
+}
+
+/* AFFILIATE */
+.affiliate {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+}
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.btn {
+  background-color: #00bfff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  background-color: #0099cc;
+  transform: scale(1.05);
+}
+
+/* NEWS SECTION */
+.news-section {
+  background-color: #0a0a0a;
+  padding: 40px 20px;
+  margin-top: 30px;
+}
+.news-section h2 {
+  color: #00bfff;
+  margin-bottom: 30px;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.article {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 0.95em;
+}
+.article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+}
+
+/* FOOTER */
+footer {
+  background-color: #000;
+  color: #888;
+  padding: 20px;
+  font-size: 0.9em;
+  border-top: 1px solid #222;
+}
