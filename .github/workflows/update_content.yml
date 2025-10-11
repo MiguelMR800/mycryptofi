@@ -22,4 +22,14 @@ jobs:
           pip install --upgrade pip
           pip install feedparser requests beautifulsoup4
 
-      # Ajet
+      # Ajetaan botti
+      - name: Run content bot
+        run: python bot.py
+
+      # Kommitointi ja päivitys GitHubiin
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "MyCryptoFI Bot"
+          git config --global user.email "bot@mycryptofi.com"
+          git add .
+          git diff --quiet && echo "No changes to commit" || (git commit -m "Auto content update" && git push)
