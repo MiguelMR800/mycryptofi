@@ -1,0 +1,21 @@
+name: Auto Update MyCryptoFI
+on:
+  schedule:
+    - cron: "0 5,15 * * *"  # klo 08:00 ja 18:00 Suomen aikaa
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python bot.py
+      - run: |
+          git config --global user.name "MyCryptoFI Bot"
+          git config --global user.email "bot@mycryptofi.com"
+          git add .
+          git commit -m "Auto content update"
+          git push
