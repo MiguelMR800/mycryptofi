@@ -1,71 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krypto-opas suomalaisille</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Krypto-opas suomalaisille — MyCryptoFI</title>
+  <meta name="description" content="Ymmärrä digitaalinen talous – ilman hypeä. Suomenkielinen krypto-opas ja ajankohtaiset uutiset." />
+  <link rel="icon" href="/favicon-32x32.ico">
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Krypto-opas suomalaisille</h1>
-    <p class="subtitle">Ymmärrä digitaalinen talous – ilman hypeä</p>
+  <header class="hero">
+    <div class="container">
+      <h1>Krypto-opas suomalaisille</h1>
+      <p class="tag">Ymmärrä digitaalinen talous – ilman hypeä</p>
+      <p class="lead">"Kuinka tulla kryptosijoittajaksi" on suomalainen, helposti ymmärrettävä blogi, joka yhdistää kryptot,
+      osakkeet ja makrotalouden. Tavoitteena on auttaa ymmärtämään kryptosijoittamisen mahdollisuudet ja riskit
+      – ilman hypeä.</p>
+
+      <div class="notice">
+        <span class="icon">⚠️</span>
+        Tämä sivusto käyttää affiliate-linkkejä. Jos teet rekisteröitymisen tai ostoksen niiden kautta, saan mahdollisesti pienen
+        komission – ilman lisäkustannusta sinulle. Kiitos tuesta!
+      </div>
+
+      <nav class="cta-row">
+        <a class="pill" href="#" target="_blank" rel="noopener">Binance</a>
+        <a class="pill" href="#" target="_blank" rel="noopener">Bybit</a>
+        <a class="pill" href="#" target="_blank" rel="noopener">Bitget</a>
+        <a class="pill" href="#" target="_blank" rel="noopener">MEXC</a>
+        <a class="pill" href="#" target="_blank" rel="noopener">Crypto.com</a>
+        <a class="pill" href="#" target="_blank" rel="noopener">Ledger</a>
+        <a class="pill" href="#" target="_blank" rel="noopener">Trezor</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="intro">
-    <p>
-      "Kuinka tulla kryptosijoittajaksi" on suomalainen, helposti ymmärrettävä blogi,
-      joka yhdistää kryptot, osakkeet ja makrotalouden. Tavoitteena on auttaa
-      ymmärtämään kryptosijoittamisen mahdollisuudet ja riskit – ilman hypeä.
-    </p>
-  </section>
+  <main class="container section">
+    <h2 class="section-title">📰 Uusimmat kryptouutiset</h2>
 
-  <section class="affiliate">
-    <p>⚠️ Tämä sivusto käyttää affiliate-linkkejä. Jos teet rekisteröitymisen tai ostoksen niiden kautta, saan mahdollisesti pienen komission – ilman lisäkustannusta sinulle. Kiitos tuesta!</p>
-    <div class="button-container">
-      <a href="#" class="btn">Binance</a>
-      <a href="#" class="btn">Bybit</a>
-      <a href="#" class="btn">Bitget</a>
-      <a href="#" class="btn">MEXC</a>
-      <a href="#" class="btn">Crypto.com</a>
-      <a href="#" class="btn">Ledger</a>
-      <a href="#" class="btn">Trezor</a>
+    <!-- NEWS_START -->
+    <div class="news-grid">
+      <p class="muted">Ensimmäinen ajo luo uutiset tähän.</p>
     </div>
-  </section>
+    <!-- NEWS_END -->
+  </main>
 
-  <!-- 🔹 UUTISOSIO (päivittyy automaattisesti botin luomasta tiedostosta) -->
-  <section class="news-section">
-    <h2>📰 Uusimmat kryptouutiset</h2>
-    <div id="news" class="news-grid"></div>
-  </section>
-
-  <footer>
-    <p>© 2025 MyCryptoFI — Rakennettu suomalaisesta näkökulmasta.</p>
+  <footer class="footer">
+    <div class="container">
+      © 2025 MyCryptoFI — Rakennettu suomalaisesta näkökulmasta.
+    </div>
   </footer>
-
-  <!-- 🔹 Skripti uutisten lataukseen -->
-  <script>
-    async function loadNews() {
-      try {
-        const response = await fetch('news.json?' + new Date().getTime());
-        const data = await response.json();
-        const container = document.getElementById('news');
-        container.innerHTML = '';
-
-        data.articles.slice(0, 9).forEach(article => {
-          const card = document.createElement('div');
-          card.className = 'article';
-          card.innerHTML = `
-            <h3><a href="${article.link}" target="_blank">${article.title}</a></h3>
-            <p class="source">${article.source}</p>
-          `;
-          container.appendChild(card);
-        });
-      } catch (err) {
-        document.getElementById('news').innerHTML = '<p>Uutisia ei voitu ladata juuri nyt.</p>';
-      }
-    }
-    loadNews();
-  </script>
 </body>
 </html>
