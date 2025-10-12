@@ -1,143 +1,62 @@
-#!/usr/bin/env python3
-import os, re, json, time, datetime, html, sys
-from urllib.parse import urlparse
+import feedparser, json, datetime, re, time
+from deep_translator import GoogleTranslator
 
-SITE_TITLE = "MyCryptoFI"
-BASE_URL = "https://mycryptofi.com"  # jos Pages julkaisussa eri polku, muuta tämä
-RSS_FEEDS = [
+SOURCES = [
     "https://www.coindesk.com/arc/outboundfeeds/rss/",
-    "https://decrypt.co/feed",
+    "https://cointelegraph.com/rss",
+    "https://www.theblock.co/rss"
 ]
-MAX_ARTICLES = 6
-ART_DIR = "articles"
-NEWS_JSON = "news.json"
-INDEX_HTML = "index.html"
-ARTICLE_TEMPLATE = "article_template.html"
 
-def slugify(text):
-    text = re.sub(r"[^\w\s-]", "", text).strip().lower()
-    text = re.sub(r"[\s_-]+", "-", text)
-    return text[:120] or "artikkeli"
+MAX_PER_SOURCE = 3        # how many items to pull per source
+MAX_TOTAL = 6             # cap total items written to latest.json
 
-def now_iso():
-    return datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+def sanitize_title(t: str) -> str:
+    t = re.sub(r"[^a-zA-Z0-9äöÄÖ.,:;!?()'\" \-\u00C0-\u017F]", "", t)
+    return re.sub(r"\s+", " ", t).strip()
 
-def read_file(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return f.read()
-
-def write_file(path, content):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
-
-def translate_fi(text):
-    text = text or ""
+def translate_to_fi(text: str) -> str:
     try:
-        from deep_translator import GoogleTranslator
-        if len(text) < 4500:
-            return GoogleTranslator(source="auto", target="fi").translate(text)
-        parts = [text[i:i+4000] for i in range(0, len(text), 4000)]
-        out = []
-        for p in parts:
-            out.append(GoogleTranslator(source="auto", target="fi").translate(p))
-            time.sleep(0.5)
-        return "".join(out)
+        return GoogleTranslator(source="auto", target="fi").translate(text)
     except Exception:
         return text
 
-def fetch_feeds(urls):
-    try:
-        import feedparser
-    except ImportError:
-        print("feedparser puuttuu", file=sys.stderr)
-        return []
+def fetch_entries():
     items = []
-    for url in urls:
-        feed = feedparser.parse(url)
-        for e in feed.entries[:10]:
-            items.append({
-                "title": getattr(e, "title", "(no title)"),
-                "link": getattr(e, "link", ""),
-                "summary": html.unescape(getattr(e, "summary", "")),
-                "published": getattr(e, "published", ""),
-                "source": urlparse(url).hostname or "feed",
-            })
-    # deduplikointi linkin perusteella
-    seen=set(); uniq=[]
-    for it in items:
-        if it["link"] in seen: 
+    for src in SOURCES:
+        try:
+            d = feedparser.parse(src)
+            for e in d.entries[:MAX_PER_SOURCE]:
+                title = e.get("title", "").strip()
+                link = e.get("link", "").strip()
+                if not title or not link:
+                    continue
+                title = sanitize_title(title)
+                if len(title) > 180:
+                    title = title[:177] + "…"
+                items.append({"title": title, "link": link})
+        except Exception:
             continue
-        seen.add(it["link"]); 
-        uniq.append(it)
-    return uniq
+    return items
 
-def render_article(template, data):
-    html_out = template
-    for k,v in data.items():
-        html_out = html_out.replace(f"{{{{{k}}}}}", str(v))
-    return html_out
-
-def build():
-    template = read_file(ARTICLE_TEMPLATE)
-    items = fetch_feeds(RSS_FEEDS)
-
-    articles = []
-    for it in items[:MAX_ARTICLES*2]:  # haetaan enemmän kuin näytetään, varmuusvaralla
-        title_fi = translate_fi(it["title"])
-        # siistitään summary: poistetaan html-tagit ja käännetään
-        clean_summary = re.sub("<[^<]+?>", "", it["summary"] or "").strip()
-        summary_fi = translate_fi(clean_summary)
-        slug = slugify(title_fi or it["title"])
-        file_name = f"{slug}.html"
-        art_path = os.path.join(ART_DIR, file_name)
-
-        meta = {
-            "title": (title_fi or it["title"]).strip(),
-            "summary": (summary_fi or clean_summary).strip(),
-            "source": it["source"],
-            "source_url": it["link"],
-            "published": it["published"] or now_iso(),
-            "url": f"{BASE_URL}/{ART_DIR}/{file_name}",
-            "slug": slug,
-        }
-
-        # artikkelisivu
-        article_html = render_article(template, {
-            "SITE_TITLE": SITE_TITLE,
-            "TITLE": html.escape(meta["title"]),
-            "SUMMARY": html.escape(meta["summary"]),
-            "PUBLISHED": html.escape(meta["published"]),
-            "SOURCE": html.escape(meta["source"]),
-            "SOURCE_URL": html.escape(meta["source_url"]),
+def build_cards(entries):
+    cards = []
+    for it in entries[:MAX_TOTAL]:
+        fi_title = translate_to_fi(it["title"])
+        cards.append({
+            "title": fi_title,
+            "desc": f"Lähde: {it['link']}"
         })
-        write_file(art_path, article_html)
-        articles.append(meta)
+    return cards
 
-    # rajataan etusivulle
-    articles = articles[:MAX_ARTICLES]
-
-    # news.json
-    write_file(NEWS_JSON, json.dumps({"generated_at": now_iso(), "articles": articles}, ensure_ascii=False, indent=2))
-
-    # index.html uutiskorttien korvaus
-    if os.path.exists(INDEX_HTML):
-        idx = read_file(INDEX_HTML)
-        cards = []
-        for a in articles:
-            cards.append(f'''<a class="card" href="/{ART_DIR}/{a["slug"]}.html">
-  <h3>{html.escape(a["title"])}</h3>
-  <p class="muted">{html.escape(a["published"])} — {html.escape(a["source"])}</p>
-  <p>{html.escape(a["summary"][:180])}…</p>
-</a>''')
-        news_html = "\n".join(cards) if cards else "<p class=\"muted\">Ei uutisia juuri nyt.</p>"
-        import re as _re
-        idx = _re.sub(r"<!-- NEWS_START -->(.*?)<!-- NEWS_END -->",
-                      f"<!-- NEWS_START -->\n<div class=\"news-grid\">{news_html}\n</div>\n<!-- NEWS_END -->",
-                      idx, flags=_re.S)
-        write_file(INDEX_HTML, idx)
-
-    print(f"OK. Generoitu {len(articles)} artikkelia.")
+def run():
+    entries = fetch_entries()
+    today = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    payload = {
+        "date": today,
+        "cards": build_cards(entries)
+    }
+    with open("latest.json", "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
-    build()
+    run()
