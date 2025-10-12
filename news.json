@@ -1,14 +1,4 @@
 {
-  "articles": [
-    {
-      "title": "Bitcoinin hinta nousee yli 60 000 dollarin – sijoittajat varpaillaan",
-      "link": "https://www.coindesk.com/",
-      "source": "CoinDesk"
-    },
-    {
-      "title": "Solanan ekosysteemi kasvaa nopeasti – uusi DeFi-protokolla rikkoo rajoja",
-      "link": "https://decrypt.co/",
-      "source": "Decrypt"
-    }
-  ]
+  "generated_at": "1970-01-01T00:00:00Z",
+  "articles": []
 }
