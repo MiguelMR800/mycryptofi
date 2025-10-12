@@ -1,35 +1,33 @@
-name: Auto Update MyCryptoFI
-
+name: Fetch crypto news
 on:
   schedule:
-    - cron: "0 5,15 * * *"  # klo 08:00 ja 18:00 Suomen aikaa
+    - cron: "0 * * * *"   # ajaa joka tunti
   workflow_dispatch:
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      # Asennetaan tarvittavat kirjastot
-      - name: Install dependencies
+      - name: Install deps
         run: |
-          pip install --upgrade pip
-          pip install feedparser requests beautifulsoup4
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      # Ajetaan botti
-      - name: Run content bot
-        run: python bot.py
-
-      # Kommitointi ja päivitys GitHubiin
-      - name: Commit and push changes
+      - name: Generate latest.json
         run: |
-          git config --global user.name "MyCryptoFI Bot"
-          git config --global user.email "bot@mycryptofi.com"
-          git add .
-          git diff --quiet && echo "No changes to commit" || (git commit -m "Auto content update" && git push)
+          python bot.py
+
+      - name: Commit & push latest.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add latest.json
+          git diff --cached --quiet && echo "No changes" || (git commit -m "chore: update latest.json" && git push)
