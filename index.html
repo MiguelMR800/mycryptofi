@@ -1,129 +1,156 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyCryptoFI — Krypto-opas suomalaisille</title>
-<style>
-body {
-    margin: 0;
-    background: #000814;
-    color: #e6f1ff;
-    font-family: 'Inter', Arial, sans-serif;
-    overflow-x: hidden;
-}
-header {
-    padding: 60px 5%;
-    text-align: center;
-    color: white;
-    background: linear-gradient(180deg, #001d3d 0%, #000814 100%);
-}
-header h1 {
-    font-size: 2.4rem;
-    letter-spacing: -0.02em;
-    font-weight: 800;
-}
-header p {
-    opacity: 0.85;
-    font-size: 1.1rem;
-}
-section {
-    max-width: 950px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 28px;
-}
-.card {
-    background: #001633;
-    border-radius: 14px;
-    padding: 18px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-    transition: all 0.2s ease;
-}
-.card:hover {
-    background: #002855;
-    transform: translateY(-4px);
-}
-.card a {
-    color: #61dafb;
-    text-decoration: none;
-}
-.card a:hover {
-    text-decoration: underline;
-}
-.card .thumb {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #adb5bd;
-    padding: 50px 20px;
-    border-top: 1px solid #002b5c;
-    background: #000d1a;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyCryptoFI — Krypto-opas suomalaisille</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: radial-gradient(circle at top, #001a33, #000814 70%);
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 100px 20px 50px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #b8d8ff;
+      margin-bottom: 30px;
+    }
+    section {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+    .card {
+      background: #001f3f;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 100%;
+      max-width: 360px;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(0,122,255,0.5);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 3px solid #0077ff;
+    }
+    .card h3 {
+      color: #61dafb;
+      font-size: 1.05rem;
+      padding: 14px;
+    }
+    .card p {
+      color: #ccc;
+      font-size: 0.85rem;
+      padding: 0 14px 20px;
+      word-wrap: break-word;
+    }
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      background: #000d1a;
+      border-top: 1px solid #002b5c;
+    }
+    footer .partners {
+      margin-bottom: 14px;
+    }
+    footer .partners a {
+      display: inline-block;
+      margin: 6px 10px;
+      color: #61dafb;
+      font-weight: 600;
+      text-decoration: none;
+      background: rgba(0, 50, 100, 0.4);
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+    }
+    footer .partners a:hover {
+      background: #0077ff;
+      color: #fff;
+    }
+    footer p {
+      color: #adb5bd;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>Krypto-opas suomalaisille</h1>
-  <p>Ymmärrä digitaalinen talous — ilman hypeä</p>
-</header>
-
-<section>
-  <h2>📰 Uusimmat kryptouutiset</h2>
-  <p style="color:#a8b2d1; font-size:0.9rem;">Päivitetty 13.10.2025 klo 06:14</p>
-  <div class="news-grid">
-      
+  <header>
+    <h1>Krypto-opas suomalaisille</h1>
+    <h2>Ymmärrä digitaalinen talous — ilman hypeä</h2>
+  </header>
+  <section>
+    <h3>📰 Uusimmat kryptouutiset</h3>
+    <p>Päivitetty 13.10.2025 klo 06:31</p>
+    <div class="cards">
         <div class="card">
-            <img src="https://cdn.sanity.io/images/s3y3vcno/production/d5646c439de12ffa75596d174196acfefaedd782-1919x1080.jpg?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip" alt="" class="thumb">
-            <h3><a href="https://www.coindesk.com/markets/2025/10/13/bitcoin-may-tank-to-usd100k-after-friday-s-btc-crash-reinforced-2017-21-bull-run-trendline-as-major-resistance" target="_blank">Bitcoin May -säiliö 100K: lle perjantaisin BTC -onnettomuuksien vahvistettu 201721 Trendlinjan vastustuskyky</a></h3>
-            <p>Lähde: https://www.coindesk.com/markets/2025/10/13/bitcoin-may-tank-to-usd100k-after-friday-s-btc-crash-reinforced-2017-21-bull-run-trendline-as-major-resistance</p>
+            <img src="https://cdn.sanity.io/images/s3y3vcno/production/56985dd3c86975489de193049979987f113266f0-1920x1080.jpg?auto=format" alt="news">
+            <h3>BTC-kaivosyhtiö Marathon (MARA) Scoops nousee 400 BTC: n hintojen kaatumisen jälkeen, ketjun tiedot osoittavat</h3>
+            <p>Lähde:<br>https://www.coindesk.com/markets/2025/10/13/marathon-scoops-up-400-btc-after-friday-s-usd20b-crash</p>
         </div>
         
         <div class="card">
-            <img src="https://cdn.sanity.io/images/s3y3vcno/production/b7dd683e48326c2ace004e4e6c4b4f6ff6c84c77-1920x1080.jpg?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip" alt="" class="thumb">
-            <h3><a href="https://www.coindesk.com/markets/2025/10/13/asia-morning-briefing-ethereum-leads-recovery-after-usd20b-liquidation-shock" target="_blank">Aasian aamutiedot: Ethereum johtaa palautumista 20b: n selvitystilan 20B jälkeen</a></h3>
-            <p>Lähde: https://www.coindesk.com/markets/2025/10/13/asia-morning-briefing-ethereum-leads-recovery-after-usd20b-liquidation-shock</p>
+            <img src="https://cdn.sanity.io/images/s3y3vcno/production/b78676419effff38a698fa0751384050e0eaed94-3840x2160.png?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip" alt="news">
+            <h3>Cardano ja Dogecoin johtavat krypto reboundia 'emotionaalisen' 19b -nollauksen jälkeen</h3>
+            <p>Lähde:<br>https://www.coindesk.com/markets/2025/10/13/cardano-dogecoin-lead-emotional-crypto-rebound-days-after-usd19b-liquidations</p>
         </div>
         
         <div class="card">
-            <img src="https://cdn.sanity.io/images/s3y3vcno/production/39cc32d14ba01a1f15f7cf0bc1aed28345d6cd60-1920x1080.jpg?auto=format" alt="" class="thumb">
-            <h3><a href="https://www.coindesk.com/markets/2025/10/12/tether-ceo-paolo-ardoino-bitcoin-and-gold-will-outlast-any-other-currency" target="_blank">Tetherin toimitusjohtaja Paolo Ardoino: Bitcoin ja kulta ylittävät kaikki muut valuutat</a></h3>
-            <p>Lähde: https://www.coindesk.com/markets/2025/10/12/tether-ceo-paolo-ardoino-bitcoin-and-gold-will-outlast-any-other-currency</p>
+            <img src="https://cdn.sanity.io/images/s3y3vcno/production/168154f682a2284a3266d79a6d95b4de0e14e847-1192x724.png?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip" alt="news">
+            <h3>Dogecoin Zooms 11 AS DOGE OSTAMISET VÄLUMISET NELJÄT</h3>
+            <p>Lähde:<br>https://www.coindesk.com/markets/2025/10/13/dogecoin-zooms-11-as-doge-buying-volumes-quadruples</p>
         </div>
         
         <div class="card">
-            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDEvMDE5NDk5ZjYtZmYwYi03ZWQyLWEwZjAtYzI3OTJlNDI5ZmM0.jpg" alt="" class="thumb">
-            <h3><a href="https://cointelegraph.com/news/us-government-shutdown-delays-crypto-etf-approvals?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound" target="_blank">Yhdysvaltain Gov -sammutus saapuu 3. viikkoon ETF -tulvaporttien valmiina purskahtamaan</a></h3>
-            <p>Lähde: https://cointelegraph.com/news/us-government-shutdown-delays-crypto-etf-approvals?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound</p>
+            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDEvMDE5NDk5ZjYtZmYwYi03ZWQyLWEwZjAtYzI3OTJlNDI5ZmM0.jpg" alt="news">
+            <h3>Yhdysvaltain Gov -sammutus saapuu 3. viikkoon ETF -tulvaporttien valmiina purskahtamaan</h3>
+            <p>Lähde:<br>https://cointelegraph.com/news/us-government-shutdown-delays-crypto-etf-approvals?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound</p>
         </div>
         
         <div class="card">
-            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTEvMDE5MzYwZWEtYzQwYS03NzBkLWE4NTYtMTBiNDZhM2MxNjhi.jpg" alt="" class="thumb">
-            <h3><a href="https://cointelegraph.com/news/mystery-insider-whale-opens-massive-new-bitcoin-short-after-bagging-192m-profits?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound" target="_blank">Kauppias, joka teki vuoden 192 miljoonaa oikosulkua, krypto -onnettomuus tekee sen uudelleen</a></h3>
-            <p>Lähde: https://cointelegraph.com/news/mystery-insider-whale-opens-massive-new-bitcoin-short-after-bagging-192m-profits?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound</p>
+            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTEvMDE5MzYwZWEtYzQwYS03NzBkLWE4NTYtMTBiNDZhM2MxNjhi.jpg" alt="news">
+            <h3>Kauppias, joka teki vuoden 192 miljoonaa oikosulkua, krypto -onnettomuus tekee sen uudelleen</h3>
+            <p>Lähde:<br>https://cointelegraph.com/news/mystery-insider-whale-opens-massive-new-bitcoin-short-after-bagging-192m-profits?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound</p>
         </div>
         
         <div class="card">
-            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTEvMDE5MzM4NDktNTQzZC03NWYyLTlkMWYtMGY5YzUzYmVjNmFh.jpg" alt="" class="thumb">
-            <h3><a href="https://cointelegraph.com/news/steak-n-shake-u-turns-eth-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound" target="_blank">Pihvi n ravista nopeasti U-käännökset, kun eetterikysely vihauttaa bitcoinereita</a></h3>
-            <p>Lähde: https://cointelegraph.com/news/steak-n-shake-u-turns-eth-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound</p>
+            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTEvMDE5MzM4NDktNTQzZC03NWYyLTlkMWYtMGY5YzUzYmVjNmFh.jpg" alt="news">
+            <h3>Pihvi n ravista nopeasti U-käännökset, kun eetterikysely vihauttaa bitcoinereita</h3>
+            <p>Lähde:<br>https://cointelegraph.com/news/steak-n-shake-u-turns-eth-payments?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound</p>
         </div>
-        
-  </div>
-</section>
-
-<footer>
-  © 2025 MyCryptoFI — Rakennettu tekoälyllä ja GitHub Actionsilla.
-</footer>
-
+        </div>
+  </section>
+  <footer>
+    <div class="partners">
+      <a href="https://accounts.binance.com/register?ref=AFFIKOODI" target="_blank">Binance</a>
+      <a href="https://www.bybit.com/invite?ref=AFFIKOODI" target="_blank">Bybit</a>
+      <a href="https://www.mexc.com/register?inviteCode=AFFIKOODI" target="_blank">MEXC</a>
+      <a href="https://www.crypto.com/app/AFFIKOODI" target="_blank">Crypto.com</a>
+      <a href="https://shop.ledger.com/?r=AFFIKOODI" target="_blank">Ledger</a>
+      <a href="https://trezor.io?offer_id=AFFIKOODI" target="_blank">Trezor</a>
+    </div>
+    <p>© 2025 MyCryptoFI — Ymmärrä digitaalinen talous ilman hypeä.</p>
+  </footer>
 </body>
 </html>
