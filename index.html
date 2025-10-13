@@ -9,7 +9,7 @@
   <meta name="description" content="Krypto-opas suomalaisille: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
   <meta property="og:title" content="MyCryptoFI — Krypto-opas suomalaisille">
   <meta property="og:description" content="Suomalainen krypto-opas: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
-  <meta property="og:image" content="https://mycryptofi.com/preview.jpg">
+  <meta property="og:image" content="https://mycryptofi.com/mycryptofi_logo_key.png">
   <meta property="og:url" content="https://mycryptofi.com">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -41,42 +41,42 @@
       <div class="exchange-grid">
 
         <div class="exchange-card">
-          <img src="logos/binance.svg" alt="Binance logo">
+          <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=029" alt="Binance logo" loading="lazy">
           <h3>Binance</h3>
           <p>Maailman suurin pörssi. Nopeat siirrot, matalat kulut ja laaja tarjonta.</p>
           <a href="https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="logos/bybit.svg" alt="Bybit logo">
+          <img src="https://cryptologos.cc/logos/bybit-logo.svg?v=029" alt="Bybit logo" loading="lazy">
           <h3>Bybit</h3>
           <p>Johdannaiset, spot ja copy trading. Suosittu treidaajille.</p>
           <a href="https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="logos/bitget.svg" alt="Bitget logo">
+          <img src="https://cryptologos.cc/logos/bitget-logo.svg?v=029" alt="Bitget logo" loading="lazy">
           <h3>Bitget</h3>
           <p>Laaja valikoima ja kilpailukykyiset kulut aktiivitreidaajille.</p>
           <a href="https://www.bitget.com/en/register?from=referral&clacCode=OMA_BITGET_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="logos/mexc.svg" alt="MEXC logo">
+          <img src="https://cryptologos.cc/logos/mexc-logo.svg?v=029" alt="MEXC logo" loading="lazy">
           <h3>MEXC</h3>
           <p>Usein uusia listauksia ja hyvä likviditeetti altcoineille.</p>
           <a href="https://www.mexc.com/register?inviteCode=OMA_MEXC_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="logos/ledger.svg" alt="Ledger logo">
+          <img src="https://cryptologos.cc/logos/ledger-logo.svg?v=029" alt="Ledger logo" loading="lazy">
           <h3>Ledger</h3>
           <p>Turvallinen kylmälompakko — suojaa varasi offline.</p>
           <a href="https://shop.ledger.com/?r=OMA_LEDGER_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="logos/trezor.svg" alt="Trezor logo">
+          <img src="https://cryptologos.cc/logos/trezor-logo.svg?v=029" alt="Trezor logo" loading="lazy">
           <h3>Trezor</h3>
           <p>Avoimen lähdekoodin hardware-lompakko — helppo käyttää.</p>
           <a href="https://trezor.io?offer_id=OMA_TREZOR_KOODI" class="button">Avaa →</a>
@@ -85,13 +85,13 @@
     </section>
   </main>
 
-  <!-- 🔹 Footer ilman automaatiomainintaa -->
+  <!-- 🔹 Footer -->
   <footer>
     <p>© 2025 MyCryptoFI — Krypto-opas suomalaisille.</p>
   </footer>
 
   <script>
-    // Lataa uutiset JSON-tiedostosta
+    // 🔹 Uutisten lataus JSON:sta ja fallback-kuvat
     fetch("latest.json")
       .then(res => res.json())
       .then(data => {
@@ -99,10 +99,14 @@
           "Päivitetty " + new Date(data.date).toLocaleString("fi-FI");
         const container = document.getElementById("news-container");
         data.cards.forEach(item => {
+          const image = item.image && item.image.trim() !== ""
+            ? item.image
+            : "https://mycryptofi.com/mycryptofi_logo_key.png"; // fallback-logo
+
           const card = document.createElement("div");
           card.className = "news-card";
           card.innerHTML = `
-            <img src="${item.image}" alt="Kuva">
+            <img src="${image}" alt="Kuva">
             <div class="news-content">
               <h3>${item.title}</h3>
               ${item.summary ? `<p>${item.summary}</p>` : ""}
@@ -110,6 +114,9 @@
             </div>`;
           container.appendChild(card);
         });
+      })
+      .catch(err => {
+        console.error("Uutisten lataus epäonnistui:", err);
       });
   </script>
 </body>
