@@ -1,4 +1,3 @@
-/* 🔹 Yleinen ulkoasu */
 body {
   font-family: 'Inter', Arial, sans-serif;
   margin: 0;
@@ -7,18 +6,16 @@ body {
   color: #fff;
 }
 
-/* 🔹 Header */
 header {
   text-align: center;
-  padding: 3rem 1rem 2rem;
+  padding: 2rem 1rem 1rem;
   background: radial-gradient(circle at top, #021428, #000);
 }
 
 header h1 {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 0.3rem;
 }
 
 header p {
@@ -26,26 +23,24 @@ header p {
   color: #b0c4de;
 }
 
-/* 🔹 Uutisosio */
-#news {
+section {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-#news h2 {
-  font-size: 1.8rem;
+h2 {
+  font-size: 1.6rem;
   color: #fff;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 #last-updated {
-  color: #7aa1c5;
-  font-size: 0.9rem;
+  color: #b0c4de;
   margin-bottom: 1.5rem;
 }
 
-#news-container {
+.card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
@@ -53,15 +48,15 @@ header p {
 
 /* 🔹 Uutiskortit */
 .news-card {
-  background-color: #001b30;
-  border-radius: 14px;
-  overflow: hidden;
+  background-color: #001e36;
+  border-radius: 16px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
   transition: transform 0.2s ease;
 }
 
 .news-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
 }
 
 .news-card img {
@@ -75,94 +70,75 @@ header p {
 }
 
 .news-content h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #fff;
-  margin-top: 0;
 }
 
 .news-content p {
   font-size: 0.95rem;
-  color: #a8c4dc;
-  margin-bottom: 0.8rem;
+  color: #cdd9e5;
 }
 
-/* 🔹 Nappi */
 .button {
   display: inline-block;
+  margin-top: 10px;
   background: #007bff;
   color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 6px;
   text-decoration: none;
-  font-weight: 500;
+  border-radius: 6px;
 }
 
 .button:hover {
-  background: #00a2ff;
+  background: #0096ff;
 }
 
-/* 🔹 Pörssit & Lompakot */
-#exchanges {
-  background-color: #000e1b;
-  padding: 3rem 1rem;
-}
-
-#exchanges h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-.affiliate-note {
-  text-align: center;
-  color: #9eb6d3;
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-}
-
+/* 🔹 Pörssit ja lompakot */
 .exchange-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .exchange-card {
-  background: #001b30;
-  border-radius: 14px;
+  background-color: #001e36;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
   text-align: center;
-  padding: 1.2rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease;
 }
 
 .exchange-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 .exchange-card img {
-  height: 50px;
-  margin-bottom: 1rem;
+  width: 80px;
+  height: auto;
+  margin-bottom: 0.8rem;
+  filter: brightness(1.1);
+  opacity: 0.95;
 }
 
 .exchange-card h3 {
   color: #fff;
-  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
 }
 
 .exchange-card p {
-  color: #a8c4dc;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+  color: #b0c4de;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
 }
 
 /* 🔹 Footer */
 footer {
   text-align: center;
-  color: #6f8ca7;
+  color: #888;
   font-size: 0.9rem;
-  padding: 2rem 1rem;
-  border-top: 1px solid #001b30;
-  background: #010a15;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+  border-top: 1px solid #0c2033;
 }
