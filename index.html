@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyCryptoFI — Krypto-opas suomalaisille</title>
 
-  <!-- META + sosiaalinen esikatselu -->
+  <!-- META -->
   <meta name="description" content="Krypto-opas suomalaisille: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
   <meta property="og:title" content="MyCryptoFI — Krypto-opas suomalaisille">
   <meta property="og:description" content="Suomalainen krypto-opas: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
@@ -24,14 +24,14 @@
   </header>
 
   <main>
-    <!-- 🔹 Uutisosio -->
+    <!-- 🔹 Uutiset -->
     <section id="news">
       <h2>📰 Uusimmat kryptouutiset</h2>
       <p id="last-updated">Päivitetty automaattisesti</p>
       <div id="news-container" class="card-grid"></div>
     </section>
 
-    <!-- 🔹 Affiliate-pörssit ja lompakot -->
+    <!-- 🔹 Pörssit ja lompakot -->
     <section id="exchanges">
       <h2>💳 Suositellut pörssit & lompakot</h2>
       <p class="affiliate-note">
@@ -39,44 +39,43 @@
       </p>
 
       <div class="exchange-grid">
-
         <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=029" alt="Binance logo" loading="lazy">
+          <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=029" alt="Binance logo" onerror="this.src='mycryptofi_logo_key.png';">
           <h3>Binance</h3>
           <p>Maailman suurin pörssi. Nopeat siirrot, matalat kulut ja laaja tarjonta.</p>
           <a href="https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/bybit-logo.svg?v=029" alt="Bybit logo" loading="lazy">
+          <img src="https://cryptologos.cc/logos/bybit-logo.svg?v=029" alt="Bybit logo" onerror="this.src='mycryptofi_logo_key.png';">
           <h3>Bybit</h3>
           <p>Johdannaiset, spot ja copy trading. Suosittu treidaajille.</p>
           <a href="https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/bitget-logo.svg?v=029" alt="Bitget logo" loading="lazy">
+          <img src="https://cryptologos.cc/logos/bitget-logo.svg?v=029" alt="Bitget logo" onerror="this.src='mycryptofi_logo_key.png';">
           <h3>Bitget</h3>
           <p>Laaja valikoima ja kilpailukykyiset kulut aktiivitreidaajille.</p>
           <a href="https://www.bitget.com/en/register?from=referral&clacCode=OMA_BITGET_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/mexc-logo.svg?v=029" alt="MEXC logo" loading="lazy">
+          <img src="https://cryptologos.cc/logos/mexc-logo.svg?v=029" alt="MEXC logo" onerror="this.src='mycryptofi_logo_key.png';">
           <h3>MEXC</h3>
           <p>Usein uusia listauksia ja hyvä likviditeetti altcoineille.</p>
           <a href="https://www.mexc.com/register?inviteCode=OMA_MEXC_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/ledger-logo.svg?v=029" alt="Ledger logo" loading="lazy">
+          <img src="https://cryptologos.cc/logos/ledger-logo.svg?v=029" alt="Ledger logo" onerror="this.src='mycryptofi_logo_key.png';">
           <h3>Ledger</h3>
           <p>Turvallinen kylmälompakko — suojaa varasi offline.</p>
           <a href="https://shop.ledger.com/?r=OMA_LEDGER_KOODI" class="button">Avaa →</a>
         </div>
 
         <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/trezor-logo.svg?v=029" alt="Trezor logo" loading="lazy">
+          <img src="https://cryptologos.cc/logos/trezor-logo.svg?v=029" alt="Trezor logo" onerror="this.src='mycryptofi_logo_key.png';">
           <h3>Trezor</h3>
           <p>Avoimen lähdekoodin hardware-lompakko — helppo käyttää.</p>
           <a href="https://trezor.io?offer_id=OMA_TREZOR_KOODI" class="button">Avaa →</a>
@@ -85,13 +84,12 @@
     </section>
   </main>
 
-  <!-- 🔹 Footer -->
   <footer>
     <p>© 2025 MyCryptoFI — Krypto-opas suomalaisille.</p>
   </footer>
 
   <script>
-    // 🔹 Uutisten lataus JSON:sta ja fallback-kuvat
+    // 🔹 Uutiset
     fetch("latest.json")
       .then(res => res.json())
       .then(data => {
@@ -101,8 +99,7 @@
         data.cards.forEach(item => {
           const image = item.image && item.image.trim() !== ""
             ? item.image
-            : "https://mycryptofi.com/mycryptofi_logo_key.png"; // fallback-logo
-
+            : "mycryptofi_logo_key.png";
           const card = document.createElement("div");
           card.className = "news-card";
           card.innerHTML = `
@@ -115,9 +112,7 @@
           container.appendChild(card);
         });
       })
-      .catch(err => {
-        console.error("Uutisten lataus epäonnistui:", err);
-      });
+      .catch(err => console.error("Uutisten lataus epäonnistui:", err));
   </script>
 </body>
 </html>
