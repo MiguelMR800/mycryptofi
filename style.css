@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #010a15;
   color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -15,7 +16,6 @@ header {
 header h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #fff;
 }
 
 header p {
@@ -23,6 +23,7 @@ header p {
   color: #b0c4de;
 }
 
+/* 🔹 Yleiset rakenteet */
 section {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,7 +32,6 @@ section {
 
 h2 {
   font-size: 1.6rem;
-  color: #fff;
   margin-bottom: 0.5rem;
 }
 
@@ -40,23 +40,24 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
+/* 🔹 Uutiskortit */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-/* 🔹 Uutiskortit */
 .news-card {
   background-color: #001e36;
   border-radius: 16px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .news-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 150, 255, 0.3);
 }
 
 .news-card img {
@@ -71,7 +72,6 @@ h2 {
 
 .news-content h3 {
   font-size: 1.05rem;
-  color: #fff;
 }
 
 .news-content p {
@@ -87,6 +87,7 @@ h2 {
   padding: 0.5rem 1rem;
   text-decoration: none;
   border-radius: 6px;
+  transition: background 0.2s ease;
 }
 
 .button:hover {
@@ -107,23 +108,32 @@ h2 {
   padding: 1.5rem 1rem;
   text-align: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .exchange-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(0, 180, 255, 0.3);
 }
 
+/* 🔹 Logo glow + hover animation */
 .exchange-card img {
-  width: 80px;
-  height: auto;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
   margin-bottom: 0.8rem;
-  filter: brightness(1.1);
+  filter: drop-shadow(0 0 0px transparent);
   opacity: 0.95;
+  transition: transform 0.25s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+.exchange-card:hover img {
+  transform: scale(1.07);
+  filter: drop-shadow(0 0 12px rgba(0, 180, 255, 0.8));
+  opacity: 1;
 }
 
 .exchange-card h3 {
-  color: #fff;
   font-size: 1.1rem;
 }
 
@@ -141,4 +151,42 @@ footer {
   padding: 1.5rem 0;
   margin-top: 2rem;
   border-top: 1px solid #0c2033;
+}
+
+/* 🔸 Light mode (automaattinen tuki selaimen asetuksille) */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f8f9fb;
+    color: #222;
+  }
+
+  header {
+    background: linear-gradient(to bottom, #e3f2ff, #cfe0f5);
+  }
+
+  .news-card, .exchange-card {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  h2, h3 {
+    color: #111;
+  }
+
+  .news-content p, .exchange-card p {
+    color: #333;
+  }
+
+  .button {
+    background: #0056d2;
+  }
+
+  footer {
+    border-top: 1px solid #d0d0d0;
+    color: #555;
+  }
+
+  .exchange-card:hover img {
+    filter: drop-shadow(0 0 10px rgba(0, 80, 200, 0.8));
+  }
 }
