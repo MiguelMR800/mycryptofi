@@ -1,0 +1,11 @@
+{
+  "binance":  "https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI",
+  "bybit":    "https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI",
+  "bitget":   "https://www.bitget.com/en/register?from=referral&clacCode=OMA_BITGET_KOODI",
+  "mexc":     "https://www.mexc.com/register?inviteCode=OMA_MEXC_KOODI",
+  "cryptocom":"https://crypto.com/app/OMA_CRYPTODOTCOM_KOODI",
+  "coinmotion":"https://coinmotion.com/fi?ref=OMA_COINMOTION_KOODI",
+  "northcrypto":"https://northcrypto.com/fi/register?ref=OMA_NORTHCRYPTO_KOODI",
+  "ledger":   "https://shop.ledger.com/?r=OMA_LEDGER_KOODI",
+  "trezor":   "https://trezor.io?offer_id=OMA_TREZOR_KOODI"
+}
