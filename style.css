@@ -1,3 +1,4 @@
+/* 🔹 Yleinen ulkoasu */
 body {
   font-family: 'Inter', Arial, sans-serif;
   margin: 0;
@@ -6,16 +7,18 @@ body {
   color: #fff;
 }
 
+/* 🔹 Header */
 header {
   text-align: center;
-  padding: 2rem 1rem 1rem;
+  padding: 3rem 1rem 2rem;
   background: radial-gradient(circle at top, #021428, #000);
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   font-weight: 700;
   color: #fff;
+  margin-bottom: 0.3rem;
 }
 
 header p {
@@ -23,62 +26,143 @@ header p {
   color: #b0c4de;
 }
 
-.section {
+/* 🔹 Uutisosio */
+#news {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.card-grid {
+#news h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+#last-updated {
+  color: #7aa1c5;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+#news-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-.card {
-  background-color: #001e36;
-  border-radius: 16px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+/* 🔹 Uutiskortit */
+.news-card {
+  background-color: #001b30;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease;
 }
 
-.card:hover {
-  transform: translateY(-4px);
+.news-card:hover {
+  transform: translateY(-6px);
 }
 
-.card img {
+.news-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
 }
 
-.card-content {
+.news-content {
   padding: 1rem;
 }
 
-.card h3 {
+.news-content h3 {
   font-size: 1.1rem;
   color: #fff;
+  margin-top: 0;
 }
 
-.card a {
+.news-content p {
+  font-size: 0.95rem;
+  color: #a8c4dc;
+  margin-bottom: 0.8rem;
+}
+
+/* 🔹 Nappi */
+.button {
   display: inline-block;
-  margin-top: 10px;
   background: #007bff;
   color: #fff;
   padding: 0.5rem 1rem;
-  text-decoration: none;
   border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.card a:hover {
-  background: #0096ff;
+.button:hover {
+  background: #00a2ff;
 }
 
+/* 🔹 Pörssit & Lompakot */
+#exchanges {
+  background-color: #000e1b;
+  padding: 3rem 1rem;
+}
+
+#exchanges h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.affiliate-note {
+  text-align: center;
+  color: #9eb6d3;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.exchange-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.exchange-card {
+  background: #001b30;
+  border-radius: 14px;
+  text-align: center;
+  padding: 1.2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.exchange-card:hover {
+  transform: translateY(-5px);
+}
+
+.exchange-card img {
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.exchange-card h3 {
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.exchange-card p {
+  color: #a8c4dc;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* 🔹 Footer */
 footer {
   text-align: center;
-  color: #888;
+  color: #6f8ca7;
   font-size: 0.9rem;
-  padding: 1.5rem 0;
+  padding: 2rem 1rem;
+  border-top: 1px solid #001b30;
+  background: #010a15;
 }
