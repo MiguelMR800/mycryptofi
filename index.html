@@ -1,215 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyCryptoFI — Krypto-opas suomalaisille</title>
-  <meta name="description" content="Suomalainen krypto-opas: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
-  <style>
-    :root {
-      --bg: #000814;
-      --bg-grad: radial-gradient(1200px 600px at 50% -10%, #002952 0%, #001a33 35%, #000814 70%);
-      --card: #001f3f;
-      --accent: #61dafb;
-      --accent-2: #0077ff;
-      --muted: #a8b2d1;
-      --border: #003260;
-      --text: #e6f1ff;
-    }
-    * { box-sizing: border-box; }
-    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: 1200px; padding: 0 24px; margin: 0 auto; }
 
-    header {
-      background: var(--bg-grad);
-      padding: 96px 0 40px;
-      text-align: center;
-    }
-    header h1 { font-size: clamp(2rem, 5vw, 3rem); margin:0 0 8px; letter-spacing:-0.02em; font-weight:800; }
-    header p  { color: var(--muted); margin:0; font-size: clamp(1rem, 2.5vw, 1.25rem); }
+  <!-- META + sosiaalinen esikatselu -->
+  <meta name="description" content="Krypto-opas suomalaisille: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
+  <meta property="og:title" content="MyCryptoFI — Krypto-opas suomalaisille">
+  <meta property="og:description" content="Suomalainen krypto-opas: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
+  <meta property="og:image" content="https://mycryptofi.com/preview.jpg">
+  <meta property="og:url" content="https://mycryptofi.com">
+  <meta name="twitter:card" content="summary_large_image">
 
-    section { padding: 48px 0; }
-    h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); margin: 0 0 8px; text-align:center; }
-    .muted { color: var(--muted); text-align:center; margin:0 0 24px; }
-
-    /* News grid */
-    .grid {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-      overflow:hidden;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent-2);
-      box-shadow: 0 12px 28px rgba(0, 119, 255, 0.25);
-    }
-    .card img {
-      width:100%; height:170px; object-fit:cover; display:block; border-bottom:1px solid var(--border);
-      background:#00213f;
-    }
-    .card h3 { padding: 14px 16px 6px; margin:0; font-size:1rem; color:var(--accent); }
-    .card .btn {
-      margin: 8px 16px 18px;
-      display:inline-block;
-      background: var(--accent-2);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 10px;
-      text-decoration:none;
-      font-weight:700;
-    }
-    .card .btn:hover { background:#3399ff; }
-
-    /* Affiliates */
-    .affiliates { background: #000d1a; border-top:1px solid var(--border); }
-    .aff-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-    .aff-card {
-      background:#001a33; border:1px solid var(--border); border-radius:14px; padding:16px; text-align:left;
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-    .aff-card:hover { transform: translateY(-4px); border-color: var(--accent-2); box-shadow: 0 12px 28px rgba(0, 119, 255, 0.22); }
-    .aff-card h4 { margin:0 0 6px; color:var(--accent); }
-    .aff-card p { margin:0 0 10px; color:var(--muted); font-size:0.95rem; line-height:1.35rem; }
-    .aff-card .btn { background: var(--accent-2); color:#fff; padding:7px 12px; border-radius:10px; display:inline-block; font-weight:700; }
-    .aff-card .btn:hover { background:#3399ff; }
-
-    footer {
-      padding: 28px 0 40px; text-align:center; color:var(--muted); border-top:1px solid var(--border);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
+
 <body>
   <header>
-    <div class="wrap">
-      <h1>Krypto-opas suomalaisille</h1>
-      <p>Ymmärrä digitaalinen talous — ilman hypeä</p>
-    </div>
+    <h1>Krypto-opas suomalaisille</h1>
+    <p>Ymmärrä digitaalinen talous — ilman hypeä</p>
   </header>
 
-  <main class="wrap">
-    <section id="uutiset">
+  <main>
+    <!-- 🔹 Uutisosio -->
+    <section id="news">
       <h2>📰 Uusimmat kryptouutiset</h2>
-      <p class="muted">Päivitetty 13.10.2025 klo 08:08</p>
-      <div class="grid">
-        
-        <article class="card">
-            <img src="https://cdn.sanity.io/images/s3y3vcno/production/56985dd3c86975489de193049979987f113266f0-1920x1080.jpg?auto=format" alt="" loading="lazy">
-            <h3>BTC-kaivosyhtiö Marathon (MARA) Scoops nousee 400 BTC: n hintojen kaatumisen jälkeen, ketjun tiedot osoittavat</h3>
-            <a class="btn" href="https://www.coindesk.com/markets/2025/10/13/marathon-scoops-up-400-btc-after-friday-s-usd20b-crash" target="_blank" rel="noopener noreferrer">Lue artikkeli</a>
-        </article>
-        
-        <article class="card">
-            <img src="https://cdn.sanity.io/images/s3y3vcno/production/b78676419effff38a698fa0751384050e0eaed94-3840x2160.png?auto=format&amp;w=1920&amp;h=1080&amp;crop=focalpoint&amp;fit=clip" alt="" loading="lazy">
-            <h3>Cardano ja Dogecoin johtavat krypto reboundia &#x27;emotionaalisen&#x27; 19b -nollauksen jälkeen</h3>
-            <a class="btn" href="https://www.coindesk.com/markets/2025/10/13/cardano-dogecoin-lead-emotional-crypto-rebound-days-after-usd19b-liquidations" target="_blank" rel="noopener noreferrer">Lue artikkeli</a>
-        </article>
-        
-        <article class="card">
-            <img src="https://cdn.sanity.io/images/s3y3vcno/production/168154f682a2284a3266d79a6d95b4de0e14e847-1192x724.png?auto=format&amp;w=1920&amp;h=1080&amp;crop=focalpoint&amp;fit=clip" alt="" loading="lazy">
-            <h3>Dogecoin Zooms 11 AS DOGE OSTAMA VÄLILUKSET</h3>
-            <a class="btn" href="https://www.coindesk.com/markets/2025/10/13/dogecoin-zooms-11-as-doge-buying-volumes-quadruples" target="_blank" rel="noopener noreferrer">Lue artikkeli</a>
-        </article>
-        
-        <article class="card">
-            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDkvMDE5OTM4NjgtMTc1Zi03NDY5LThmYjAtODYzNGQ3M2IzMzJj.jpg" alt="" loading="lazy">
-            <h3>120K tai härän markkinoiden loppu? 5 asiaa tietää Bitcoinissa tällä viikolla</h3>
-            <a class="btn" href="https://cointelegraph.com/news/120k-or-end-of-bull-market-5-things-bitcoin-this-week?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener noreferrer">Lue artikkeli</a>
-        </article>
-        
-        <article class="card">
-            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDEvMDE5NDk5ZjYtZmYwYi03ZWQyLWEwZjAtYzI3OTJlNDI5ZmM0.jpg" alt="" loading="lazy">
-            <h3>Yhdysvaltain Gov -sammutus saapuu 3. viikkoon ETF -tulvaporttien valmiina purskahtamiseen</h3>
-            <a class="btn" href="https://cointelegraph.com/news/us-government-shutdown-delays-crypto-etf-approvals?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener noreferrer">Lue artikkeli</a>
-        </article>
-        
-        <article class="card">
-            <img src="https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTEvMDE5MzYwZWEtYzQwYS03NzBkLWE4NTYtMTBiNDZhM2MxNjhi.jpg" alt="" loading="lazy">
-            <h3>Kauppias, joka teki vuoden 192 miljoonaa oikosulkua, krypto -onnettomuus tekee sen uudelleen</h3>
-            <a class="btn" href="https://cointelegraph.com/news/mystery-insider-whale-opens-massive-new-bitcoin-short-after-bagging-192m-profits?utm_source=rss_feed&amp;utm_medium=rss&amp;utm_campaign=rss_partner_inbound" target="_blank" rel="noopener noreferrer">Lue artikkeli</a>
-        </article>
-        
+      <p id="last-updated">Päivitetty automaattisesti</p>
+      <div id="news-container" class="card-grid"></div>
+    </section>
+
+    <!-- 🔹 Affiliate-pörssit ja lompakot -->
+    <section id="exchanges">
+      <h2>💳 Suositellut pörssit & lompakot</h2>
+      <p class="affiliate-note">
+        Affiliate-kumppanit — linkkien kautta tehdyt rekisteröitymiset voivat tuoda meille pienen komission ilman lisäkuluja sinulle.
+      </p>
+
+      <div class="exchange-grid">
+
+        <div class="exchange-card">
+          <img src="logos/binance.svg" alt="Binance logo">
+          <h3>Binance</h3>
+          <p>Maailman suurin pörssi. Nopeat siirrot, matalat kulut ja laaja tarjonta.</p>
+          <a href="https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI" class="button">Avaa →</a>
+        </div>
+
+        <div class="exchange-card">
+          <img src="logos/bybit.svg" alt="Bybit logo">
+          <h3>Bybit</h3>
+          <p>Johdannaiset, spot ja copy trading. Suosittu treidaajille.</p>
+          <a href="https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI" class="button">Avaa →</a>
+        </div>
+
+        <div class="exchange-card">
+          <img src="logos/bitget.svg" alt="Bitget logo">
+          <h3>Bitget</h3>
+          <p>Laaja valikoima ja kilpailukykyiset kulut aktiivitreidaajille.</p>
+          <a href="https://www.bitget.com/en/register?from=referral&clacCode=OMA_BITGET_KOODI" class="button">Avaa →</a>
+        </div>
+
+        <div class="exchange-card">
+          <img src="logos/mexc.svg" alt="MEXC logo">
+          <h3>MEXC</h3>
+          <p>Usein uusia listauksia ja hyvä likviditeetti altcoineille.</p>
+          <a href="https://www.mexc.com/register?inviteCode=OMA_MEXC_KOODI" class="button">Avaa →</a>
+        </div>
+
+        <div class="exchange-card">
+          <img src="logos/ledger.svg" alt="Ledger logo">
+          <h3>Ledger</h3>
+          <p>Turvallinen kylmälompakko — suojaa varasi offline.</p>
+          <a href="https://shop.ledger.com/?r=OMA_LEDGER_KOODI" class="button">Avaa →</a>
+        </div>
+
+        <div class="exchange-card">
+          <img src="logos/trezor.svg" alt="Trezor logo">
+          <h3>Trezor</h3>
+          <p>Avoimen lähdekoodin hardware-lompakko — helppo käyttää.</p>
+          <a href="https://trezor.io?offer_id=OMA_TREZOR_KOODI" class="button">Avaa →</a>
+        </div>
       </div>
     </section>
   </main>
 
-  
-    <section class="affiliates" id="palvelut">
-      <h2>📊 Suositellut pörssit & lompakot</h2>
-      <p class="muted">Valitut palvelut: helppokäyttöisyys, likviditeetti ja turvallisuus.</p>
-      <div class="aff-grid">
-        
-        <div class="aff-card">
-            <h4>Binance</h4>
-            <p>Maailman suurin pörssi. Nopeat siirrot, matalat kulut, laaja tarjonta.</p>
-            <a class="btn" href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>Bybit</h4>
-            <p>Johdannaiset, spot, copy trading. Suosittu treidaajille.</p>
-            <a class="btn" href="https://www.bybit.com/invite?ref=EQ69EL" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>Bitget</h4>
-            <p>Aktiivitreidaajille. Laaja valikoima ja kilpailukykyiset kulut.</p>
-            <a class="btn" href="https://www.bitget.com/referral/register?clacCode=B0US0BU8" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>MEXC</h4>
-            <p>Uusia listauksia usein. Hyvä altcoin-screenerin kanssa.</p>
-            <a class="btn" href="https://promote.mexc.com/r/Wos5E00S" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>Crypto.com</h4>
-            <p>Pörssi + kortti. Helppo arjen käyttöön.</p>
-            <a class="btn" href="https://crypto.com/app/YOUR_CODE" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>Coinmotion (FI)</h4>
-            <p>Kotimainen toimija, verot ja raportointi helppoja.</p>
-            <a class="btn" href="https://coinmotion.com/fi/?ref=92a4" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>Northcrypto (FI)</h4>
-            <p>Kotimainen palvelu, selkeä käyttöliittymä.</p>
-            <a class="btn" href="https://kvarnx.com/rekisteroityminen/UUYYY7M90V" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>Ledger</h4>
-            <p>Turvallinen kylmälompakko — suojaa varasi offline.</p>
-            <a class="btn" href="https://shop.ledger.com/?r=c97ab0683c61" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-        <div class="aff-card">
-            <h4>Trezor</h4>
-            <p>Avoimen lähdekoodin hardware-lompakko — helppo käyttää.</p>
-            <a class="btn" href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&amp;offer_id=239&amp;affiliate_id=35816" target="_blank" rel="noopener noreferrer">Avaa →</a>
-        </div>
-        
-      </div>
-    </section>
-    
-
+  <!-- 🔹 Footer ilman automaatiomainintaa -->
   <footer>
-    <div class="wrap">
-      © 2025 MyCryptoFI — Rakennettu automaatiolla (GitHub Actions).
-    </div>
+    <p>© 2025 MyCryptoFI — Krypto-opas suomalaisille.</p>
   </footer>
+
+  <script>
+    // Lataa uutiset JSON-tiedostosta
+    fetch("latest.json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("last-updated").textContent =
+          "Päivitetty " + new Date(data.date).toLocaleString("fi-FI");
+        const container = document.getElementById("news-container");
+        data.cards.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "news-card";
+          card.innerHTML = `
+            <img src="${item.image}" alt="Kuva">
+            <div class="news-content">
+              <h3>${item.title}</h3>
+              ${item.summary ? `<p>${item.summary}</p>` : ""}
+              <a href="${item.link}" target="_blank" class="button">Lue artikkeli</a>
+            </div>`;
+          container.appendChild(card);
+        });
+      });
+  </script>
 </body>
 </html>
