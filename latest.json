@@ -1,12 +1,6 @@
 {
-  "date": "2025-10-13T08:29:10Z",
+  "date": "2025-10-13T08:33:05Z",
   "cards": [
-    {
-      "title": "Ethereum's Fusaka Testing and Continued U.S. Government Shutdown: Crypto Week Ahead",
-      "summary": "",
-      "image": "https://cdn.sanity.io/images/s3y3vcno/production/11d38e96067e18f4d9e1e0057cdf51ebefe2cca9-1920x1080.jpg?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip",
-      "link": "https://www.coindesk.com/markets/2025/10/09/ethereum-s-fusaka-testing-and-continued-u-s-government-shutdown-crypto-week-ahead"
-    },
     {
       "title": "BTC Mining Firm Marathon (MARA) Scoops Up 400 BTC After Price Crash, On-Chain Data Show",
       "summary": "",
@@ -14,25 +8,31 @@
       "link": "https://www.coindesk.com/markets/2025/10/13/marathon-scoops-up-400-btc-after-friday-s-usd20b-crash"
     },
     {
-      "title": "Cardano and Dogecoin Lead Crypto Rebound Following an 'Emotional' 19B Reset",
+      "title": "Cardano and Dogecoin Lead Crypto Rebound Following an 'Emotional' $19B Reset",
       "summary": "",
       "image": "https://cdn.sanity.io/images/s3y3vcno/production/b78676419effff38a698fa0751384050e0eaed94-3840x2160.png?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip",
       "link": "https://www.coindesk.com/markets/2025/10/13/cardano-dogecoin-lead-emotional-crypto-rebound-days-after-usd19b-liquidations"
     },
     {
-      "title": "120K or end of the bull market? 5 things to know in Bitcoin this week",
+      "title": "Dogecoin Zooms 11% as DOGE Buying Volumes Quadruples",
+      "summary": "",
+      "image": "https://cdn.sanity.io/images/s3y3vcno/production/168154f682a2284a3266d79a6d95b4de0e14e847-1192x724.png?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip",
+      "link": "https://www.coindesk.com/markets/2025/10/13/dogecoin-zooms-11-as-doge-buying-volumes-quadruples"
+    },
+    {
+      "title": "$120K or end of the bull market? 5 things to know in Bitcoin this week",
       "summary": "",
       "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDkvMDE5OTM4NjgtMTc1Zi03NDY5LThmYjAtODYzNGQ3M2IzMzJj.jpg",
       "link": "https://cointelegraph.com/news/120k-or-end-of-bull-market-5-things-bitcoin-this-week?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
-      "title": "US gov shutdown enters 3rd week with ETF floodgates ready to burst",
+      "title": "US gov shutdown enters 3rd week with ETF ‘floodgates’ ready to burst",
       "summary": "",
       "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDEvMDE5NDk5ZjYtZmYwYi03ZWQyLWEwZjAtYzI3OTJlNDI5ZmM0.jpg",
       "link": "https://cointelegraph.com/news/us-government-shutdown-delays-crypto-etf-approvals?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
-      "title": "Trader who made 192M shorting the crypto crash is doing it again",
+      "title": "Trader who made $192M shorting the crypto crash is doing it again",
       "summary": "",
       "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTEvMDE5MzYwZWEtYzQwYS03NzBkLWE4NTYtMTBiNDZhM2MxNjhi.jpg",
       "link": "https://cointelegraph.com/news/mystery-insider-whale-opens-massive-new-bitcoin-short-after-bagging-192m-profits?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
