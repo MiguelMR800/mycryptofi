@@ -1,39 +1,84 @@
-.affiliate-note {
-  font-size: 0.9rem;
-  color: #a0a0a0;
-  text-align: center;
-  margin-bottom: 1.5rem;
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #010a15;
+  color: #fff;
 }
 
-.exchange-grid {
+header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  background: radial-gradient(circle at top, #021428, #000);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #b0c4de;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  justify-content: center;
 }
 
-.exchange-card {
-  background: #041727;
-  padding: 1.2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s;
+.card {
+  background-color: #001e36;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: transform 0.2s ease;
 }
 
-.exchange-card:hover {
+.card:hover {
   transform: translateY(-4px);
 }
 
-.exchange-card img {
-  height: 40px;
-  margin-bottom: 0.6rem;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.card a:hover {
+  background: #0096ff;
 }
 
 footer {
   text-align: center;
-  color: #aaa;
-  font-size: 0.85rem;
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
+  font-size: 0.9rem;
+  padding: 1.5rem 0;
 }
