@@ -3,97 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MyCryptoFI — Suomen selkein krypto-opas. Uusimmat uutiset, suositellut pörssit ja turvalliset lompakot." />
   <title>MyCryptoFI — Krypto-opas suomalaisille</title>
+
+  <!-- Favicon ja logo -->
+  <link rel="icon" type="image/png" href="mycryptofi_logo_key.png" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <h1>💡 Krypto-opas suomalaisille</h1>
-    <p>Ymmärrä digitaalinen talous — ilman hypeä</p>
+  <!-- Ylälogo -->
+  <header class="header">
+    <a href="#" class="logo-link">
+      <img src="mycryptofi_logo_key.png" alt="MyCryptoFI logo" class="logo" />
+    </a>
   </header>
 
-  <!-- UUTISET -->
-  <section id="news-section" class="section">
-    <h2>📰 Uusimmat kryptouutiset</h2>
-    <p id="last-updated">Päivitetty automaattisesti</p>
-    <div id="news-grid" class="card-grid"></div>
+  <!-- Hero-osio -->
+  <section class="hero">
+    <h1>MyCryptoFI — Krypto-opas suomalaisille</h1>
+    <p class="subtitle">Tietoa pörsseistä, lompakoista ja markkinoista — tiiviisti, ilman mainospuhetta.</p>
   </section>
 
-  <!-- PÖRSSIT JA LOMPAKOT -->
-  <section id="exchange-section" class="section">
-    <h2>💳 Suositellut pörssit & lompakot</h2>
-    <p class="affiliate-note">
-      Affiliate-kumppanit — linkkien kautta tehdyt rekisteröitymiset voivat tuoda meille pienen komission ilman lisäkuluja sinulle.
-    </p>
-    <div id="exchange-grid" class="exchange-grid"></div>
+  <!-- Pörssikortit -->
+  <section class="exchanges">
+    <h2>Suositellut pörssit & lompakot</h2>
+    <div class="exchange-grid" id="exchange-grid"></div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    © 2025 MyCryptoFI — Krypto-opas suomalaisille.
+    © 2025 MyCryptoFI — Kaikki oikeudet pidätetään.
   </footer>
 
-  <!-- SISÄLTÖJEN LATAUS (uutiset + pörssit) -->
   <script>
-  // --- Ladataan uutiset (latest.json) ---
-  async function loadNews() {
-    const newsGrid = document.getElementById("news-grid");
-    const updatedText = document.getElementById("last-updated");
+    const exchanges = [
+      { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register", icon: "https://cdn.simpleicons.org/binance/000000" },
+      { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com", icon: "https://cdn.simpleicons.org/bybit/000000" },
+      { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com", icon: "https://cdn.simpleicons.org/bitget/000000" },
+      { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com", icon: "https://cdn.simpleicons.org/mexc/000000" },
+      { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com", icon: "https://cdn.simpleicons.org/ledger/000000" },
+      { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io", icon: "https://cdn.simpleicons.org/trezor/000000" }
+    ];
 
-    try {
-      const res = await fetch("latest.json?_=" + new Date().getTime());
-      const data = await res.json();
-
-      updatedText.textContent = `Päivitetty ${new Date(data.updated).toLocaleString("fi-FI")}`;
-
-      data.articles.forEach(article => {
-        const card = document.createElement("div");
-        card.className = "news-card";
-        card.innerHTML = `
-          <img src="${article.image}" alt="${article.title}">
-          <div class="news-content">
-            <h3>${article.title}</h3>
-            <p>${article.summary || ""}</p>
-            <a href="${article.url}" target="_blank" class="button">Lue artikkeli</a>
-          </div>
-        `;
-        newsGrid.appendChild(card);
-      });
-    } catch (err) {
-      newsGrid.innerHTML = "<p>⚠️ Uutisten lataus epäonnistui.</p>";
-      console.error(err);
-    }
-  }
-
-  // --- Luodaan automaattisesti logot ja kortit pörsseille ---
-  const exchanges = [
-    { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI", icon: "https://cdn.simpleicons.org/binance/FFFFFF" },
-    { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI", icon: "https://cdn.simpleicons.org/bybit/FFFFFF" },
-    { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com/en/register?from=referral", icon: "https://cdn.simpleicons.org/bitget/FFFFFF" },
-    { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com/register", icon: "https://cdn.simpleicons.org/mexc/FFFFFF" },
-    { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com", icon: "https://cdn.simpleicons.org/ledger/FFFFFF" },
-    { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io", icon: "https://cdn.simpleicons.org/trezor/FFFFFF" }
-  ];
-
-  function loadExchanges() {
     const grid = document.getElementById("exchange-grid");
+    const fallbackLogo = "mycryptofi_logo_key.png";
+
     exchanges.forEach(ex => {
       const card = document.createElement("div");
       card.className = "exchange-card";
       card.innerHTML = `
-        <img src="${ex.icon}" alt="${ex.name} logo" />
+        <div class="icon-wrapper">
+          <img src="${ex.icon}" alt="${ex.name} logo" onerror="this.src='${fallbackLogo}'" />
+        </div>
         <h3>${ex.name}</h3>
         <p>${ex.desc}</p>
         <a href="${ex.url}" target="_blank" class="button">Avaa →</a>`;
       grid.appendChild(card);
     });
-  }
 
-  // Käynnistetään molemmat
-  loadNews();
-  loadExchanges();
+    // Touch-spring efekti
+    document.querySelectorAll('.exchange-card').forEach(card => {
+      card.addEventListener('touchstart', () => card.classList.add('pressed'));
+      card.addEventListener('touchend', () => card.classList.remove('pressed'));
+      card.addEventListener('mousedown', () => card.classList.add('pressed'));
+      card.addEventListener('mouseup', () => card.classList.remove('pressed'));
+    });
   </script>
 </body>
 </html>
