@@ -1,117 +1,121 @@
-/* -------------------- YLEISILME -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 body {
-  font-family: 'Inter', Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #010a15;
-  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f7f7;
+  color: #111;
+  line-height: 1.6;
 }
 
-/* -------------------- HEADER -------------------- */
-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem;
-  background: linear-gradient(180deg, #06152b 0%, #010a15 100%);
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 2rem;
 }
 
-header h1 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #a8c0ff;
-}
-
-/* -------------------- OSIOT -------------------- */
-.section, section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-  color: #fff;
-  border-left: 4px solid #007bff;
-  padding-left: 10px;
-  margin-bottom: 1.5rem;
-}
-
-.affiliate-note {
-  color: #99aabb;
-  font-size: 0.95rem;
-  text-align: center;
-}
-
-/* -------------------- UUTISKORTIT -------------------- */
-.card-grid, .exchange-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.news-card, .exchange-card {
-  background-color: #001e36;
-  border-radius: 16px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.news-card:hover, .exchange-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
-}
-
-.news-card img, .exchange-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: contain;
-  background-color: #0a192f;
-  padding: 1rem;
-}
-
-/* -------------------- KORTTIEN SISÄLLÖT -------------------- */
-.news-content, .exchange-card {
-  padding: 1rem 1.2rem;
-  text-align: center;
-}
-
-.news-card h3, .exchange-card h3 {
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-.news-card p, .exchange-card p {
-  color: #a0b3d1;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.button, .exchange-card a {
+.logo-link {
   display: inline-block;
-  margin-top: 10px;
-  background: #007bff;
-  color: #fff;
-  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  background: #e3e3e3;
+  padding: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.exchanges {
+  text-align: center;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.exchanges h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.exchange-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.exchange-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.5rem;
+  transition: all 0.25s ease;
+  transform: translateY(0);
+}
+
+.exchange-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.exchange-card.pressed {
+  transform: scale(0.98);
+}
+
+.icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.icon-wrapper img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: #0070f3;
+  color: white;
   text-decoration: none;
   border-radius: 6px;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: background 0.2s ease;
 }
 
-.button:hover, .exchange-card a:hover {
-  background: #0096ff;
+.button:hover {
+  background: #005ad1;
 }
 
-/* -------------------- FOOTER -------------------- */
 footer {
   text-align: center;
-  color: #667;
+  padding: 2rem;
+  color: #555;
   font-size: 0.9rem;
-  padding: 2rem 0;
-  border-top: 1px solid #112;
+  border-top: 1px solid #ddd;
 }
