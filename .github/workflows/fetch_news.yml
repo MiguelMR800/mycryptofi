@@ -1,119 +1,35 @@
-name: Fetch crypto news
+name: Update 3D Front (Local Zip)
 
 on:
-  schedule:
-    - cron: "0 6 * * *"  # klo 6 UTC (klo 9 Suomessa)
   workflow_dispatch:
-
-permissions:
-  contents: write   # antaa oikeuden git pushille
+  schedule:
+    - cron: "0 5 * * *"  # Ajaa joka päivä klo 05:00
 
 jobs:
-  update:
+  update_front:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+      - name: Install unzip
+        run: sudo apt-get update && sudo apt-get install -y unzip
 
-      - name: Install dependencies
+      - name: Extract mycryptofi-3d.zip
         run: |
-          pip install requests beautifulsoup4
+          unzip -o mycryptofi-3d.zip -d ./_front
 
-      - name: Fetch crypto news
+      - name: Replace site files
         run: |
-          python - <<'EOF'
-          import json, requests, datetime
-          from bs4 import BeautifulSoup
+          rm -rf src public index.html package.json tailwind.config.js postcss.config.js vite.config.js
+          cp -r ./_front/* .
+          rm -rf ./_front
 
-          def fetch_news():
-              urls = [
-                  "https://cointelegraph.com/",
-                  "https://decrypt.co/",
-                  "https://www.coindesk.com/"
-              ]
-              articles = []
-              for site in urls:
-                  try:
-                      r = requests.get(site, timeout=10)
-                      soup = BeautifulSoup(r.text, "html.parser")
-                      titles = soup.find_all("h3")
-                      for t in titles[:5]:
-                          text = t.get_text(strip=True)
-                          link = t.find("a")["href"] if t.find("a") else site
-                          if not link.startswith("http"):
-                              link = site.rstrip("/") + "/" + link.lstrip("/")
-                          articles.append({
-                              "title": text,
-                              "url": link,
-                              "source": site.split("//")[1].split("/")[0]
-                          })
-                  except Exception as e:
-                      print("Error fetching", site, ":", e)
-              with open("news.json", "w", encoding="utf-8") as f:
-                  json.dump(articles, f, indent=2, ensure_ascii=False)
-
-          fetch_news()
-          print("✅ News fetched successfully.")
-          EOF
-
-      - name: Verify exchange icons (auto-fix)
+      - name: Commit and push
         run: |
-          python - <<'EOF'
-          import json, urllib.request
-
-          fallback = "mycryptofi_logo_key.png"
-          icons = {
-              "binance": "https://cdn.simpleicons.org/binance/333",
-              "bybit": "https://cdn.simpleicons.org/bybit/333",
-              "bitget": "https://cdn.simpleicons.org/bitget/333",
-              "mexc": "https://cdn.simpleicons.org/mexc/333",
-              "ledger": "https://cdn.simpleicons.org/ledger/333",
-              "trezor": "https://cdn.simpleicons.org/trezor/333"
-          }
-
-          def icon_exists(url):
-              try:
-                  with urllib.request.urlopen(url) as r:
-                      return r.status == 200
-              except:
-                  return False
-
-          with open("affiliates.json", "r", encoding="utf-8") as f:
-              data = json.load(f)
-
-          changed = False
-          for ex in data:
-              name = ex["name"].lower()
-              icon_url = icons.get(name)
-              if icon_url and icon_exists(icon_url):
-                  ex["icon"] = icon_url
-              else:
-                  ex["icon"] = fallback
-                  changed = True
-
-          if changed:
-              with open("affiliates.json", "w", encoding="utf-8") as f:
-                  json.dump(data, f, indent=2, ensure_ascii=False)
-              print("🔧 Missing icons replaced with fallback logo.")
-          else:
-              print("✅ All icons verified.")
-          EOF
-
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "MyCryptoFI Bot"
-          git config --global user.email "bot@mycryptofi.com"
-          git add news.json affiliates.json
-          git commit -m "Auto-update news and fix missing icons" || echo "No changes"
-          git push origin HEAD:main
+          git config user.name "MyCryptoFI Bot"
+          git config user.email "bot@mycryptofi.com"
+          git add .
+          git commit -m "Auto-update Render style 3D front" || echo "No changes"
+          git push
