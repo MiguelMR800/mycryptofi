@@ -1,6 +1,12 @@
 {
-  "date": "2025-10-14T01:45:46Z",
+  "date": "2025-10-14T04:27:18Z",
   "cards": [
+    {
+      "title": "Asia Morning Briefing: China Renaissance’s BNB Treasury Highlights a Shift in Asia’s Crypto Playbook",
+      "summary": "",
+      "image": "https://cdn.sanity.io/images/s3y3vcno/production/f23bb4b952589bc74307aabe68da804c0c6ac307-3840x2160.png?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip",
+      "link": "https://www.coindesk.com/markets/2025/10/14/asia-morning-briefing-china-renaissance-s-bnb-treasury-highlights-a-shift-in-asia-s-crypto-playbook"
+    },
     {
       "title": "Bitcoin Miners Lead Crypto Stock Bounce as OpenAI-Broadcom Deal Fuels AI Trade",
       "summary": "",
@@ -14,28 +20,22 @@
       "link": "https://www.coindesk.com/markets/2025/10/13/citi-eyes-2026-crypto-custody-launch-after-years-of-quiet-development-cnbc"
     },
     {
-      "title": "XLM Rises 6% to Recover From Weekend Plunge",
+      "title": "SEAL team develops ‘verifiable phishing reports’ to fight scammers",
       "summary": "",
-      "image": "https://cdn.sanity.io/images/s3y3vcno/production/2efa489cdfa7e9bbfce95bf3b4752967a3bce452-700x430.png?auto=format&w=1920&h=1080&crop=focalpoint&fit=clip",
-      "link": "https://www.coindesk.com/markets/2025/10/13/xlm-rises-6-to-recover-from-weekend-plunge"
+      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTIvMDE5MzgzNmUtZTA3OC03OWU2LWEzNWYtYmIwMzBlNWJlZmY0.jpg",
+      "link": "https://cointelegraph.com/news/security-alliance-anti-phishing-tool-verify-malicious-links?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
-      "title": "Bhutan migrates its national ID system to Ethereum",
+      "title": "TradFi giant JPMorgan is planning to offer crypto trading for clients",
       "summary": "",
-      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTAvMDE5OWRmYTYtYjA3MS03OTEwLWJiYjktYjdlY2ZiYjVjMmRl.jpg",
-      "link": "https://cointelegraph.com/news/bhutan-migrates-ethereum-national-id?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDYvMDE5NzNjOTItOTJmZC03MjJjLWFhZmUtNDgxOTY5MTc3M2Jh.jpg",
+      "link": "https://cointelegraph.com/news/jp-morgan-offer-crypto-trading-for-clients?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     },
     {
-      "title": "3 reasons why a Bitcoin rally to $125K could be delayed",
+      "title": "‘Crowd FUD’ is the best signal for when to buy Bitcoin: Analyst",
       "summary": "",
-      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTAvMDE5OWRlYTAtMDEwNy03Mjg2LWFhMmItMTMxZTUzNjNjMTQ5.jpg",
-      "link": "https://cointelegraph.com/news/3-reasons-why-a-bitcoin-rally-to-dollar125k-could-be-delayed?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-      "title": "Here’s what happened in crypto today",
-      "summary": "",
-      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDYvMDE5Nzk0MjMtZWY4ZS03YzYwLWI5MzctYjlkZGY3NWZlOGFk.jpg",
-      "link": "https://cointelegraph.com/news/what-happened-in-crypto-today?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTAvMDE5OWUwMDUtMjFlZi03NDE5LTlmZmYtNGY0ZjkwZjBkMGVm.jpg",
+      "link": "https://cointelegraph.com/news/bitcoin-fud-retail-selloff-trump-tariffs-2025?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     }
   ]
 }
