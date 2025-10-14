@@ -2,7 +2,7 @@ name: Fetch crypto news
 
 on:
   schedule:
-    - cron: "0 6 * * *"  # joka aamu klo 6 UTC
+    - cron: "0 6 * * *"  # joka aamu klo 6 UTC (klo 9 Suomessa)
   workflow_dispatch:
 
 jobs:
@@ -63,7 +63,8 @@ jobs:
       - name: Verify exchange icons (auto-fix)
         run: |
           python - <<'EOF'
-          import json, os, urllib.request
+          import json, urllib.request
+
           fallback = "mycryptofi_logo_key.png"
           icons = {
               "binance": "https://cdn.simpleicons.org/binance/333",
@@ -92,6 +93,7 @@ jobs:
               else:
                   ex["icon"] = fallback
                   changed = True
+
           if changed:
               with open("affiliates.json", "w", encoding="utf-8") as f:
                   json.dump(data, f, indent=2, ensure_ascii=False)
