@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyCryptoFI — Krypto-opas suomalaisille</title>
 
-  <!-- META -->
   <meta name="description" content="Krypto-opas suomalaisille: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
   <meta property="og:title" content="MyCryptoFI — Krypto-opas suomalaisille">
   <meta property="og:description" content="Suomalainen krypto-opas: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
@@ -13,8 +12,10 @@
   <meta property="og:url" content="https://mycryptofi.com">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="/style.css?v=5" />
+  <link rel="icon" type="image/png" href="/favicon.png?v=2" />
+
+  <style>body{background:#010a15;color:#fff;}</style>
 </head>
 
 <body>
@@ -31,56 +32,14 @@
       <div id="news-container" class="card-grid"></div>
     </section>
 
-    <!-- 🔹 Pörssit ja lompakot -->
+    <!-- 🔹 Pörssit -->
     <section id="exchanges">
       <h2>💳 Suositellut pörssit & lompakot</h2>
       <p class="affiliate-note">
         Affiliate-kumppanit — linkkien kautta tehdyt rekisteröitymiset voivat tuoda meille pienen komission ilman lisäkuluja sinulle.
       </p>
 
-      <div class="exchange-grid">
-        <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=029" alt="Binance logo" onerror="this.src='mycryptofi_logo_key.png';">
-          <h3>Binance</h3>
-          <p>Maailman suurin pörssi. Nopeat siirrot, matalat kulut ja laaja tarjonta.</p>
-          <a href="https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI" class="button">Avaa →</a>
-        </div>
-
-        <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/bybit-logo.svg?v=029" alt="Bybit logo" onerror="this.src='mycryptofi_logo_key.png';">
-          <h3>Bybit</h3>
-          <p>Johdannaiset, spot ja copy trading. Suosittu treidaajille.</p>
-          <a href="https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI" class="button">Avaa →</a>
-        </div>
-
-        <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/bitget-logo.svg?v=029" alt="Bitget logo" onerror="this.src='mycryptofi_logo_key.png';">
-          <h3>Bitget</h3>
-          <p>Laaja valikoima ja kilpailukykyiset kulut aktiivitreidaajille.</p>
-          <a href="https://www.bitget.com/en/register?from=referral&clacCode=OMA_BITGET_KOODI" class="button">Avaa →</a>
-        </div>
-
-        <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/mexc-logo.svg?v=029" alt="MEXC logo" onerror="this.src='mycryptofi_logo_key.png';">
-          <h3>MEXC</h3>
-          <p>Usein uusia listauksia ja hyvä likviditeetti altcoineille.</p>
-          <a href="https://www.mexc.com/register?inviteCode=OMA_MEXC_KOODI" class="button">Avaa →</a>
-        </div>
-
-        <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/ledger-logo.svg?v=029" alt="Ledger logo" onerror="this.src='mycryptofi_logo_key.png';">
-          <h3>Ledger</h3>
-          <p>Turvallinen kylmälompakko — suojaa varasi offline.</p>
-          <a href="https://shop.ledger.com/?r=OMA_LEDGER_KOODI" class="button">Avaa →</a>
-        </div>
-
-        <div class="exchange-card">
-          <img src="https://cryptologos.cc/logos/trezor-logo.svg?v=029" alt="Trezor logo" onerror="this.src='mycryptofi_logo_key.png';">
-          <h3>Trezor</h3>
-          <p>Avoimen lähdekoodin hardware-lompakko — helppo käyttää.</p>
-          <a href="https://trezor.io?offer_id=OMA_TREZOR_KOODI" class="button">Avaa →</a>
-        </div>
-      </div>
+      <div class="exchange-grid" id="exchange-grid"></div>
     </section>
   </main>
 
@@ -88,22 +47,20 @@
     <p>© 2025 MyCryptoFI — Krypto-opas suomalaisille.</p>
   </footer>
 
+  <!-- 🔹 BOTTI: uutiset + logot -->
   <script>
-    // 🔹 Uutiset
-    fetch("latest.json")
+    // 🔸 1. Lataa uutiset JSON:sta
+    fetch("/latest.json")
       .then(res => res.json())
       .then(data => {
         document.getElementById("last-updated").textContent =
           "Päivitetty " + new Date(data.date).toLocaleString("fi-FI");
         const container = document.getElementById("news-container");
         data.cards.forEach(item => {
-          const image = item.image && item.image.trim() !== ""
-            ? item.image
-            : "mycryptofi_logo_key.png";
           const card = document.createElement("div");
           card.className = "news-card";
           card.innerHTML = `
-            <img src="${image}" alt="Kuva">
+            <img src="${item.image}" alt="Kuva">
             <div class="news-content">
               <h3>${item.title}</h3>
               ${item.summary ? `<p>${item.summary}</p>` : ""}
@@ -111,8 +68,34 @@
             </div>`;
           container.appendChild(card);
         });
-      })
-      .catch(err => console.error("Uutisten lataus epäonnistui:", err));
+      });
+
+    // 🔸 2. Automaattiset pörssit ja logot (botti hakee faviconit)
+    const exchanges = [
+      { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI" },
+      { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI" },
+      { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com/en/register?from=referral&clacCode=OMA_BITGET_KOODI" },
+      { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com/register?inviteCode=OMA_MEXC_KOODI" },
+      { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com?r=OMA_LEDGER_KOODI" },
+      { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io?offer_id=OMA_TREZOR_KOODI" }
+    ];
+
+    const grid = document.getElementById("exchange-grid");
+
+    exchanges.forEach(ex => {
+      const hostname = new URL(ex.url).hostname;
+      const logo = `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
+
+      const card = document.createElement("div");
+      card.className = "exchange-card";
+      card.innerHTML = `
+        <img src="${logo}" alt="${ex.name} logo" />
+        <h3>${ex.name}</h3>
+        <p>${ex.desc}</p>
+        <a href="${ex.url}" target="_blank" class="button">Avaa →</a>
+      `;
+      grid.appendChild(card);
+    });
   </script>
 </body>
 </html>
