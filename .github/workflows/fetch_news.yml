@@ -2,16 +2,20 @@ name: Fetch crypto news
 
 on:
   schedule:
-    - cron: "0 6 * * *"  # joka aamu klo 6 UTC (klo 9 Suomessa)
+    - cron: "0 6 * * *"  # klo 6 UTC = klo 9 Suomessa
   workflow_dispatch:
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # sallii commitin ja pushin
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # tarvitaan pushia varten
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -52,7 +56,6 @@ jobs:
                           })
                   except Exception as e:
                       print("Error fetching", site, ":", e)
-              now = datetime.datetime.utcnow().isoformat() + "Z"
               with open("news.json", "w", encoding="utf-8") as f:
                   json.dump(articles, f, indent=2, ensure_ascii=False)
 
@@ -84,6 +87,7 @@ jobs:
 
           with open("affiliates.json", "r", encoding="utf-8") as f:
               data = json.load(f)
+
           changed = False
           for ex in data:
               name = ex["name"].lower()
@@ -103,9 +107,11 @@ jobs:
           EOF
 
       - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "MyCryptoFI Bot"
           git config --global user.email "bot@mycryptofi.com"
           git add news.json affiliates.json
           git commit -m "Auto-update news and fix missing icons" || echo "No changes"
-          git push
+          git push origin HEAD:main
