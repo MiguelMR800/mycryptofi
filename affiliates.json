@@ -1,11 +1,38 @@
-{
-  "binance": "https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T",
-  "bybit": "https://www.bybit.com/invite?ref=EQ69EL",
-  "bitget": "https://www.bitget.com/referral/register?clacCode=B0US0BU8",
-  "mexc": "https://promote.mexc.com/r/Wos5E00S",
-  "crypto.com": "https://crypto.com/app/nrmm4uzm29",
-  "coinmotion": "https://coinmotion.com/fi/?ref=92a4",
-  "northcrypto": "https://kvarnx.com/rekisteroityminen/UUYYY7M90V",
-  "ledger": "https://shop.ledger.com/?r=c97ab0683c61",
-  "trezor": "https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=239&affiliate_id=35816"
-}
+[
+  {
+    "name": "binance",
+    "url": "https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T"
+  },
+  {
+    "name": "bybit",
+    "url": "https://www.bybit.com/invite?ref=EQ69FEL"
+  },
+  {
+    "name": "bitget",
+    "url": "https://www.bitget.com/referral/register?clacCode=B0US0BU8"
+  },
+  {
+    "name": "mexc",
+    "url": "https://promote.mexc.com/r/Wos5E0E9"
+  },
+  {
+    "name": "crypto.com",
+    "url": "https://crypto.com/app/nrmm4uzm29"
+  },
+  {
+    "name": "coinmotion",
+    "url": "https://coinmotion.com/fi?ref=9za4"
+  },
+  {
+    "name": "northcrypto",
+    "url": "https://kvarnx.com/rekisteroityminen/UUYYY7M90V"
+  },
+  {
+    "name": "ledger",
+    "url": "https://shop.ledger.com/?r=c97ab0683c61"
+  },
+  {
+    "name": "trezor",
+    "url": "https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=2398&affiliate_id=35816"
+  }
+]
