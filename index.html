@@ -1,72 +1,73 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MyCryptoFI — Krypto-opas suomalaisille. Ymmärrä digitaalinen talous helposti ja turvallisesti.">
   <title>MyCryptoFI — Krypto-opas suomalaisille</title>
 
-  <!-- Favicon ja logo -->
-  <link rel="icon" type="image/png" href="mycryptofi_logo_key.png" />
+  <!-- Favicon & logo metadata -->
+  <link rel="icon" type="image/png" href="mycryptofi_favicon.png">
+  <link rel="apple-touch-icon" href="mycryptofi_favicon.png">
+  <meta property="og:image" content="mycryptofi_logo_key.png">
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Ylälogo -->
-  <header class="header">
-    <a href="#" class="logo-link">
-      <img src="mycryptofi_logo_key.png" alt="MyCryptoFI logo" class="logo" />
-    </a>
+  <header>
+    <div class="logo-container">
+      <img src="mycryptofi_logo_key.png" alt="MyCryptoFI logo" class="logo">
+      <h1>MyCryptoFI</h1>
+    </div>
   </header>
 
-  <!-- Hero-osio -->
-  <section class="hero">
-    <h1>MyCryptoFI — Krypto-opas suomalaisille</h1>
-    <p class="subtitle">Tietoa pörsseistä, lompakoista ja markkinoista — tiiviisti, ilman mainospuhetta.</p>
-  </section>
+  <main>
+    <section class="intro">
+      <h2>Krypto-opas suomalaisille</h2>
+      <p>Tietoa, uutisia ja käytännön vinkkejä digitaalisen talouden maailmasta.</p>
+    </section>
 
-  <!-- Pörssikortit -->
-  <section class="exchanges">
-    <h2>Suositellut pörssit & lompakot</h2>
-    <div class="exchange-grid" id="exchange-grid"></div>
-  </section>
+    <section class="news">
+      <h2>📰 Uusimmat kryptouutiset</h2>
+      <div id="news-grid" class="card-grid"></div>
+    </section>
+
+    <section class="exchanges">
+      <h2>💼 Suositellut pörssit ja lompakot</h2>
+      <p>Affiliate-kumppanit — rekisteröitymällä linkkien kautta tuet sivustoa ilman lisäkuluja.</p>
+      <div id="exchange-grid" class="card-grid"></div>
+    </section>
+  </main>
 
   <footer>
-    © 2025 MyCryptoFI — Kaikki oikeudet pidätetään.
+    <p>© 2025 MyCryptoFI — Krypto-opas suomalaisille.</p>
   </footer>
 
   <script>
-    const exchanges = [
-      { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register", icon: "https://cdn.simpleicons.org/binance/000000" },
-      { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com", icon: "https://cdn.simpleicons.org/bybit/000000" },
-      { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com", icon: "https://cdn.simpleicons.org/bitget/000000" },
-      { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com", icon: "https://cdn.simpleicons.org/mexc/000000" },
-      { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com", icon: "https://cdn.simpleicons.org/ledger/000000" },
-      { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io", icon: "https://cdn.simpleicons.org/trezor/000000" }
-    ];
+  const exchanges = [
+    { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register", icon: "https://cdn.simpleicons.org/binance/333" },
+    { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com/", icon: "https://cdn.simpleicons.org/bybit/333" },
+    { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com/", icon: "https://cdn.simpleicons.org/bitget/333" },
+    { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com/", icon: "https://cdn.simpleicons.org/mexc/333" },
+    { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com/", icon: "https://cdn.simpleicons.org/ledger/333" },
+    { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io/", icon: "https://cdn.simpleicons.org/trezor/333" }
+  ];
 
-    const grid = document.getElementById("exchange-grid");
-    const fallbackLogo = "mycryptofi_logo_key.png";
-
-    exchanges.forEach(ex => {
-      const card = document.createElement("div");
-      card.className = "exchange-card";
-      card.innerHTML = `
-        <div class="icon-wrapper">
-          <img src="${ex.icon}" alt="${ex.name} logo" onerror="this.src='${fallbackLogo}'" />
-        </div>
-        <h3>${ex.name}</h3>
-        <p>${ex.desc}</p>
-        <a href="${ex.url}" target="_blank" class="button">Avaa →</a>`;
-      grid.appendChild(card);
-    });
-
-    // Touch-spring efekti
-    document.querySelectorAll('.exchange-card').forEach(card => {
-      card.addEventListener('touchstart', () => card.classList.add('pressed'));
-      card.addEventListener('touchend', () => card.classList.remove('pressed'));
-      card.addEventListener('mousedown', () => card.classList.add('pressed'));
-      card.addEventListener('mouseup', () => card.classList.remove('pressed'));
-    });
+  const grid = document.getElementById("exchange-grid");
+  exchanges.forEach(ex => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-logo">
+        <img src="${ex.icon}" alt="${ex.name} logo" onerror="this.src='mycryptofi_logo_key.png'">
+      </div>
+      <h3>${ex.name}</h3>
+      <p>${ex.desc}</p>
+      <a href="${ex.url}" target="_blank">Avaa →</a>
+    `;
+    grid.appendChild(card);
+  });
   </script>
 </body>
 </html>
