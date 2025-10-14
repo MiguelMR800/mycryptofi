@@ -1,4 +1,52 @@
-{
-  "generated_at": "1970-01-01T00:00:00Z",
-  "articles": []
-}
+[
+  {
+    "title": "BTC",
+    "url": "https://decrypt.co/price/bitcoin",
+    "source": "decrypt.co"
+  },
+  {
+    "title": "ETH",
+    "url": "https://decrypt.co/price/ethereum",
+    "source": "decrypt.co"
+  },
+  {
+    "title": "BNB",
+    "url": "https://decrypt.co/price/binance-coin",
+    "source": "decrypt.co"
+  },
+  {
+    "title": "XRP",
+    "url": "https://decrypt.co/price/xrp",
+    "source": "decrypt.co"
+  },
+  {
+    "title": "SOL",
+    "url": "https://decrypt.co/price/solana",
+    "source": "decrypt.co"
+  },
+  {
+    "title": "",
+    "url": "https://www.coindesk.com/",
+    "source": "www.coindesk.com"
+  },
+  {
+    "title": "Featured Stories",
+    "url": "https://www.coindesk.com/",
+    "source": "www.coindesk.com"
+  },
+  {
+    "title": "Is Elon Musk Getting Interested in Bitcoin Again?",
+    "url": "https://www.coindesk.com/",
+    "source": "www.coindesk.com"
+  },
+  {
+    "title": "Is Elon Musk Getting Interested in Bitcoin Again?",
+    "url": "https://www.coindesk.com/",
+    "source": "www.coindesk.com"
+  },
+  {
+    "title": "Bitcoin Miner IREN's AI Pivot Earns $100 Price Target at Cantor Fitzgerald",
+    "url": "https://www.coindesk.com/",
+    "source": "www.coindesk.com"
+  }
+]
