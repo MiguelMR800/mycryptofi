@@ -2,9 +2,9 @@ name: Fetch crypto news
 
 on:
   schedule:
-    # Päivittää uutiset automaattisesti joka aamu klo 06:00
-    - cron: "0 6 * * *"
-  workflow_dispatch:  # mahdollistaa manuaalisen ajon
+    - cron: "0 6 * * *"  # joka aamu klo 6 UTC
+  workflow_dispatch:
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -24,6 +24,7 @@ jobs:
 
       - name: Fetch crypto news
         run: |
+          python - <<'EOF'
           import json, requests, datetime
           from bs4 import BeautifulSoup
 
@@ -52,16 +53,17 @@ jobs:
                   except Exception as e:
                       print("Error fetching", site, ":", e)
               now = datetime.datetime.utcnow().isoformat() + "Z"
-              data = {"updated": now, "items": articles}
-              with open("news.json", "w") as f:
-                  json.dump(data["items"], f, indent=2, ensure_ascii=False)
+              with open("news.json", "w", encoding="utf-8") as f:
+                  json.dump(articles, f, indent=2, ensure_ascii=False)
 
           fetch_news()
-          print("✅ Fetched latest crypto news successfully.")
+          print("✅ News fetched successfully.")
+          EOF
 
       - name: Verify exchange icons (auto-fix)
         run: |
-          import json, os
+          python - <<'EOF'
+          import json, os, urllib.request
           fallback = "mycryptofi_logo_key.png"
           icons = {
               "binance": "https://cdn.simpleicons.org/binance/333",
@@ -71,22 +73,32 @@ jobs:
               "ledger": "https://cdn.simpleicons.org/ledger/333",
               "trezor": "https://cdn.simpleicons.org/trezor/333"
           }
+
+          def icon_exists(url):
+              try:
+                  with urllib.request.urlopen(url) as r:
+                      return r.status == 200
+              except:
+                  return False
+
           with open("affiliates.json", "r", encoding="utf-8") as f:
               data = json.load(f)
           changed = False
           for ex in data:
-              icon = icons.get(ex["name"].lower())
-              if not icon:
+              name = ex["name"].lower()
+              icon_url = icons.get(name)
+              if icon_url and icon_exists(icon_url):
+                  ex["icon"] = icon_url
+              else:
                   ex["icon"] = fallback
                   changed = True
-              else:
-                  ex["icon"] = icon
           if changed:
               with open("affiliates.json", "w", encoding="utf-8") as f:
                   json.dump(data, f, indent=2, ensure_ascii=False)
               print("🔧 Missing icons replaced with fallback logo.")
           else:
-              print("✅ All exchange icons verified.")
+              print("✅ All icons verified.")
+          EOF
 
       - name: Commit and push changes
         run: |
