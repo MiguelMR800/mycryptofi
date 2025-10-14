@@ -1,5 +1,5 @@
 {
-  "date": "2025-10-14T08:20:18Z",
+  "date": "2025-10-14T08:29:03Z",
   "cards": [
     {
       "title": "Bitcoin Slips Under $112K, ETH, DOGE Drop 6% as China Hits Back on U.S. Tariffs",
@@ -20,6 +20,12 @@
       "link": "https://www.coindesk.com/markets/2025/10/14/bullish-bitcoin-traders-eye-chart-patterns-from-2020-and-2024-after-weekend-s-usd19b-liquidations"
     },
     {
+      "title": "Metaplanet enterprise value dips below its Bitcoin holdings",
+      "summary": "",
+      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMDIvMDE5NGYxMDQtYjM4Yi03ZGQxLThiNTktYjk3ZjQxMjJlNjlh.jpg",
+      "link": "https://cointelegraph.com/news/metaplanet-enterprise-value-below-bitcoin-holdings-mnav?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
+    },
+    {
       "title": "US spot Bitcoin, Ether ETFs shed $755M after crypto market crash",
       "summary": "",
       "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjQtMTIvMDE5NDAwNDUtMjg4Yy03MGYzLWE3NjAtZTRkM2M5ZTVkZjI2.jpg",
@@ -30,12 +36,6 @@
       "summary": "",
       "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTAvMDE5OWJlZGItNTlmMi03M2U0LWEwZmQtYWU0ZGUwOTQ1NWY0.jpg",
       "link": "https://cointelegraph.com/explained/pi-networks-mystery-why-the-hype-wont-die-despite-endless-doubts?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
-    },
-    {
-      "title": "How to use Google’s Gemini to research coins before you invest",
-      "summary": "",
-      "image": "https://images.cointelegraph.com/images/528_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjUtMTAvMDE5OWEwYjgtZmZiZi03MDZlLTlmMGEtM2RjMDlkM2IwZTM3.jpg",
-      "link": "https://cointelegraph.com/news/how-to-use-google-s-gemini-to-research-coins-before-you-invest?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound"
     }
   ]
 }
