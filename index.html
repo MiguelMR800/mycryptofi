@@ -3,99 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MyCryptoFI — Suomen selkein krypto-opas. Uusimmat uutiset, suositellut pörssit ja turvalliset lompakot." />
   <title>MyCryptoFI — Krypto-opas suomalaisille</title>
-
-  <meta name="description" content="Krypto-opas suomalaisille: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
-  <meta property="og:title" content="MyCryptoFI — Krypto-opas suomalaisille">
-  <meta property="og:description" content="Suomalainen krypto-opas: uutiset, pörssit, lompakot ja käytännön vinkit ilman hypeä.">
-  <meta property="og:image" content="https://mycryptofi.com/mycryptofi_logo_key.png">
-  <meta property="og:url" content="https://mycryptofi.com">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="stylesheet" href="/style.css?v=5" />
-  <link rel="icon" type="image/png" href="/favicon.png?v=2" />
-
-  <style>body{background:#010a15;color:#fff;}</style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <!-- HEADER -->
   <header>
-    <h1>Krypto-opas suomalaisille</h1>
+    <h1>💡 Krypto-opas suomalaisille</h1>
     <p>Ymmärrä digitaalinen talous — ilman hypeä</p>
   </header>
 
-  <main>
-    <!-- 🔹 Uutiset -->
-    <section id="news">
-      <h2>📰 Uusimmat kryptouutiset</h2>
-      <p id="last-updated">Päivitetty automaattisesti</p>
-      <div id="news-container" class="card-grid"></div>
-    </section>
+  <!-- UUTISET -->
+  <section id="news-section" class="section">
+    <h2>📰 Uusimmat kryptouutiset</h2>
+    <p id="last-updated">Päivitetty automaattisesti</p>
+    <div id="news-grid" class="card-grid"></div>
+  </section>
 
-    <!-- 🔹 Pörssit -->
-    <section id="exchanges">
-      <h2>💳 Suositellut pörssit & lompakot</h2>
-      <p class="affiliate-note">
-        Affiliate-kumppanit — linkkien kautta tehdyt rekisteröitymiset voivat tuoda meille pienen komission ilman lisäkuluja sinulle.
-      </p>
+  <!-- PÖRSSIT JA LOMPAKOT -->
+  <section id="exchange-section" class="section">
+    <h2>💳 Suositellut pörssit & lompakot</h2>
+    <p class="affiliate-note">
+      Affiliate-kumppanit — linkkien kautta tehdyt rekisteröitymiset voivat tuoda meille pienen komission ilman lisäkuluja sinulle.
+    </p>
+    <div id="exchange-grid" class="exchange-grid"></div>
+  </section>
 
-      <div class="exchange-grid" id="exchange-grid"></div>
-    </section>
-  </main>
-
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 MyCryptoFI — Krypto-opas suomalaisille.</p>
+    © 2025 MyCryptoFI — Krypto-opas suomalaisille.
   </footer>
 
-  <!-- 🔹 BOTTI: uutiset + logot -->
+  <!-- SISÄLTÖJEN LATAUS (uutiset + pörssit) -->
   <script>
-    // 🔸 1. Lataa uutiset JSON:sta
-    fetch("/latest.json")
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("last-updated").textContent =
-          "Päivitetty " + new Date(data.date).toLocaleString("fi-FI");
-        const container = document.getElementById("news-container");
-        data.cards.forEach(item => {
-          const card = document.createElement("div");
-          card.className = "news-card";
-          card.innerHTML = `
-            <img src="${item.image}" alt="Kuva">
-            <div class="news-content">
-              <h3>${item.title}</h3>
-              ${item.summary ? `<p>${item.summary}</p>` : ""}
-              <a href="${item.link}" target="_blank" class="button">Lue artikkeli</a>
-            </div>`;
-          container.appendChild(card);
-        });
+  // --- Ladataan uutiset (latest.json) ---
+  async function loadNews() {
+    const newsGrid = document.getElementById("news-grid");
+    const updatedText = document.getElementById("last-updated");
+
+    try {
+      const res = await fetch("latest.json?_=" + new Date().getTime());
+      const data = await res.json();
+
+      updatedText.textContent = `Päivitetty ${new Date(data.updated).toLocaleString("fi-FI")}`;
+
+      data.articles.forEach(article => {
+        const card = document.createElement("div");
+        card.className = "news-card";
+        card.innerHTML = `
+          <img src="${article.image}" alt="${article.title}">
+          <div class="news-content">
+            <h3>${article.title}</h3>
+            <p>${article.summary || ""}</p>
+            <a href="${article.url}" target="_blank" class="button">Lue artikkeli</a>
+          </div>
+        `;
+        newsGrid.appendChild(card);
       });
+    } catch (err) {
+      newsGrid.innerHTML = "<p>⚠️ Uutisten lataus epäonnistui.</p>";
+      console.error(err);
+    }
+  }
 
-    // 🔸 2. Automaattiset pörssit ja logot (botti hakee faviconit)
-    const exchanges = [
-      { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI" },
-      { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI" },
-      { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com/en/register?from=referral&clacCode=OMA_BITGET_KOODI" },
-      { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com/register?inviteCode=OMA_MEXC_KOODI" },
-      { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com?r=OMA_LEDGER_KOODI" },
-      { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io?offer_id=OMA_TREZOR_KOODI" }
-    ];
+  // --- Luodaan automaattisesti logot ja kortit pörsseille ---
+  const exchanges = [
+    { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register?ref=OMA_BINANCE_KOODI", icon: "https://cdn.simpleicons.org/binance/FFFFFF" },
+    { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com/invite?ref=OMA_BYBIT_KOODI", icon: "https://cdn.simpleicons.org/bybit/FFFFFF" },
+    { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com/en/register?from=referral", icon: "https://cdn.simpleicons.org/bitget/FFFFFF" },
+    { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com/register", icon: "https://cdn.simpleicons.org/mexc/FFFFFF" },
+    { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com", icon: "https://cdn.simpleicons.org/ledger/FFFFFF" },
+    { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io", icon: "https://cdn.simpleicons.org/trezor/FFFFFF" }
+  ];
 
+  function loadExchanges() {
     const grid = document.getElementById("exchange-grid");
-
     exchanges.forEach(ex => {
-      const hostname = new URL(ex.url).hostname;
-      const logo = `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
-
       const card = document.createElement("div");
       card.className = "exchange-card";
       card.innerHTML = `
-        <img src="${logo}" alt="${ex.name} logo" />
+        <img src="${ex.icon}" alt="${ex.name} logo" />
         <h3>${ex.name}</h3>
         <p>${ex.desc}</p>
-        <a href="${ex.url}" target="_blank" class="button">Avaa →</a>
-      `;
+        <a href="${ex.url}" target="_blank" class="button">Avaa →</a>`;
       grid.appendChild(card);
     });
+  }
+
+  // Käynnistetään molemmat
+  loadNews();
+  loadExchanges();
   </script>
 </body>
 </html>
