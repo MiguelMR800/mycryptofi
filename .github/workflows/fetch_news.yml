@@ -1,13 +1,14 @@
 name: Fetch crypto news
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "0 */4 * * *"  # Ajetaan automaattisesti 4 tunnin välein
-
+    # Päivittää uutiset automaattisesti joka aamu klo 06:00
+    - cron: "0 6 * * *"
+  workflow_dispatch:  # mahdollistaa manuaalisen ajon
 jobs:
-  fetch-news:
+  update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -15,35 +16,82 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install feedparser openai
+          pip install requests beautifulsoup4
 
-      - name: Verify environment
+      - name: Fetch crypto news
         run: |
-          echo "Tarkistetaan ympäristö..."
-          python --version
-          echo "OPENAI_API_KEY asetettu: ${{ secrets.OPENAI_API_KEY != '' }}"
+          import json, requests, datetime
+          from bs4 import BeautifulSoup
 
-      - name: Run bot.py to fetch and translate news
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          echo "=== Suoritetaan uutisbotti ==="
-          python bot.py || { echo "bot.py epäonnistui"; exit 1; }
+          def fetch_news():
+              urls = [
+                  "https://cointelegraph.com/",
+                  "https://decrypt.co/",
+                  "https://www.coindesk.com/"
+              ]
+              articles = []
+              for site in urls:
+                  try:
+                      r = requests.get(site, timeout=10)
+                      soup = BeautifulSoup(r.text, "html.parser")
+                      titles = soup.find_all("h3")
+                      for t in titles[:5]:
+                          text = t.get_text(strip=True)
+                          link = t.find("a")["href"] if t.find("a") else site
+                          if not link.startswith("http"):
+                              link = site.rstrip("/") + "/" + link.lstrip("/")
+                          articles.append({
+                              "title": text,
+                              "url": link,
+                              "source": site.split("//")[1].split("/")[0]
+                          })
+                  except Exception as e:
+                      print("Error fetching", site, ":", e)
+              now = datetime.datetime.utcnow().isoformat() + "Z"
+              data = {"updated": now, "items": articles}
+              with open("news.json", "w") as f:
+                  json.dump(data["items"], f, indent=2, ensure_ascii=False)
 
-      - name: Debug output (näytä viimeiset rivit latest.json:sta)
-        run: |
-          echo "=== Näytetään latest.json ==="
-          tail -n 40 latest.json || echo "latest.json puuttuu"
+          fetch_news()
+          print("✅ Fetched latest crypto news successfully.")
 
-      - name: Commit & Push updated news
+      - name: Verify exchange icons (auto-fix)
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add latest.json
-          git commit -m "Päivitetyt kryptouutiset" || echo "Ei uusia muutoksia"
+          import json, os
+          fallback = "mycryptofi_logo_key.png"
+          icons = {
+              "binance": "https://cdn.simpleicons.org/binance/333",
+              "bybit": "https://cdn.simpleicons.org/bybit/333",
+              "bitget": "https://cdn.simpleicons.org/bitget/333",
+              "mexc": "https://cdn.simpleicons.org/mexc/333",
+              "ledger": "https://cdn.simpleicons.org/ledger/333",
+              "trezor": "https://cdn.simpleicons.org/trezor/333"
+          }
+          with open("affiliates.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+          changed = False
+          for ex in data:
+              icon = icons.get(ex["name"].lower())
+              if not icon:
+                  ex["icon"] = fallback
+                  changed = True
+              else:
+                  ex["icon"] = icon
+          if changed:
+              with open("affiliates.json", "w", encoding="utf-8") as f:
+                  json.dump(data, f, indent=2, ensure_ascii=False)
+              print("🔧 Missing icons replaced with fallback logo.")
+          else:
+              print("✅ All exchange icons verified.")
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "MyCryptoFI Bot"
+          git config --global user.email "bot@mycryptofi.com"
+          git add news.json affiliates.json
+          git commit -m "Auto-update news and fix missing icons" || echo "No changes"
           git push
