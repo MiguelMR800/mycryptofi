@@ -1,73 +1,178 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MyCryptoFI — Krypto-opas suomalaisille. Ymmärrä digitaalinen talous helposti ja turvallisesti.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyCryptoFI — Krypto-opas suomalaisille</title>
-
-  <!-- Favicon & logo metadata -->
-  <link rel="icon" type="image/png" href="mycryptofi_favicon.png">
-  <link rel="apple-touch-icon" href="mycryptofi_favicon.png">
-  <meta property="og:image" content="mycryptofi_logo_key.png">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="mycryptofi_favicon.png" />
+  <style>
+    :root {
+      --bg: #f8f9fb;
+      --card: #fff;
+      --text: #111;
+      --accent: #0057ff;
+      --muted: #777;
+      --radius: 1.2rem;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      line-height: 1.5;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    h1, h2 {
+      margin: 0.5em 0;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+    /* uutislista */
+    #news-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 3rem 0;
+    }
+    #news-list li {
+      background: var(--card);
+      margin-bottom: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    #news-list a {
+      color: var(--text);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    #news-list a:hover {
+      color: var(--accent);
+    }
+    /* affiliate grid */
+    #affiliate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card img {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 0.5rem auto;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+    .card h3 {
+      margin: 0.5rem 0;
+    }
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 0.6rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: background 0.2s ease;
+    }
+    .btn:hover { background: #003fc2; }
+    footer {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <div class="logo-container">
-      <img src="mycryptofi_logo_key.png" alt="MyCryptoFI logo" class="logo">
-      <h1>MyCryptoFI</h1>
-    </div>
+    <h1>MyCryptoFI</h1>
+    <p>Krypto-opas suomalaisille — tietoa, uutisia ja käytännön vinkkejä digitaalisesta taloudesta.</p>
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Krypto-opas suomalaisille</h2>
-      <p>Tietoa, uutisia ja käytännön vinkkejä digitaalisen talouden maailmasta.</p>
-    </section>
-
-    <section class="news">
+    <!-- Uutisosio -->
+    <section id="news">
       <h2>📰 Uusimmat kryptouutiset</h2>
-      <div id="news-grid" class="card-grid"></div>
+      <ul id="news-list"><li>Ladataan uutisia...</li></ul>
     </section>
 
-    <section class="exchanges">
+    <!-- Affiliate-osiot -->
+    <section id="affiliates">
       <h2>💼 Suositellut pörssit ja lompakot</h2>
       <p>Affiliate-kumppanit — rekisteröitymällä linkkien kautta tuet sivustoa ilman lisäkuluja.</p>
-      <div id="exchange-grid" class="card-grid"></div>
+      <div id="affiliate-grid"></div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 MyCryptoFI — Krypto-opas suomalaisille.</p>
+    © 2025 MyCryptoFI — Krypto-opas suomalaisille.
   </footer>
 
   <script>
-  const exchanges = [
-    { name: "Binance", desc: "Maailman suurin pörssi.", url: "https://accounts.binance.com/register", icon: "https://cdn.simpleicons.org/binance/333" },
-    { name: "Bybit", desc: "Johdannaiset, spot ja copy trading.", url: "https://www.bybit.com/", icon: "https://cdn.simpleicons.org/bybit/333" },
-    { name: "Bitget", desc: "Laaja valikoima ja kilpailukykyiset kulut.", url: "https://www.bitget.com/", icon: "https://cdn.simpleicons.org/bitget/333" },
-    { name: "MEXC", desc: "Usein uusia listauksia ja hyvä likviditeetti altcoineille.", url: "https://www.mexc.com/", icon: "https://cdn.simpleicons.org/mexc/333" },
-    { name: "Ledger", desc: "Turvallinen kylmälompakko — suojaa varasi offline.", url: "https://shop.ledger.com/", icon: "https://cdn.simpleicons.org/ledger/333" },
-    { name: "Trezor", desc: "Avoimen lähdekoodin hardware-lompakko.", url: "https://trezor.io/", icon: "https://cdn.simpleicons.org/trezor/333" }
-  ];
+    async function renderNews() {
+      const list = document.getElementById('news-list');
+      try {
+        const res = await fetch('news.json');
+        const data = await res.json();
+        list.innerHTML = '';
+        data.forEach(article => {
+          if (!article.title || !article.url) return;
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <a href="${article.url}" target="_blank" rel="noopener noreferrer">
+              ${article.title}
+            </a> <span style="color:#777;">(${article.source})</span>
+          `;
+          list.appendChild(li);
+        });
+        if (!data.length) list.innerHTML = '<li>Ei uutisia saatavilla juuri nyt.</li>';
+      } catch (err) {
+        console.error(err);
+        list.innerHTML = '<li>Uutisten lataus epäonnistui.</li>';
+      }
+    }
 
-  const grid = document.getElementById("exchange-grid");
-  exchanges.forEach(ex => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <div class="card-logo">
-        <img src="${ex.icon}" alt="${ex.name} logo" onerror="this.src='mycryptofi_logo_key.png'">
-      </div>
-      <h3>${ex.name}</h3>
-      <p>${ex.desc}</p>
-      <a href="${ex.url}" target="_blank">Avaa →</a>
-    `;
-    grid.appendChild(card);
-  });
+    async function renderAffiliates() {
+      const grid = document.getElementById('affiliate-grid');
+      try {
+        const res = await fetch('affiliates.json');
+        const affiliates = await res.json();
+        grid.innerHTML = '';
+        affiliates.forEach(ex => {
+          const icon = ex.icon || 'mycryptofi_logo_key.png';
+          const div = document.createElement('div');
+          div.className = 'card';
+          div.innerHTML = `
+            <img src="${icon}" alt="${ex.name}">
+            <h3>${ex.name}</h3>
+            <p><a href="${ex.url}" target="_blank" class="btn">Avaa →</a></p>
+          `;
+          grid.appendChild(div);
+        });
+        if (!affiliates.length) grid.innerHTML = '<p>Ei dataa.</p>';
+      } catch (err) {
+        console.error(err);
+        grid.innerHTML = '<p>Virhe datan latauksessa.</p>';
+      }
+    }
+
+    renderNews();
+    renderAffiliates();
   </script>
 </body>
 </html>
