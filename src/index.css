@@ -1,34 +1,27 @@
-@import "https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Outfit", sans-serif;
-}
-
-html,
+/* Neon glow & smoothness */
 body {
   background-color: #000;
-  color: #f3f4f6;
-  min-height: 100%;
+  color: #e0f7ff;
+  font-family: "Inter", monospace;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
-h1 {
-  letter-spacing: 1px;
-}
-
-a {
-  color: #38bdf8;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
+/* Button hover glow */
 a:hover {
-  text-shadow: 0 0 8px #0ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  text-shadow: 0 0 25px #00ffff;
 }
 
-/* Glow-efekti */
-.drop-shadow-glow {
-  filter: drop-shadow(0 0 10px #1e90ff) drop-shadow(0 0 20px #0ff);
+/* Scrollbar minimal */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffff44;
+  border-radius: 10px;
 }
