@@ -18,12 +18,14 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: |
+          npm install --global prettier eslint
+          npm ci || npm install
 
       - name: Lint and fix common issues
         run: |
           npx prettier --write .
-          npx eslint . --ext .js,.jsx,.json,.yml || true
+          npx eslint . --ext .js,.jsx,.json,.yml --fix || true
 
       - name: Commit fixes if any
         run: |
