@@ -2,8 +2,7 @@ name: Deploy MyCryptoFI Front
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
