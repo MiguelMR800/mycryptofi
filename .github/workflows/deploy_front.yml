@@ -1,31 +1,33 @@
-name: Build and Deploy Front
+name: Deploy to GitHub Pages
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm ci
 
-      - name: Build project
+      - name: Build Vite project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
