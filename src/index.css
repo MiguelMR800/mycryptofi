@@ -1,27 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Neon glow & smoothness */
-body {
-  background-color: #000;
-  color: #e0f7ff;
-  font-family: "Inter", monospace;
-  text-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Button hover glow */
-a:hover {
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
-  text-shadow: 0 0 25px #00ffff;
-}
-
-/* Scrollbar minimal */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background: #00ffff44;
-  border-radius: 10px;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #0a0a0a;
 }
