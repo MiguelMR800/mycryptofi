@@ -7,17 +7,16 @@ export default function App() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        flexDirection: "column",
         background: "#0a0a0a",
         color: "#00ffae",
         fontSize: "2rem",
-        flexDirection: "column",
-        gap: "1rem",
       }}
     >
-      <div>✅ MyCryptoFI toimii!</div>
-      <div style={{ fontSize: "1rem", opacity: 0.8 }}>
-        Tämä on testiversio. Sivun rakennus onnistui.
-      </div>
+      ✅ MyCryptoFI toimii!
+      <p style={{ fontSize: "1rem", color: "#ccc" }}>
+        GitHub Pages julkaisu onnistui 🚀
+      </p>
     </div>
   );
 }
