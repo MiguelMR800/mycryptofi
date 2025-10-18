@@ -1,121 +1,74 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", Arial, sans-serif;
-  background-color: #f7f8fa;
-  color: #111;
-  scroll-behavior: smooth;
+/* MyCryptoFI minimalist theme - Render-inspired */
+:root{
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --muted:#5a5a5a;
+  --line:#e9e9e9;
+  --container: 1120px;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffffff;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--fg);
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.container{max-width:var(--container); margin:0 auto; padding:0 24px}
+
+.site-header{
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; background:#fff; z-index:10;
+}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 0}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--fg);}
+.logo{height:28px; width:auto; display:block}
+.brand-text{font-weight:800; letter-spacing:0.2px}
+
+.nav a{margin-left:20px; text-decoration:none; color:var(--fg); font-weight:600}
+.nav a:hover{opacity:0.7}
+
+.hero{padding:96px 0 56px 0}
+.hero-inner{text-align:center}
+.hero h1{font-size: clamp(32px, 6vw, 54px); line-height:1.1; margin:0}
+.hero .lede{margin:20px auto 28px; color:var(--muted); max-width:720px; font-size:18px}
+.cta{
+  display:inline-block; padding:14px 22px; border-radius:10px;
+  background:var(--fg); color:#fff; text-decoration:none; font-weight:700;
+}
+.cta:hover{opacity:0.9}
+
+.news{padding:24px 0 80px}
+.section-head h2{font-size:24px; margin:0 0 8px}
+.section-head p{color:var(--muted); margin:0 0 22px}
+
+.news-list{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:1fr; gap:14px}
+.news-list li{
+  border:1px solid var(--line);
+  border-radius:12px; padding:14px 16px; display:flex; justify-content:space-between; align-items:center; gap:12px;
+}
+.news-list a{color:var(--fg); text-decoration:none; font-weight:600}
+.news-list small{color:var(--muted)}
+.news-list li:hover{background:#fafafa}
+
+.news-empty, .news-error{
+  border:1px dashed var(--line); padding:16px; border-radius:12px; color:var(--muted);
 }
 
-.logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+.grid-links{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:10px;
+  margin-top:12px;
 }
+.aff{display:block; text-decoration:none; color:var(--fg); border:1px solid var(--line); padding:12px 14px; border-radius:10px; font-weight:600; text-align:center}
+.aff:hover{background:#fafafa}
 
-h1 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0;
-  color: #111;
-}
+.site-footer{border-top:1px solid var(--line); padding:36px 0}
+.fineprint{margin-top:16px; color:var(--muted); font-size:13px}
 
-main {
-  padding: 2rem 1rem 4rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.intro {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.intro h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-title {
-  margin-bottom: 1rem;
-  color: #222;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-}
-
-.card-logo img {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
-
-.card h3 {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-.card p {
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: #007bff;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.card a:hover {
-  background-color: #0069d9;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #777;
-  padding: 1.5rem;
-  background: #fff;
-  border-top: 1px solid #eee;
+@media (min-width: 840px){
+  .news-list{grid-template-columns:1fr 1fr}
 }

@@ -1,13 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyCryptoFI</title>
-    <meta name="description" content="MyCryptoFI – Krypto-opas ja uutiset suomeksi" />
-  </head>
-  <body style="margin:0;background:#0a0a0a;">
-    <div id="root"></div>
-    <script type="module" src="src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyCryptoFI — Krypto & Makro Uutiset</title>
+  <meta name="description" content="Suomalaisille kuratoitu etusivu globaaleista krypto- ja makrouutisista. Minimalistinen, nopea ja luotettava." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./mycryptofi_favicon.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/">
+        <img src="./mycryptofi_logo_key.png" alt="MyCryptoFI logo" class="logo" />
+        <span class="brand-text">MyCryptoFI</span>
+      </a>
+      <nav class="nav">
+        <a href="/">Etusivu</a>
+        <a href="#hallinto">Hallinto</a>
+        <a href="#tilastot">Tilastot</a>
+        <a href="#blogi">Blogi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Edistämme seuraavan sukupolven kryptointelligenssiä ja tekoälyn automaatiota.</h1>
+        <p class="lede">
+          Kuratoitu etusivu suomalaisille sijoittajille: globaaleja krypto- ja makrouutisia ilman hypeä.
+        </p>
+        <a class="cta" href="#" aria-label="Tutustu protokollaan (placeholder)">Tutustu protokollaan</a>
+      </div>
+    </section>
+
+    <section id="uutiset" class="news">
+      <div class="container">
+        <div class="section-head">
+          <h2>Uutiset</h2>
+          <p>Tuoreimmat otsikot luotetuista lähteistä. Otsikot näytetään alkuperäiskielellä.</p>
+        </div>
+        <ul id="news-list" class="news-list" aria-live="polite"></ul>
+        <div id="news-empty" class="news-empty" hidden>
+          Uutiset päivittyvät automaattisesti — palaa pian.
+        </div>
+        <div id="news-error" class="news-error" hidden>
+          Uutisten lataus epäonnistui. Päivitä sivu.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pörssit ja Lompakot</h2>
+      </div>
+      <div class="grid-links">
+        <a class="aff" target="_blank" rel="noopener" href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T">Binance</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://www.bybit.com/invite?ref=EQ69EL">Bybit</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://www.bitget.com/referral/register?clacCode=B0US0BU8">Bitget</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://promote.mexc.com/r/Wos5E00S">MEXC</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://kvarnx.com/rekisteroityminen/UUYYY7M90V">Northcrypto</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://crypto.com/app/nrmm4uzm29">Crypto.com</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://coinmotion.com/fi/?ref=92a4">Coinmotion</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://shop.ledger.com/?r=c97ab0683c61">Ledger</a>
+        <a class="aff" target="_blank" rel="noopener" href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=239&affiliate_id=35816">Trezor</a>
+      </div>
+
+      <div class="fineprint">
+        <p>© {year} MyCryptoFI. Rakennettu yksinkertaiseksi GitHub Pages -sivuksi. Ei sijoitusneuvontaa.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.querySelector('.fineprint p').innerHTML = document.querySelector('.fineprint p').innerHTML.replace('{year}', new Date().getFullYear());</script>
+  <script src="./app.js"></script>
+</body>
 </html>
