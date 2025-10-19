@@ -1,4 +1,4 @@
-/* MyCryptoFI minimalist theme - Render-inspired */
+/* MyCryptoFI minimalist theme - Render-inspired (v2) */
 :root{
   --bg: #ffffff;
   --fg: #0a0a0a;
@@ -59,12 +59,15 @@ body{
   border:1px dashed var(--line); padding:16px; border-radius:12px; color:var(--muted);
 }
 
-.grid-links{
-  display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:10px;
+.grid-cards{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:14px;
   margin-top:12px;
 }
-.aff{display:block; text-decoration:none; color:var(--fg); border:1px solid var(--line); padding:12px 14px; border-radius:10px; font-weight:600; text-align:center}
-.aff:hover{background:#fafafa}
+.card{display:block; text-decoration:none; color:var(--fg); border:1px solid var(--line); padding:14px 14px; border-radius:12px}
+.card:hover{background:#fafafa}
+.card h3{margin:0 0 6px; font-size:16px; display:flex; align-items:center; gap:8px}
+.card p{margin:0; color:var(--muted); font-size:14px}
+.stars{font-weight:600; letter-spacing:1px}
 
 .site-footer{border-top:1px solid var(--line); padding:36px 0}
 .fineprint{margin-top:16px; color:var(--muted); font-size:13px}

@@ -20,9 +20,7 @@
       </a>
       <nav class="nav">
         <a href="/">Etusivu</a>
-        <a href="#hallinto">Hallinto</a>
-        <a href="#tilastot">Tilastot</a>
-        <a href="#blogi">Blogi</a>
+        <a href="./blog.html">Blogi</a>
       </nav>
     </div>
   </header>
@@ -42,7 +40,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Uutiset</h2>
-          <p>Tuoreimmat otsikot luotetuista lähteistä. Otsikot näytetään alkuperäiskielellä.</p>
+          <p>Tuoreimmat otsikot luotetuista lähteistä (CoinDesk, Cointelegraph, Decrypt). Otsikot näytetään alkuperäiskielellä.</p>
         </div>
         <ul id="news-list" class="news-list" aria-live="polite"></ul>
         <div id="news-empty" class="news-empty" hidden>
@@ -59,26 +57,54 @@
     <div class="container">
       <div class="section-head">
         <h2>Pörssit ja Lompakot</h2>
+        <p>Suomalaisesta näkökulmasta: käyttömukavuus, valvonta, likviditeetti ja edut.</p>
       </div>
-      <div class="grid-links">
-        <a class="aff" target="_blank" rel="noopener" href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T">Binance</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://www.bybit.com/invite?ref=EQ69EL">Bybit</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://www.bitget.com/referral/register?clacCode=B0US0BU8">Bitget</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://promote.mexc.com/r/Wos5E00S">MEXC</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://kvarnx.com/rekisteroityminen/UUYYY7M90V">Northcrypto</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://crypto.com/app/nrmm4uzm29">Crypto.com</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://coinmotion.com/fi/?ref=92a4">Coinmotion</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://shop.ledger.com/?r=c97ab0683c61">Ledger</a>
-        <a class="aff" target="_blank" rel="noopener" href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=239&affiliate_id=35816">Trezor</a>
+
+      <div class="grid-cards">
+        <a class="card" target="_blank" rel="noopener" href="https://www.binance.com/activity/referral-entry/CPA?ref=CPA_006KQGC05T">
+          <h3>Binance <span class="stars" aria-label="4/5">★★★★☆</span></h3>
+          <p>Suurin volyymi ja listaukset. Hyvä likviditeetti treidaajalle. Vahva KYC.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://www.bybit.com/invite?ref=EQ69EL">
+          <h3>Bybit <span class="stars" aria-label="4/5">★★★★☆</span></h3>
+          <p>Selkeä UI, futuurit ja airdrop-kampanjat. Nopeat listaukset.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://www.bitget.com/referral/register?clacCode=B0US0BU8">
+          <h3>Bitget <span class="stars" aria-label="3/5">★★★☆☆</span></h3>
+          <p>Copy trading ja kampanjat. Likviditeetti vaihtelee altcoineissa.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://promote.mexc.com/r/Wos5E00S">
+          <h3>MEXC <span class="stars" aria-label="3/5">★★★☆☆</span></h3>
+          <p>Paljon varhaisia listauksia. Hyvä spekulaatioon, vähemmän säädelty.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://kvarnx.com/rekisteroityminen/UUYYY7M90V">
+          <h3>Northcrypto <span class="stars" aria-label="4/5">★★★★☆</span></h3>
+          <p>Kotimainen fiatsilta. Helppo verotusraportointiin, pienempi valikoima.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://crypto.com/app/nrmm4uzm29">
+          <h3>Crypto.com <span class="stars" aria-label="4/5">★★★★☆</span></h3>
+          <p>Korttiedut ja sovellus-ekosysteemi. Kätevä peruskäyttöön.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://coinmotion.com/fi/?ref=92a4">
+          <h3>Coinmotion <span class="stars" aria-label="4/5">★★★★☆</span></h3>
+          <p>Suomalainen toimija, Fivan alla. Helppo eurot ↔ krypto.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://shop.ledger.com/?r=c97ab0683c61">
+          <h3>Ledger <span class="stars" aria-label="5/5">★★★★★</span></h3>
+          <p>Laitesäilytys pitkään holdiin. Vahva ekosysteemi.</p>
+        </a>
+        <a class="card" target="_blank" rel="noopener" href="https://trezor.io/trezor-safe-3-bitcoin-only?transaction_id=102e7a00b82b4b779be8b66fe80b7e&offer_id=239&affiliate_id=35816">
+          <h3>Trezor <span class="stars" aria-label="4/5">★★★★☆</span></h3>
+          <p>Avoimen lähdekoodin laitelompakko. Luotettava vaihtoehto.</p>
+        </a>
       </div>
 
       <div class="fineprint">
-        <p>© {year} MyCryptoFI. Rakennettu yksinkertaiseksi GitHub Pages -sivuksi. Ei sijoitusneuvontaa.</p>
+        <p>© 2025 MyCryptoFI. Kaikki oikeudet pidätetään. Ei sijoitusneuvontaa.</p>
       </div>
     </div>
   </footer>
 
-  <script>document.querySelector('.fineprint p').innerHTML = document.querySelector('.fineprint p').innerHTML.replace('{year}', new Date().getFullYear());</script>
   <script src="./app.js"></script>
 </body>
 </html>
