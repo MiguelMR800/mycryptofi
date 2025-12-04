@@ -1,1 +1,83 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tausta -->
+  <defs>
+    <!-- Glow filter korteille -->
+    <filter id="cardGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0.65
+                0 0 0 0 0.85
+                0 0 0 0 1
+                0 0 0 0.6 0" />
+    </filter>
 
+    <!-- Gradientit korteille -->
+    <linearGradient id="gradGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#facc6b"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <linearGradient id="gradBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <linearGradient id="gradPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+
+    <linearGradient id="gradTeal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5eead4"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Musta tausta pienen vinjetin kanssa -->
+  <rect width="512" height="512" fill="#020617"/>
+  <radialGradient id="bgGrad" cx="50%" cy="0%" r="70%">
+    <stop offset="0%" stop-color="#1d293b" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#020617" stop-opacity="1"/>
+  </radialGradient>
+  <rect width="512" height="512" fill="url(#bgGrad)" />
+
+  <!-- Glow kerros korttien taakse -->
+  <g filter="url(#cardGlow)" opacity="0.55">
+    <rect x="96" y="156" width="320" height="200" rx="38" fill="#38bdf8" />
+  </g>
+
+  <!-- Kortit (pieni perspektiopinon fiilis) -->
+  <g transform="translate(80,150)">
+    <!-- vasen takimmainen kortti -->
+    <rect x="0" y="36" width="120" height="200" rx="24" fill="url(#gradTeal)" opacity="0.85"/>
+
+    <!-- toinen kortti -->
+    <rect x="80" y="18" width="120" height="200" rx="24" fill="url(#gradPurple)" opacity="0.9"/>
+
+    <!-- kolmas kortti -->
+    <rect x="160" y="0" width="120" height="200" rx="24" fill="url(#gradBlue)" opacity="0.95"/>
+
+    <!-- etummainen kultainen kortti -->
+    <rect x="240" y="14" width="120" height="200" rx="24" fill="url(#gradGold)"/>
+  </g>
+
+  <!-- MyCryptoFI-teksti -->
+  <text x="50%" y="390" text-anchor="middle"
+        font-family="Inter, system-ui, -apple-system, sans-serif"
+        font-size="42" font-weight="700"
+        fill="#f9fafb" letter-spacing="0.12em">
+    MYCRYPTOFI
+  </text>
+
+  <!-- Ala-tagline -->
+  <text x="50%" y="426" text-anchor="middle"
+        font-family="Inter, system-ui, -apple-system, sans-serif"
+        font-size="18" font-weight="500"
+        fill="#9ca3af" letter-spacing="0.18em">
+    CARDS · EXCHANGES
+  </text>
+</svg>
